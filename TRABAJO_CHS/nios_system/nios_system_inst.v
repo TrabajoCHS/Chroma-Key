@@ -1,10 +1,30 @@
 	nios_system u0 (
-		.clk_50_in_clk                                  (<connected-to-clk_50_in_clk>),                                  //                         clk_50_in.clk
+		.char_lcd_external_interface_DATA               (<connected-to-char_lcd_external_interface_DATA>),               //       char_lcd_external_interface.DATA
+		.char_lcd_external_interface_ON                 (<connected-to-char_lcd_external_interface_ON>),                 //                                  .ON
+		.char_lcd_external_interface_BLON               (<connected-to-char_lcd_external_interface_BLON>),               //                                  .BLON
+		.char_lcd_external_interface_EN                 (<connected-to-char_lcd_external_interface_EN>),                 //                                  .EN
+		.char_lcd_external_interface_RS                 (<connected-to-char_lcd_external_interface_RS>),                 //                                  .RS
+		.char_lcd_external_interface_RW                 (<connected-to-char_lcd_external_interface_RW>),                 //                                  .RW
 		.clk_50_2_in_clk                                (<connected-to-clk_50_2_in_clk>),                                //                       clk_50_2_in.clk
-		.reset_bridge_in_reset_n                        (<connected-to-reset_bridge_in_reset_n>),                        //                   reset_bridge_in.reset_n
-		.sys_clk_out_clk                                (<connected-to-sys_clk_out_clk>),                                //                       sys_clk_out.clk
-		.sdram_clk_out_clk                              (<connected-to-sdram_clk_out_clk>),                              //                     sdram_clk_out.clk
+		.clk_50_in_clk                                  (<connected-to-clk_50_in_clk>),                                  //                         clk_50_in.clk
+		.flash_bridge_out_tcm_address_out               (<connected-to-flash_bridge_out_tcm_address_out>),               //                  flash_bridge_out.tcm_address_out
+		.flash_bridge_out_tcm_read_n_out                (<connected-to-flash_bridge_out_tcm_read_n_out>),                //                                  .tcm_read_n_out
+		.flash_bridge_out_tcm_write_n_out               (<connected-to-flash_bridge_out_tcm_write_n_out>),               //                                  .tcm_write_n_out
+		.flash_bridge_out_tcm_data_out                  (<connected-to-flash_bridge_out_tcm_data_out>),                  //                                  .tcm_data_out
+		.flash_bridge_out_tcm_chipselect_n_out          (<connected-to-flash_bridge_out_tcm_chipselect_n_out>),          //                                  .tcm_chipselect_n_out
+		.green_led_external_interface_export            (<connected-to-green_led_external_interface_export>),            //      green_led_external_interface.export
 		.mtl_clk_out_clk                                (<connected-to-mtl_clk_out_clk>),                                //                       mtl_clk_out.clk
+		.mtl_controller_external_interface_CLK          (<connected-to-mtl_controller_external_interface_CLK>),          // mtl_controller_external_interface.CLK
+		.mtl_controller_external_interface_HS           (<connected-to-mtl_controller_external_interface_HS>),           //                                  .HS
+		.mtl_controller_external_interface_VS           (<connected-to-mtl_controller_external_interface_VS>),           //                                  .VS
+		.mtl_controller_external_interface_DATA_EN      (<connected-to-mtl_controller_external_interface_DATA_EN>),      //                                  .DATA_EN
+		.mtl_controller_external_interface_R            (<connected-to-mtl_controller_external_interface_R>),            //                                  .R
+		.mtl_controller_external_interface_G            (<connected-to-mtl_controller_external_interface_G>),            //                                  .G
+		.mtl_controller_external_interface_B            (<connected-to-mtl_controller_external_interface_B>),            //                                  .B
+		.pushbuttons_external_interface_export          (<connected-to-pushbuttons_external_interface_export>),          //    pushbuttons_external_interface.export
+		.red_leds_external_interface_export             (<connected-to-red_leds_external_interface_export>),             //       red_leds_external_interface.export
+		.reset_bridge_in_reset_n                        (<connected-to-reset_bridge_in_reset_n>),                        //                   reset_bridge_in.reset_n
+		.sdram_clk_out_clk                              (<connected-to-sdram_clk_out_clk>),                              //                     sdram_clk_out.clk
 		.sdram_wire_addr                                (<connected-to-sdram_wire_addr>),                                //                        sdram_wire.addr
 		.sdram_wire_ba                                  (<connected-to-sdram_wire_ba>),                                  //                                  .ba
 		.sdram_wire_cas_n                               (<connected-to-sdram_wire_cas_n>),                               //                                  .cas_n
@@ -14,21 +34,6 @@
 		.sdram_wire_dqm                                 (<connected-to-sdram_wire_dqm>),                                 //                                  .dqm
 		.sdram_wire_ras_n                               (<connected-to-sdram_wire_ras_n>),                               //                                  .ras_n
 		.sdram_wire_we_n                                (<connected-to-sdram_wire_we_n>),                                //                                  .we_n
-		.flash_bridge_out_tcm_address_out               (<connected-to-flash_bridge_out_tcm_address_out>),               //                  flash_bridge_out.tcm_address_out
-		.flash_bridge_out_tcm_read_n_out                (<connected-to-flash_bridge_out_tcm_read_n_out>),                //                                  .tcm_read_n_out
-		.flash_bridge_out_tcm_write_n_out               (<connected-to-flash_bridge_out_tcm_write_n_out>),               //                                  .tcm_write_n_out
-		.flash_bridge_out_tcm_data_out                  (<connected-to-flash_bridge_out_tcm_data_out>),                  //                                  .tcm_data_out
-		.flash_bridge_out_tcm_chipselect_n_out          (<connected-to-flash_bridge_out_tcm_chipselect_n_out>),          //                                  .tcm_chipselect_n_out
-		.green_led_external_interface_export            (<connected-to-green_led_external_interface_export>),            //      green_led_external_interface.export
-		.red_leds_external_interface_export             (<connected-to-red_leds_external_interface_export>),             //       red_leds_external_interface.export
-		.pushbuttons_external_interface_export          (<connected-to-pushbuttons_external_interface_export>),          //    pushbuttons_external_interface.export
-		.switches_external_interface_export             (<connected-to-switches_external_interface_export>),             //       switches_external_interface.export
-		.char_lcd_external_interface_DATA               (<connected-to-char_lcd_external_interface_DATA>),               //       char_lcd_external_interface.DATA
-		.char_lcd_external_interface_ON                 (<connected-to-char_lcd_external_interface_ON>),                 //                                  .ON
-		.char_lcd_external_interface_BLON               (<connected-to-char_lcd_external_interface_BLON>),               //                                  .BLON
-		.char_lcd_external_interface_EN                 (<connected-to-char_lcd_external_interface_EN>),                 //                                  .EN
-		.char_lcd_external_interface_RS                 (<connected-to-char_lcd_external_interface_RS>),                 //                                  .RS
-		.char_lcd_external_interface_RW                 (<connected-to-char_lcd_external_interface_RW>),                 //                                  .RW
 		.sram_external_interface_DQ                     (<connected-to-sram_external_interface_DQ>),                     //           sram_external_interface.DQ
 		.sram_external_interface_ADDR                   (<connected-to-sram_external_interface_ADDR>),                   //                                  .ADDR
 		.sram_external_interface_LB_N                   (<connected-to-sram_external_interface_LB_N>),                   //                                  .LB_N
@@ -36,13 +41,8 @@
 		.sram_external_interface_CE_N                   (<connected-to-sram_external_interface_CE_N>),                   //                                  .CE_N
 		.sram_external_interface_OE_N                   (<connected-to-sram_external_interface_OE_N>),                   //                                  .OE_N
 		.sram_external_interface_WE_N                   (<connected-to-sram_external_interface_WE_N>),                   //                                  .WE_N
-		.mtl_controller_external_interface_CLK          (<connected-to-mtl_controller_external_interface_CLK>),          // mtl_controller_external_interface.CLK
-		.mtl_controller_external_interface_HS           (<connected-to-mtl_controller_external_interface_HS>),           //                                  .HS
-		.mtl_controller_external_interface_VS           (<connected-to-mtl_controller_external_interface_VS>),           //                                  .VS
-		.mtl_controller_external_interface_DATA_EN      (<connected-to-mtl_controller_external_interface_DATA_EN>),      //                                  .DATA_EN
-		.mtl_controller_external_interface_R            (<connected-to-mtl_controller_external_interface_R>),            //                                  .R
-		.mtl_controller_external_interface_G            (<connected-to-mtl_controller_external_interface_G>),            //                                  .G
-		.mtl_controller_external_interface_B            (<connected-to-mtl_controller_external_interface_B>),            //                                  .B
+		.switches_external_interface_export             (<connected-to-switches_external_interface_export>),             //       switches_external_interface.export
+		.sys_clk_out_clk                                (<connected-to-sys_clk_out_clk>),                                //                       sys_clk_out.clk
 		.video_decoder_external_interface_TD_CLK27      (<connected-to-video_decoder_external_interface_TD_CLK27>),      //  video_decoder_external_interface.TD_CLK27
 		.video_decoder_external_interface_TD_DATA       (<connected-to-video_decoder_external_interface_TD_DATA>),       //                                  .TD_DATA
 		.video_decoder_external_interface_TD_HS         (<connected-to-video_decoder_external_interface_TD_HS>),         //                                  .TD_HS

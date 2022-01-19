@@ -1,0 +1,114 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\patvalma\Documents\TRABAJO_CHS\nios_system.qsys --synthesis=VERILOG --output-directory=C:\Users\patvalma\Documents\TRABAJO_CHS\nios_system\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading TRABAJO_CHS/nios_system.qsys
+Progress: Reading input file
+Progress: Adding Green_LED [altera_up_avalon_parallel_port 17.1]
+Progress: Parameterizing module Green_LED
+Progress: Adding alpha_blending [altera_up_avalon_video_alpha_blender 17.1]
+Progress: Parameterizing module alpha_blending
+Progress: Adding char_lcd [altera_up_avalon_character_lcd 17.1]
+Progress: Parameterizing module char_lcd
+Progress: Adding clk_50 [clock_source 17.1]
+Progress: Parameterizing module clk_50
+Progress: Adding clk_50_2 [clock_source 17.1]
+Progress: Parameterizing module clk_50_2
+Progress: Adding cpu [altera_nios2_gen2 17.1]
+Progress: Parameterizing module cpu
+Progress: Adding dma_controller_foreground [altera_up_avalon_video_dma_controller 17.1]
+Progress: Parameterizing module dma_controller_foreground
+Progress: Adding flash_bridge [altera_tristate_conduit_bridge 17.1]
+Progress: Parameterizing module flash_bridge
+Progress: Adding flash_controller [altera_generic_tristate_controller 17.1]
+Progress: Parameterizing module flash_controller
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 17.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding mtl_char_buffer [altera_up_avalon_video_character_buffer_with_dma 17.1]
+Progress: Parameterizing module mtl_char_buffer
+Progress: Adding mtl_clk [altera_clock_bridge 17.1]
+Progress: Parameterizing module mtl_clk
+Progress: Adding mtl_controller [altera_up_avalon_video_vga_controller 17.1]
+Progress: Parameterizing module mtl_controller
+Progress: Adding mtl_dual_clock_buffer [altera_up_avalon_video_dual_clock_buffer 17.1]
+Progress: Parameterizing module mtl_dual_clock_buffer
+Progress: Adding onchip_memory [altera_avalon_onchip_memory2 17.1]
+Progress: Parameterizing module onchip_memory
+Progress: Adding performance_counter [altera_avalon_performance_counter 17.1]
+Progress: Parameterizing module performance_counter
+Progress: Adding pushbuttons [altera_up_avalon_parallel_port 17.1]
+Progress: Parameterizing module pushbuttons
+Progress: Adding red_LEDs [altera_up_avalon_parallel_port 17.1]
+Progress: Parameterizing module red_LEDs
+Progress: Adding reset_bridge [altera_reset_bridge 17.1]
+Progress: Parameterizing module reset_bridge
+Progress: Adding rgb_resampler_foreground [altera_up_avalon_video_rgb_resampler 17.1]
+Progress: Parameterizing module rgb_resampler_foreground
+Progress: Adding scaler_foreground [altera_up_avalon_video_scaler 17.1]
+Progress: Parameterizing module scaler_foreground
+Progress: Adding sdram [altera_avalon_new_sdram_controller 17.1]
+Progress: Parameterizing module sdram
+Progress: Adding sdram_clk [altera_clock_bridge 17.1]
+Progress: Parameterizing module sdram_clk
+Progress: Adding sram [altera_up_avalon_sram 17.1]
+Progress: Parameterizing module sram
+Progress: Adding switches [altera_up_avalon_parallel_port 17.1]
+Progress: Parameterizing module switches
+Progress: Adding sys_clk [altera_clock_bridge 17.1]
+Progress: Parameterizing module sys_clk
+Progress: Adding sys_sdram_pll [altera_up_avalon_sys_sdram_pll 17.1]
+Progress: Parameterizing module sys_sdram_pll
+Progress: Adding sysid [altera_avalon_sysid_qsys 17.1]
+Progress: Parameterizing module sysid
+Progress: Adding timer [altera_avalon_timer 17.1]
+Progress: Parameterizing module timer
+Progress: Adding video_chroma_resampler [altera_up_avalon_video_chroma_resampler 17.1]
+Progress: Parameterizing module video_chroma_resampler
+Progress: Adding video_clipper_normal [altera_up_avalon_video_clipper 17.1]
+Progress: Parameterizing module video_clipper_normal
+Progress: Adding video_csc [altera_up_avalon_video_csc 17.1]
+Progress: Parameterizing module video_csc
+Progress: Adding video_decoder [altera_up_avalon_video_decoder 17.1]
+Progress: Parameterizing module video_decoder
+Progress: Adding video_dma_controller_normal [altera_up_avalon_video_dma_controller 17.1]
+Progress: Parameterizing module video_dma_controller_normal
+Progress: Adding video_pll [altera_up_avalon_video_pll 17.1]
+Progress: Parameterizing module video_pll
+Progress: Adding video_rgb_resampler [altera_up_avalon_video_rgb_resampler 17.1]
+Progress: Parameterizing module video_rgb_resampler
+Progress: Adding video_scaler_normal [altera_up_avalon_video_scaler 17.1]
+Progress: Parameterizing module video_scaler_normal
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_system.Green_LED: The Parallel Port is now deprecated. The PIO component (Processor and Peripherals/Peripherals/PIO) should be used instead.
+Warning: nios_system.flash_controller: Properties (isFlash,isMemoryDevice,isNonVolatileStorage) have been set on interface uas - in composed mode these are ignored
+Info: nios_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: nios_system.mtl_char_buffer: Character Resolution: 50 x 30
+Info: nios_system.mtl_controller: Video Output Stream: Format: 800 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: nios_system.pushbuttons: The Parallel Port is now deprecated. The PIO component (Processor and Peripherals/Peripherals/PIO) should be used instead.
+Info: nios_system.red_LEDs: The Parallel Port is now deprecated. The PIO component (Processor and Peripherals/Peripherals/PIO) should be used instead.
+Info: nios_system.rgb_resampler_foreground: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: nios_system.scaler_foreground: Change in Resolution: 400 x 240 -> 800 x 480
+Info: nios_system.sdram: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: nios_system.switches: The Parallel Port is now deprecated. The PIO component (Processor and Peripherals/Peripherals/PIO) should be used instead.
+Info: nios_system.sys_sdram_pll: Refclk Freq: 50.0
+Info: nios_system.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: nios_system.sysid: Time stamp will be automatically updated when this component is generated.
+Info: nios_system.video_chroma_resampler: Chroma Resampling: 8 (bits) x 2 (planes) -> 8 (bits) x 3 (planes)
+Info: nios_system.video_clipper_normal: Change in Resolution: 720 x 288 -> 800 x 480
+Info: nios_system.video_csc: Colour Space Conversion: 8 (bits) x 3 (planes) (444 YCrCb) -> 8 (bits) x 3 (planes) (24-bit RGB)
+Info: nios_system.video_decoder: Video In Stream: Format: 720 x 244 (Odd Frames) or 720 x 243 (Even Frames) with Colour: 8 (bits) x 2 (planes) (YCrCb 4:2:2)
+Info: nios_system.video_rgb_resampler: RGB Resampling: 8 (bits) x 3 (planes) -> 16 (bits) x 1 (planes)
+Info: nios_system.video_scaler_normal: Change in Resolution: 800 x 480 -> 400 x 240
+Info: nios_system.dma_controller_foreground.avalon_pixel_source/rgb_resampler_foreground.avalon_rgb_sink: The source data signal is 48 bits, but the sink is 16 bits. Avalon-ST Adapter will be inserted.
+Info: nios_system.video_rgb_resampler.avalon_rgb_source/video_clipper_normal.avalon_clipper_sink: The source data signal is 16 bits, but the sink is 48 bits. Avalon-ST Adapter will be inserted.
+Info: nios_system.scaler_foreground.avalon_scaler_source/alpha_blending.avalon_background_sink: The source has a channel signal of 2 bits, but the sink does not. Avalon-ST Adapter will be inserted.
+Info: nios_system: Generating nios_system "nios_system" for QUARTUS_SYNTH
+Info: avalon_st_adapter: Inserting data_format_adapter: data_format_adapter_0
+Info: avalon_st_adapter_001: Inserting data_format_adapter: data_format_adapter_0
+Error: avalon_st_adapter_001.data_format_adapter_0: The output interface has no empty signal, but this adapter has been configured to adapt a narrow input interface  symbols per beat(1) to a wide output interface symbols per beat(3).
+Info: avalon_st_adapter_002: Inserting channel_adapter: channel_adapter_0
+Error: Generation stopped, 41 or more modules remaining
+Info: nios_system: Done "nios_system" with 38 modules, 1 files
+Error: qsys-generate failed with exit code 1: 2 Errors, 1 Warning
+Info: Finished: Create HDL design files for synthesis
