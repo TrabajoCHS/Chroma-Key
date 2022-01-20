@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed Jan 19 11:16:54 2022
+Fitter Status : Successful - Thu Jan 20 16:55:58 2022
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 Revision Name : ChromaKey
 Top-level Entity Name : ChromaKey
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 8,727 / 114,480 ( 8 % )
-    Total combinational functions : 7,782 / 114,480 ( 7 % )
+Total logic elements : 8,744 / 114,480 ( 8 % )
+    Total combinational functions : 7,784 / 114,480 ( 7 % )
     Dedicated logic registers : 5,412 / 114,480 ( 5 % )
 Total registers : 5531
-Total pins : 360 / 529 ( 68 % )
+Total pins : 358 / 529 ( 68 % )
 Total virtual pins : 0
 Total memory bits : 371,328 / 3,981,312 ( 9 % )
 Embedded Multiplier 9-bit elements : 16 / 532 ( 3 % )

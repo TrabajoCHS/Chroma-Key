@@ -141,11 +141,9 @@ module ChromaKey (
 	 SD_CLK,
 	 
 	 //video decoder
-	 DECODER_TD_CLK27,
-	 DECODER_TD_DATA,
-	 DECODER_TD_HS,
-	 DECODER_TD_VS,
-    DECODER_TD_RESET
+	 TD_DATA,
+	 TD_HS,
+	 TD_VS
 	
 );
 
@@ -181,11 +179,9 @@ input				DATA0;
 input 			SD_WP_N;
 
 //VIDEO DECODER
-input DECODER_TD_CLK27;
-input [7:0] DECODER_TD_DATA;
-input DECODER_TD_HS;
-input DECODER_TD_VS;
-input DECODER_TD_RESET;
+input [7:0] TD_DATA;
+input TD_HS;
+input TD_VS;
 
 
 /*****************************************************************************/
@@ -321,7 +317,7 @@ wire			[ 7: 0]	MTL_B;
  *****************************************************************************/
 
 // Asignaciones a Salidadas
-assign TD_RESET_N	= 1'b1;
+//assign TD_RESET_N	= 1'b1;
 
 // Configuracion Flash
 assign	FL_RST_N = KEY[0];
@@ -420,12 +416,12 @@ assign 	GPIO[35]		= 1'bZ;
         .sram_external_interface_WE_N                   (SRAM_WE_N),                   //                                  .WE_N
         .switches_external_interface_export             (SW),             //       switches_external_interface.export
         .sys_clk_out_clk                                (),                                //                       sys_clk_out.clk
-        .video_decoder_external_interface_TD_CLK27      (DECODER_TD_CLK27),      //  video_decoder_external_interface.TD_CLK27
-        .video_decoder_external_interface_TD_DATA       (DECODER_TD_DATA),       //                                  .TD_DATA
-        .video_decoder_external_interface_TD_HS         (DECODER_TD_HS),         //                                  .TD_HS
-        .video_decoder_external_interface_TD_VS         (DECODER_TD_VS),         //                                  .TD_VS
+        .video_decoder_external_interface_TD_CLK27      (TD_CLK27),      //  video_decoder_external_interface.TD_CLK27
+        .video_decoder_external_interface_TD_DATA       (TD_DATA),       //                                  .TD_DATA
+        .video_decoder_external_interface_TD_HS         (TD_HS),         //                                  .TD_HS
+        .video_decoder_external_interface_TD_VS         (TD_VS),         //                                  .TD_VS
         .video_decoder_external_interface_clk27_reset   (),   //                                  .clk27_reset
-        .video_decoder_external_interface_TD_RESET      (DECODER_TD_RESET),      //                                  .TD_RESET
+        .video_decoder_external_interface_TD_RESET      (TD_RESET_N),      //                                  .TD_RESET
         .video_decoder_external_interface_overflow_flag ()  //                                  .overflow_flag
     );
 

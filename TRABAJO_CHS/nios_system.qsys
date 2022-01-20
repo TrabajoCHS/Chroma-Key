@@ -29,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "27";
+         value = "24";
          type = "int";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum _sortIndex
       {
-         value = "30";
+         value = "27";
          type = "int";
       }
    }
@@ -141,7 +141,7 @@
    {
       datum _sortIndex
       {
-         value = "26";
+         value = "23";
          type = "int";
       }
    }
@@ -173,7 +173,7 @@
    {
       datum _sortIndex
       {
-         value = "29";
+         value = "26";
          type = "int";
       }
    }
@@ -181,7 +181,7 @@
    {
       datum _sortIndex
       {
-         value = "28";
+         value = "25";
          type = "int";
       }
    }
@@ -214,22 +214,6 @@
       datum baseAddress
       {
          value = "268439680";
-         type = "String";
-      }
-   }
-   element pixel_buffer_dma_background
-   {
-      datum _sortIndex
-      {
-         value = "23";
-         type = "int";
-      }
-   }
-   element pixel_buffer_dma_background.avalon_control_slave
-   {
-      datum baseAddress
-      {
-         value = "268439808";
          type = "String";
       }
    }
@@ -273,27 +257,11 @@
          type = "int";
       }
    }
-   element rgb_resampler_background
-   {
-      datum _sortIndex
-      {
-         value = "24";
-         type = "int";
-      }
-   }
    element rgb_resampler_foreground
    {
       datum _sortIndex
       {
-         value = "31";
-         type = "int";
-      }
-   }
-   element scaler_background
-   {
-      datum _sortIndex
-      {
-         value = "25";
+         value = "28";
          type = "int";
       }
    }
@@ -301,7 +269,7 @@
    {
       datum _sortIndex
       {
-         value = "32";
+         value = "29";
          type = "int";
       }
    }
@@ -405,7 +373,7 @@
    {
       datum _sortIndex
       {
-         value = "34";
+         value = "31";
          type = "int";
       }
    }
@@ -413,7 +381,7 @@
    {
       datum _sortIndex
       {
-         value = "37";
+         value = "34";
          type = "int";
       }
    }
@@ -421,7 +389,7 @@
    {
       datum _sortIndex
       {
-         value = "35";
+         value = "32";
          type = "int";
       }
    }
@@ -429,7 +397,7 @@
    {
       datum _sortIndex
       {
-         value = "33";
+         value = "30";
          type = "int";
       }
    }
@@ -437,7 +405,7 @@
    {
       datum _sortIndex
       {
-         value = "39";
+         value = "36";
          type = "int";
       }
    }
@@ -461,7 +429,7 @@
    {
       datum _sortIndex
       {
-         value = "36";
+         value = "33";
          type = "int";
       }
    }
@@ -469,7 +437,7 @@
    {
       datum _sortIndex
       {
-         value = "38";
+         value = "35";
          type = "int";
       }
    }
@@ -969,20 +937,6 @@
   <parameter name="numberOfSections" value="3" />
  </module>
  <module
-   name="pixel_buffer_dma_background"
-   kind="altera_up_avalon_video_pixel_buffer_dma"
-   version="17.1"
-   enabled="0">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="addr_mode" value="X-Y" />
-  <parameter name="back_start_address" value="150994944" />
-  <parameter name="color_space" value="16-bit RGB" />
-  <parameter name="image_height" value="240" />
-  <parameter name="image_width" value="400" />
-  <parameter name="start_address" value="150994944" />
- </module>
- <module
    name="pushbuttons"
    kind="altera_up_avalon_parallel_port"
    version="17.1"
@@ -1034,17 +988,6 @@
   <parameter name="USE_RESET_REQUEST" value="0" />
  </module>
  <module
-   name="rgb_resampler_background"
-   kind="altera_up_avalon_video_rgb_resampler"
-   version="17.1"
-   enabled="0">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="alpha" value="1023" />
-  <parameter name="input_type" value="16-bit RGB" />
-  <parameter name="output_type" value="30-bit RGB" />
- </module>
- <module
    name="rgb_resampler_foreground"
    kind="altera_up_avalon_video_rgb_resampler"
    version="17.1"
@@ -1054,21 +997,6 @@
   <parameter name="alpha" value="1023" />
   <parameter name="input_type" value="16-bit RGB" />
   <parameter name="output_type" value="30-bit RGB" />
- </module>
- <module
-   name="scaler_background"
-   kind="altera_up_avalon_video_scaler"
-   version="17.1"
-   enabled="0">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="color_bits" value="10" />
-  <parameter name="color_planes" value="3" />
-  <parameter name="height_in" value="240" />
-  <parameter name="height_scaling" value="2" />
-  <parameter name="include_channel" value="false" />
-  <parameter name="width_in" value="400" />
-  <parameter name="width_scaling" value="2" />
  </module>
  <module
    name="scaler_foreground"
@@ -1321,15 +1249,6 @@
  <connection
    kind="avalon"
    version="17.1"
-   start="pixel_buffer_dma_background.avalon_pixel_dma_master"
-   end="sram.avalon_sram_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x09000000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
    start="cpu.data_master"
    end="mtl_char_buffer.avalon_char_buffer_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1343,15 +1262,6 @@
    end="mtl_char_buffer.avalon_char_control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x10001200" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
-   start="cpu.data_master"
-   end="pixel_buffer_dma_background.avalon_control_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10001100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1569,11 +1479,6 @@
  <connection
    kind="avalon_streaming"
    version="17.1"
-   start="pixel_buffer_dma_background.avalon_pixel_source"
-   end="rgb_resampler_background.avalon_rgb_sink" />
- <connection
-   kind="avalon_streaming"
-   version="17.1"
    start="video_rgb_resampler.avalon_rgb_source"
    end="video_clipper_normal.avalon_clipper_sink" />
  <connection
@@ -1581,11 +1486,6 @@
    version="17.1"
    start="rgb_resampler_foreground.avalon_rgb_source"
    end="scaler_foreground.avalon_scaler_sink" />
- <connection
-   kind="avalon_streaming"
-   version="17.1"
-   start="rgb_resampler_background.avalon_rgb_source"
-   end="scaler_background.avalon_scaler_sink" />
  <connection
    kind="avalon_streaming"
    version="17.1"
@@ -1756,21 +1656,6 @@
    version="17.1"
    start="sys_sdram_pll.sys_clk"
    end="video_scaler_normal.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="sys_sdram_pll.sys_clk"
-   end="scaler_background.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="sys_sdram_pll.sys_clk"
-   end="rgb_resampler_background.clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="sys_sdram_pll.sys_clk"
-   end="pixel_buffer_dma_background.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -1955,21 +1840,6 @@
    kind="reset"
    version="17.1"
    start="cpu.debug_reset_request"
-   end="scaler_background.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="cpu.debug_reset_request"
-   end="rgb_resampler_background.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="cpu.debug_reset_request"
-   end="pixel_buffer_dma_background.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="cpu.debug_reset_request"
    end="onchip_memory.reset1" />
  <connection
    kind="reset"
@@ -2121,21 +1991,6 @@
    version="17.1"
    start="sys_sdram_pll.reset_source"
    end="video_scaler_normal.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="sys_sdram_pll.reset_source"
-   end="scaler_background.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="sys_sdram_pll.reset_source"
-   end="rgb_resampler_background.reset" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="sys_sdram_pll.reset_source"
-   end="pixel_buffer_dma_background.reset" />
  <connection
    kind="reset"
    version="17.1"

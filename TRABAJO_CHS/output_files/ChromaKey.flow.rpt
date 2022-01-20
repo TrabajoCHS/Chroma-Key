@@ -1,5 +1,5 @@
 Flow report for ChromaKey
-Wed Jan 19 11:17:10 2022
+Thu Jan 20 16:56:14 2022
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Flow Summary                                                                                  ;
 +------------------------------------+----------------------------------------------------------+
-; Flow Status                        ; Successful - Wed Jan 19 11:17:02 2022                    ;
+; Flow Status                        ; Successful - Thu Jan 20 16:56:06 2022                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; ChromaKey                                                ;
 ; Top-level Entity Name              ; ChromaKey                                                ;
 ; Family                             ; Cyclone IV E                                             ;
 ; Device                             ; EP4CE115F29C7                                            ;
 ; Timing Models                      ; Final                                                    ;
-; Total logic elements               ; 8,727 / 114,480 ( 8 % )                                  ;
-;     Total combinational functions  ; 7,782 / 114,480 ( 7 % )                                  ;
+; Total logic elements               ; 8,744 / 114,480 ( 8 % )                                  ;
+;     Total combinational functions  ; 7,784 / 114,480 ( 7 % )                                  ;
 ;     Dedicated logic registers      ; 5,412 / 114,480 ( 5 % )                                  ;
 ; Total registers                    ; 5531                                                     ;
-; Total pins                         ; 360 / 529 ( 68 % )                                       ;
+; Total pins                         ; 358 / 529 ( 68 % )                                       ;
 ; Total virtual pins                 ; 0                                                        ;
 ; Total memory bits                  ; 371,328 / 3,981,312 ( 9 % )                              ;
 ; Embedded Multiplier 9-bit elements ; 16 / 532 ( 3 % )                                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/19/2022 11:14:48 ;
+; Start date & time ; 01/20/2022 16:54:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ChromaKey           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 242211430917466.164258728819672                               ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 242211430917466.164269404008556                               ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --          ; --         ;
@@ -89,7 +89,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1642585602 ; --            ; nios_system ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1642693981 ; --            ; nios_system ; --         ;
 ; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --          ; --         ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
@@ -100,11 +100,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:16     ; 1.0                     ; 5108 MB             ; 00:01:37                           ;
-; Fitter                    ; 00:00:42     ; 1.0                     ; 5952 MB             ; 00:00:56                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4732 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.2                     ; 4950 MB             ; 00:00:07                           ;
-; Total                     ; 00:02:10     ; --                      ; --                  ; 00:02:44                           ;
+; Analysis & Synthesis      ; 00:01:15     ; 1.0                     ; 5124 MB             ; 00:01:37                           ;
+; Fitter                    ; 00:00:37     ; 1.1                     ; 5904 MB             ; 00:00:51                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4736 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.2                     ; 4953 MB             ; 00:00:08                           ;
+; Total                     ; 00:02:04     ; --                      ; --                  ; 00:02:40                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

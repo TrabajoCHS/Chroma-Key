@@ -880,39 +880,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_CLK27",
+					"name" : "TD_CLK27",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[6]",
+					"name" : "TD_DATA[6]",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[5]",
+					"name" : "TD_DATA[5]",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[1]",
+					"name" : "TD_DATA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[4]",
+					"name" : "TD_DATA[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[0]",
+					"name" : "TD_DATA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[3]",
+					"name" : "TD_DATA[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[2]",
+					"name" : "TD_DATA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DECODER_TD_DATA[7]",
+					"name" : "TD_DATA[7]",
 					"strict" : false
 				},
 				{
