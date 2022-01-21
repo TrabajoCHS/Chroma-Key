@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2022.01.21.09:38:38</td>
+    <td class="l">2022.01.21.11:00:55</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -7939,7 +7939,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1642754317</td>
+        <td class="parametervalue">1642759255</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -7964,7 +7964,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1642754317</td>
+        <td class="parametervalue">1642759255</td>
        </tr>
       </table>
      </td>
@@ -8294,9 +8294,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_scaler_normal">video_scaler_normal</a>
+       <a href="#module_video_rgb_resampler">video_rgb_resampler</a>
       </td>
-      <td class="from">avalon_scaler_source&#160;&#160;</td>
+      <td class="from">avalon_rgb_source&#160;&#160;</td>
       <td class="main" rowspan="12">video_clipper_normal</td>
      </tr>
      <tr>
@@ -8337,13 +8337,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">avalon_clipper_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_dma_controller_normal">video_dma_controller_normal</a>
+       <a href="#module_video_scaler_normal">video_scaler_normal</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;avalon_dma_sink</td>
+      <td class="to">&#160;&#160;avalon_scaler_sink</td>
      </tr>
     </table>
    </div>
@@ -8356,7 +8356,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <table>
        <tr>
         <td class="parametername">width_in</td>
-        <td class="parametervalue">540</td>
+        <td class="parametervalue">720</td>
        </tr>
        <tr>
         <td class="parametername">height_in</td>
@@ -8364,35 +8364,35 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">drop_left</td>
-        <td class="parametervalue">70</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">drop_right</td>
-        <td class="parametervalue">70</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">drop_top</td>
-        <td class="parametervalue">24</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">drop_bottom</td>
-        <td class="parametervalue">24</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">add_left</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">40</td>
        </tr>
        <tr>
         <td class="parametername">add_right</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">40</td>
        </tr>
        <tr>
         <td class="parametername">add_top</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">96</td>
        </tr>
        <tr>
         <td class="parametername">add_bottom</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">96</td>
        </tr>
        <tr>
         <td class="parametername">add_value_plane_1</td>
@@ -8685,9 +8685,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_clipper_normal">video_clipper_normal</a>
+       <a href="#module_video_scaler_normal">video_scaler_normal</a>
       </td>
-      <td class="from">avalon_clipper_source&#160;&#160;</td>
+      <td class="from">avalon_scaler_source&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_dma_sink</td>
@@ -9011,13 +9011,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">avalon_rgb_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_scaler_normal">video_scaler_normal</a>
+       <a href="#module_video_clipper_normal">video_clipper_normal</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;avalon_scaler_sink</td>
+      <td class="to">&#160;&#160;avalon_clipper_sink</td>
      </tr>
     </table>
    </div>
@@ -9092,9 +9092,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_rgb_resampler">video_rgb_resampler</a>
+       <a href="#module_video_clipper_normal">video_clipper_normal</a>
       </td>
-      <td class="from">avalon_rgb_source&#160;&#160;</td>
+      <td class="from">avalon_clipper_source&#160;&#160;</td>
       <td class="main" rowspan="12">video_scaler_normal</td>
      </tr>
      <tr>
@@ -9135,13 +9135,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">avalon_scaler_source&#160;&#160;</td>
       <td class="neighbor" rowspan="2">
-       <a href="#module_video_clipper_normal">video_clipper_normal</a>
+       <a href="#module_video_dma_controller_normal">video_dma_controller_normal</a>
       </td>
      </tr>
      <tr>
       <td></td>
       <td></td>
-      <td class="to">&#160;&#160;avalon_clipper_sink</td>
+      <td class="to">&#160;&#160;avalon_dma_sink</td>
      </tr>
     </table>
    </div>
@@ -9154,11 +9154,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <table>
        <tr>
         <td class="parametername">width_scaling</td>
-        <td class="parametervalue">0.75</td>
+        <td class="parametervalue">0.5</td>
        </tr>
        <tr>
         <td class="parametername">height_scaling</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">0.5</td>
        </tr>
        <tr>
         <td class="parametername">include_channel</td>
@@ -9170,19 +9170,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">width_in</td>
-        <td class="parametervalue">720</td>
+        <td class="parametervalue">800</td>
        </tr>
        <tr>
         <td class="parametername">height_in</td>
-        <td class="parametervalue">288</td>
+        <td class="parametervalue">480</td>
        </tr>
        <tr>
         <td class="parametername">width_out</td>
-        <td class="parametervalue">540</td>
+        <td class="parametervalue">400</td>
        </tr>
        <tr>
         <td class="parametername">height_out</td>
-        <td class="parametervalue">288</td>
+        <td class="parametervalue">240</td>
        </tr>
        <tr>
         <td class="parametername">color_bits</td>
@@ -9222,7 +9222,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0,00 seconds</td>
-    <td class="r">rendering took 0,05 seconds</td>
+    <td class="r">rendering took 0,06 seconds</td>
    </tr>
   </table>
  </body>

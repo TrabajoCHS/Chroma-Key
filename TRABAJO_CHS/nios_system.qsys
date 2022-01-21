@@ -533,7 +533,7 @@
    {
       datum _sortIndex
       {
-         value = "43";
+         value = "42";
          type = "int";
       }
    }
@@ -589,7 +589,7 @@
    {
       datum _sortIndex
       {
-         value = "42";
+         value = "43";
          type = "int";
       }
    }
@@ -1460,22 +1460,22 @@
    enabled="1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="add_bottom" value="0" />
-  <parameter name="add_left" value="0" />
-  <parameter name="add_right" value="0" />
-  <parameter name="add_top" value="0" />
+  <parameter name="add_bottom" value="96" />
+  <parameter name="add_left" value="40" />
+  <parameter name="add_right" value="40" />
+  <parameter name="add_top" value="96" />
   <parameter name="add_value_plane_1" value="0" />
   <parameter name="add_value_plane_2" value="0" />
   <parameter name="add_value_plane_3" value="0" />
   <parameter name="add_value_plane_4" value="0" />
   <parameter name="color_bits" value="16" />
   <parameter name="color_planes" value="1" />
-  <parameter name="drop_bottom" value="24" />
-  <parameter name="drop_left" value="70" />
-  <parameter name="drop_right" value="70" />
-  <parameter name="drop_top" value="24" />
+  <parameter name="drop_bottom" value="0" />
+  <parameter name="drop_left" value="0" />
+  <parameter name="drop_right" value="0" />
+  <parameter name="drop_top" value="0" />
   <parameter name="height_in" value="288" />
-  <parameter name="width_in" value="540" />
+  <parameter name="width_in" value="720" />
  </module>
  <module
    name="video_csc"
@@ -1548,11 +1548,11 @@
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="color_bits" value="16" />
   <parameter name="color_planes" value="1" />
-  <parameter name="height_in" value="288" />
-  <parameter name="height_scaling" value="1" />
+  <parameter name="height_in" value="480" />
+  <parameter name="height_scaling" value="0.5" />
   <parameter name="include_channel" value="false" />
-  <parameter name="width_in" value="720" />
-  <parameter name="width_scaling" value="0.75" />
+  <parameter name="width_in" value="800" />
+  <parameter name="width_scaling" value="0.5" />
  </module>
  <connection
    kind="avalon"
@@ -1853,7 +1853,7 @@
    kind="avalon_streaming"
    version="17.1"
    start="video_clipper_normal.avalon_clipper_source"
-   end="video_dma_controller_normal.avalon_dma_sink" />
+   end="video_scaler_normal.avalon_scaler_sink" />
  <connection
    kind="avalon_streaming"
    version="17.1"
@@ -1877,13 +1877,13 @@
  <connection
    kind="avalon_streaming"
    version="17.1"
-   start="rgb_resampler_green.avalon_rgb_source"
-   end="scaler_green.avalon_scaler_sink" />
+   start="video_rgb_resampler.avalon_rgb_source"
+   end="video_clipper_normal.avalon_clipper_sink" />
  <connection
    kind="avalon_streaming"
    version="17.1"
-   start="video_rgb_resampler.avalon_rgb_source"
-   end="video_scaler_normal.avalon_scaler_sink" />
+   start="rgb_resampler_green.avalon_rgb_source"
+   end="scaler_green.avalon_scaler_sink" />
  <connection
    kind="avalon_streaming"
    version="17.1"
@@ -1893,7 +1893,7 @@
    kind="avalon_streaming"
    version="17.1"
    start="video_scaler_normal.avalon_scaler_source"
-   end="video_clipper_normal.avalon_clipper_sink" />
+   end="video_dma_controller_normal.avalon_dma_sink" />
  <connection
    kind="clock"
    version="17.1"

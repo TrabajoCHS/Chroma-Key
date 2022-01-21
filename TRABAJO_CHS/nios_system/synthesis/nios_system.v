@@ -99,11 +99,11 @@ module nios_system (
 	wire         video_chroma_resampler_avalon_chroma_source_ready;                                 // video_csc:stream_in_ready -> video_chroma_resampler:stream_out_ready
 	wire         video_chroma_resampler_avalon_chroma_source_startofpacket;                         // video_chroma_resampler:stream_out_startofpacket -> video_csc:stream_in_startofpacket
 	wire         video_chroma_resampler_avalon_chroma_source_endofpacket;                           // video_chroma_resampler:stream_out_endofpacket -> video_csc:stream_in_endofpacket
-	wire         video_clipper_normal_avalon_clipper_source_valid;                                  // video_clipper_normal:stream_out_valid -> video_dma_controller_normal:stream_valid
-	wire  [15:0] video_clipper_normal_avalon_clipper_source_data;                                   // video_clipper_normal:stream_out_data -> video_dma_controller_normal:stream_data
-	wire         video_clipper_normal_avalon_clipper_source_ready;                                  // video_dma_controller_normal:stream_ready -> video_clipper_normal:stream_out_ready
-	wire         video_clipper_normal_avalon_clipper_source_startofpacket;                          // video_clipper_normal:stream_out_startofpacket -> video_dma_controller_normal:stream_startofpacket
-	wire         video_clipper_normal_avalon_clipper_source_endofpacket;                            // video_clipper_normal:stream_out_endofpacket -> video_dma_controller_normal:stream_endofpacket
+	wire         video_clipper_normal_avalon_clipper_source_valid;                                  // video_clipper_normal:stream_out_valid -> video_scaler_normal:stream_in_valid
+	wire  [15:0] video_clipper_normal_avalon_clipper_source_data;                                   // video_clipper_normal:stream_out_data -> video_scaler_normal:stream_in_data
+	wire         video_clipper_normal_avalon_clipper_source_ready;                                  // video_scaler_normal:stream_in_ready -> video_clipper_normal:stream_out_ready
+	wire         video_clipper_normal_avalon_clipper_source_startofpacket;                          // video_clipper_normal:stream_out_startofpacket -> video_scaler_normal:stream_in_startofpacket
+	wire         video_clipper_normal_avalon_clipper_source_endofpacket;                            // video_clipper_normal:stream_out_endofpacket -> video_scaler_normal:stream_in_endofpacket
 	wire         video_csc_avalon_csc_source_valid;                                                 // video_csc:stream_out_valid -> video_rgb_resampler:stream_in_valid
 	wire  [23:0] video_csc_avalon_csc_source_data;                                                  // video_csc:stream_out_data -> video_rgb_resampler:stream_in_data
 	wire         video_csc_avalon_csc_source_ready;                                                 // video_rgb_resampler:stream_in_ready -> video_csc:stream_out_ready
@@ -124,21 +124,21 @@ module nios_system (
 	wire         pixel_buffer_dma_green_avalon_pixel_source_ready;                                  // rgb_resampler_green:stream_in_ready -> pixel_buffer_dma_green:stream_ready
 	wire         pixel_buffer_dma_green_avalon_pixel_source_startofpacket;                          // pixel_buffer_dma_green:stream_startofpacket -> rgb_resampler_green:stream_in_startofpacket
 	wire         pixel_buffer_dma_green_avalon_pixel_source_endofpacket;                            // pixel_buffer_dma_green:stream_endofpacket -> rgb_resampler_green:stream_in_endofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_valid;                                       // video_rgb_resampler:stream_out_valid -> video_clipper_normal:stream_in_valid
+	wire  [15:0] video_rgb_resampler_avalon_rgb_source_data;                                        // video_rgb_resampler:stream_out_data -> video_clipper_normal:stream_in_data
+	wire         video_rgb_resampler_avalon_rgb_source_ready;                                       // video_clipper_normal:stream_in_ready -> video_rgb_resampler:stream_out_ready
+	wire         video_rgb_resampler_avalon_rgb_source_startofpacket;                               // video_rgb_resampler:stream_out_startofpacket -> video_clipper_normal:stream_in_startofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_endofpacket;                                 // video_rgb_resampler:stream_out_endofpacket -> video_clipper_normal:stream_in_endofpacket
 	wire         rgb_resampler_green_avalon_rgb_source_valid;                                       // rgb_resampler_green:stream_out_valid -> scaler_green:stream_in_valid
 	wire  [29:0] rgb_resampler_green_avalon_rgb_source_data;                                        // rgb_resampler_green:stream_out_data -> scaler_green:stream_in_data
 	wire         rgb_resampler_green_avalon_rgb_source_ready;                                       // scaler_green:stream_in_ready -> rgb_resampler_green:stream_out_ready
 	wire         rgb_resampler_green_avalon_rgb_source_startofpacket;                               // rgb_resampler_green:stream_out_startofpacket -> scaler_green:stream_in_startofpacket
 	wire         rgb_resampler_green_avalon_rgb_source_endofpacket;                                 // rgb_resampler_green:stream_out_endofpacket -> scaler_green:stream_in_endofpacket
-	wire         video_rgb_resampler_avalon_rgb_source_valid;                                       // video_rgb_resampler:stream_out_valid -> video_scaler_normal:stream_in_valid
-	wire  [15:0] video_rgb_resampler_avalon_rgb_source_data;                                        // video_rgb_resampler:stream_out_data -> video_scaler_normal:stream_in_data
-	wire         video_rgb_resampler_avalon_rgb_source_ready;                                       // video_scaler_normal:stream_in_ready -> video_rgb_resampler:stream_out_ready
-	wire         video_rgb_resampler_avalon_rgb_source_startofpacket;                               // video_rgb_resampler:stream_out_startofpacket -> video_scaler_normal:stream_in_startofpacket
-	wire         video_rgb_resampler_avalon_rgb_source_endofpacket;                                 // video_rgb_resampler:stream_out_endofpacket -> video_scaler_normal:stream_in_endofpacket
-	wire         video_scaler_normal_avalon_scaler_source_valid;                                    // video_scaler_normal:stream_out_valid -> video_clipper_normal:stream_in_valid
-	wire  [15:0] video_scaler_normal_avalon_scaler_source_data;                                     // video_scaler_normal:stream_out_data -> video_clipper_normal:stream_in_data
-	wire         video_scaler_normal_avalon_scaler_source_ready;                                    // video_clipper_normal:stream_in_ready -> video_scaler_normal:stream_out_ready
-	wire         video_scaler_normal_avalon_scaler_source_startofpacket;                            // video_scaler_normal:stream_out_startofpacket -> video_clipper_normal:stream_in_startofpacket
-	wire         video_scaler_normal_avalon_scaler_source_endofpacket;                              // video_scaler_normal:stream_out_endofpacket -> video_clipper_normal:stream_in_endofpacket
+	wire         video_scaler_normal_avalon_scaler_source_valid;                                    // video_scaler_normal:stream_out_valid -> video_dma_controller_normal:stream_valid
+	wire  [15:0] video_scaler_normal_avalon_scaler_source_data;                                     // video_scaler_normal:stream_out_data -> video_dma_controller_normal:stream_data
+	wire         video_scaler_normal_avalon_scaler_source_ready;                                    // video_dma_controller_normal:stream_ready -> video_scaler_normal:stream_out_ready
+	wire         video_scaler_normal_avalon_scaler_source_startofpacket;                            // video_scaler_normal:stream_out_startofpacket -> video_dma_controller_normal:stream_startofpacket
+	wire         video_scaler_normal_avalon_scaler_source_endofpacket;                              // video_scaler_normal:stream_out_endofpacket -> video_dma_controller_normal:stream_endofpacket
 	wire         flash_controller_tcm_data_outen;                                                   // flash_controller:tcm_data_outen -> flash_bridge:tcs_tcm_data_outen
 	wire         flash_controller_tcm_request;                                                      // flash_controller:tcm_request -> flash_bridge:request
 	wire         flash_controller_tcm_write_n_out;                                                  // flash_controller:tcm_write_n_out -> flash_bridge:tcs_tcm_write_n_out
@@ -955,11 +955,11 @@ module nios_system (
 	nios_system_video_clipper_normal video_clipper_normal (
 		.clk                      (sys_clk_out_clk),                                          //                   clk.clk
 		.reset                    (rst_controller_reset_out_reset),                           //                 reset.reset
-		.stream_in_data           (video_scaler_normal_avalon_scaler_source_data),            //   avalon_clipper_sink.data
-		.stream_in_startofpacket  (video_scaler_normal_avalon_scaler_source_startofpacket),   //                      .startofpacket
-		.stream_in_endofpacket    (video_scaler_normal_avalon_scaler_source_endofpacket),     //                      .endofpacket
-		.stream_in_valid          (video_scaler_normal_avalon_scaler_source_valid),           //                      .valid
-		.stream_in_ready          (video_scaler_normal_avalon_scaler_source_ready),           //                      .ready
+		.stream_in_data           (video_rgb_resampler_avalon_rgb_source_data),               //   avalon_clipper_sink.data
+		.stream_in_startofpacket  (video_rgb_resampler_avalon_rgb_source_startofpacket),      //                      .startofpacket
+		.stream_in_endofpacket    (video_rgb_resampler_avalon_rgb_source_endofpacket),        //                      .endofpacket
+		.stream_in_valid          (video_rgb_resampler_avalon_rgb_source_valid),              //                      .valid
+		.stream_in_ready          (video_rgb_resampler_avalon_rgb_source_ready),              //                      .ready
 		.stream_out_ready         (video_clipper_normal_avalon_clipper_source_ready),         // avalon_clipper_source.ready
 		.stream_out_data          (video_clipper_normal_avalon_clipper_source_data),          //                      .data
 		.stream_out_startofpacket (video_clipper_normal_avalon_clipper_source_startofpacket), //                      .startofpacket
@@ -1002,11 +1002,11 @@ module nios_system (
 	nios_system_video_dma_controller_normal video_dma_controller_normal (
 		.clk                  (sys_clk_out_clk),                                                                   //                      clk.clk
 		.reset                (rst_controller_reset_out_reset),                                                    //                    reset.reset
-		.stream_data          (video_clipper_normal_avalon_clipper_source_data),                                   //          avalon_dma_sink.data
-		.stream_startofpacket (video_clipper_normal_avalon_clipper_source_startofpacket),                          //                         .startofpacket
-		.stream_endofpacket   (video_clipper_normal_avalon_clipper_source_endofpacket),                            //                         .endofpacket
-		.stream_valid         (video_clipper_normal_avalon_clipper_source_valid),                                  //                         .valid
-		.stream_ready         (video_clipper_normal_avalon_clipper_source_ready),                                  //                         .ready
+		.stream_data          (video_scaler_normal_avalon_scaler_source_data),                                     //          avalon_dma_sink.data
+		.stream_startofpacket (video_scaler_normal_avalon_scaler_source_startofpacket),                            //                         .startofpacket
+		.stream_endofpacket   (video_scaler_normal_avalon_scaler_source_endofpacket),                              //                         .endofpacket
+		.stream_valid         (video_scaler_normal_avalon_scaler_source_valid),                                    //                         .valid
+		.stream_ready         (video_scaler_normal_avalon_scaler_source_ready),                                    //                         .ready
 		.slave_address        (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_address),    // avalon_dma_control_slave.address
 		.slave_byteenable     (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_byteenable), //                         .byteenable
 		.slave_read           (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_read),       //                         .read
@@ -1042,18 +1042,18 @@ module nios_system (
 	);
 
 	nios_system_video_scaler_normal video_scaler_normal (
-		.clk                      (sys_clk_out_clk),                                        //                  clk.clk
-		.reset                    (rst_controller_reset_out_reset),                         //                reset.reset
-		.stream_in_startofpacket  (video_rgb_resampler_avalon_rgb_source_startofpacket),    //   avalon_scaler_sink.startofpacket
-		.stream_in_endofpacket    (video_rgb_resampler_avalon_rgb_source_endofpacket),      //                     .endofpacket
-		.stream_in_valid          (video_rgb_resampler_avalon_rgb_source_valid),            //                     .valid
-		.stream_in_ready          (video_rgb_resampler_avalon_rgb_source_ready),            //                     .ready
-		.stream_in_data           (video_rgb_resampler_avalon_rgb_source_data),             //                     .data
-		.stream_out_ready         (video_scaler_normal_avalon_scaler_source_ready),         // avalon_scaler_source.ready
-		.stream_out_startofpacket (video_scaler_normal_avalon_scaler_source_startofpacket), //                     .startofpacket
-		.stream_out_endofpacket   (video_scaler_normal_avalon_scaler_source_endofpacket),   //                     .endofpacket
-		.stream_out_valid         (video_scaler_normal_avalon_scaler_source_valid),         //                     .valid
-		.stream_out_data          (video_scaler_normal_avalon_scaler_source_data)           //                     .data
+		.clk                      (sys_clk_out_clk),                                          //                  clk.clk
+		.reset                    (rst_controller_reset_out_reset),                           //                reset.reset
+		.stream_in_startofpacket  (video_clipper_normal_avalon_clipper_source_startofpacket), //   avalon_scaler_sink.startofpacket
+		.stream_in_endofpacket    (video_clipper_normal_avalon_clipper_source_endofpacket),   //                     .endofpacket
+		.stream_in_valid          (video_clipper_normal_avalon_clipper_source_valid),         //                     .valid
+		.stream_in_ready          (video_clipper_normal_avalon_clipper_source_ready),         //                     .ready
+		.stream_in_data           (video_clipper_normal_avalon_clipper_source_data),          //                     .data
+		.stream_out_ready         (video_scaler_normal_avalon_scaler_source_ready),           // avalon_scaler_source.ready
+		.stream_out_startofpacket (video_scaler_normal_avalon_scaler_source_startofpacket),   //                     .startofpacket
+		.stream_out_endofpacket   (video_scaler_normal_avalon_scaler_source_endofpacket),     //                     .endofpacket
+		.stream_out_valid         (video_scaler_normal_avalon_scaler_source_valid),           //                     .valid
+		.stream_out_data          (video_scaler_normal_avalon_scaler_source_data)             //                     .data
 	);
 
 	nios_system_mm_interconnect_0 mm_interconnect_0 (

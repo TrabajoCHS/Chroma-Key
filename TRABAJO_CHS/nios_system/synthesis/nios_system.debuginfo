@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="system" version="17.1" fabric="QSYS">
  <!-- Format version 17.1 593 (Future versions may contain additional information.) -->
- <!-- 2022.01.21.09:39:15 -->
+ <!-- 2022.01.21.11:01:46 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1642754317</value>
+  <value>1642759255</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -25116,7 +25116,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1642754317</value>
+   <value>1642759255</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -25136,7 +25136,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1642754317</value>
+   <value>1642759255</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -25152,7 +25152,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1642754317</value>
+   <value>1642759255</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -26895,7 +26895,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="width_in">
    <type>int</type>
-   <value>540</value>
+   <value>720</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26911,7 +26911,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="drop_left">
    <type>int</type>
-   <value>70</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26919,7 +26919,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="drop_right">
    <type>int</type>
-   <value>70</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26927,7 +26927,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="drop_top">
    <type>int</type>
-   <value>24</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26935,7 +26935,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="drop_bottom">
    <type>int</type>
-   <value>24</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26943,7 +26943,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="add_left">
    <type>int</type>
-   <value>0</value>
+   <value>40</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26951,7 +26951,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="add_right">
    <type>int</type>
-   <value>0</value>
+   <value>40</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26959,7 +26959,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="add_top">
    <type>int</type>
-   <value>0</value>
+   <value>96</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -26967,7 +26967,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="add_bottom">
    <type>int</type>
-   <value>0</value>
+   <value>96</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -30286,7 +30286,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="width_scaling">
    <type>java.lang.String</type>
-   <value>0.75</value>
+   <value>0.5</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -30294,7 +30294,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="height_scaling">
    <type>java.lang.String</type>
-   <value>1</value>
+   <value>0.5</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -30318,7 +30318,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width_in">
    <type>int</type>
-   <value>720</value>
+   <value>800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -30326,7 +30326,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="height_in">
    <type>int</type>
-   <value>288</value>
+   <value>480</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -30334,7 +30334,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width_out">
    <type>int</type>
-   <value>540</value>
+   <value>400</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -30342,7 +30342,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="height_out">
    <type>int</type>
-   <value>288</value>
+   <value>240</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -44713,11 +44713,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_csc_sink</endConnectionPoint>
  </connection>
  <connection
-   name="video_clipper_normal.avalon_clipper_source/video_dma_controller_normal.avalon_dma_sink"
+   name="video_clipper_normal.avalon_clipper_source/video_scaler_normal.avalon_scaler_sink"
    kind="avalon_streaming"
    version="17.1"
    start="video_clipper_normal.avalon_clipper_source"
-   end="video_dma_controller_normal.avalon_dma_sink">
+   end="video_scaler_normal.avalon_scaler_sink">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -44736,8 +44736,8 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>video_clipper_normal</startModule>
   <startConnectionPoint>avalon_clipper_source</startConnectionPoint>
-  <endModule>video_dma_controller_normal</endModule>
-  <endConnectionPoint>avalon_dma_sink</endConnectionPoint>
+  <endModule>video_scaler_normal</endModule>
+  <endConnectionPoint>avalon_scaler_sink</endConnectionPoint>
  </connection>
  <connection
    name="video_csc.avalon_csc_source/video_rgb_resampler.avalon_rgb_sink"
@@ -44848,6 +44848,33 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_rgb_sink</endConnectionPoint>
  </connection>
  <connection
+   name="video_rgb_resampler.avalon_rgb_source/video_clipper_normal.avalon_clipper_sink"
+   kind="avalon_streaming"
+   version="17.1"
+   start="video_rgb_resampler.avalon_rgb_source"
+   end="video_clipper_normal.avalon_clipper_sink">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>video_rgb_resampler</startModule>
+  <startConnectionPoint>avalon_rgb_source</startConnectionPoint>
+  <endModule>video_clipper_normal</endModule>
+  <endConnectionPoint>avalon_clipper_sink</endConnectionPoint>
+ </connection>
+ <connection
    name="rgb_resampler_green.avalon_rgb_source/scaler_green.avalon_scaler_sink"
    kind="avalon_streaming"
    version="17.1"
@@ -44875,38 +44902,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_scaler_sink</endConnectionPoint>
  </connection>
  <connection
-   name="video_rgb_resampler.avalon_rgb_source/video_scaler_normal.avalon_scaler_sink"
-   kind="avalon_streaming"
-   version="17.1"
-   start="video_rgb_resampler.avalon_rgb_source"
-   end="video_scaler_normal.avalon_scaler_sink">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>video_rgb_resampler</startModule>
-  <startConnectionPoint>avalon_rgb_source</startConnectionPoint>
-  <endModule>video_scaler_normal</endModule>
-  <endConnectionPoint>avalon_scaler_sink</endConnectionPoint>
- </connection>
- <connection
-   name="video_scaler_normal.avalon_scaler_source/video_clipper_normal.avalon_clipper_sink"
+   name="video_scaler_normal.avalon_scaler_source/video_dma_controller_normal.avalon_dma_sink"
    kind="avalon_streaming"
    version="17.1"
    start="video_scaler_normal.avalon_scaler_source"
-   end="video_clipper_normal.avalon_clipper_sink">
+   end="video_dma_controller_normal.avalon_dma_sink">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -44925,8 +44925,8 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>video_scaler_normal</startModule>
   <startConnectionPoint>avalon_scaler_source</startConnectionPoint>
-  <endModule>video_clipper_normal</endModule>
-  <endConnectionPoint>avalon_clipper_sink</endConnectionPoint>
+  <endModule>video_dma_controller_normal</endModule>
+  <endConnectionPoint>avalon_dma_sink</endConnectionPoint>
  </connection>
  <connection
    name="audio_pll.audio_clk/audio_clk.in_clk"
@@ -51306,5 +51306,5 @@ parameters are a RESULT of the module parameters. -->
   <version>17.1</version>
  </plugin>
  <reportVersion>17.1 593</reportVersion>
- <uniqueIdentifier>0A00270000060000017E7BC9B2CD</uniqueIdentifier>
+ <uniqueIdentifier>DC4A3E4CE5620000017E7C150B65</uniqueIdentifier>
 </EnsembleReport>

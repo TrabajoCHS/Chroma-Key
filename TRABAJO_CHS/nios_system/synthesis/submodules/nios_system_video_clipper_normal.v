@@ -59,25 +59,25 @@ module nios_system_video_clipper_normal (
 parameter DW							= 15; // Frame's data width
 parameter EW							= 0; // Frame's empty width
 
-parameter WIDTH_IN					= 540; // Incoming frame's width in pixels
+parameter WIDTH_IN					= 720; // Incoming frame's width in pixels
 parameter HEIGHT_IN					= 288; // Incoming frame's height in lines
 parameter WW_IN						= 9; // Incoming frame's width's address width
 parameter HW_IN						= 8; // Incoming frame's height's address width
 
-parameter DROP_PIXELS_AT_START	= 70;
-parameter DROP_PIXELS_AT_END		= 70;
-parameter DROP_LINES_AT_START		= 24;
-parameter DROP_LINES_AT_END		= 24;
+parameter DROP_PIXELS_AT_START	= 0;
+parameter DROP_PIXELS_AT_END		= 0;
+parameter DROP_LINES_AT_START		= 0;
+parameter DROP_LINES_AT_END		= 0;
 
-parameter WIDTH_OUT					= 400; // Final frame's width in pixels
-parameter HEIGHT_OUT					= 240; // Final frame's height in lines
-parameter WW_OUT						= 8; // Final frame's width's address width
-parameter HW_OUT						= 7; // Final frame's height's address width
+parameter WIDTH_OUT					= 800; // Final frame's width in pixels
+parameter HEIGHT_OUT					= 480; // Final frame's height in lines
+parameter WW_OUT						= 9; // Final frame's width's address width
+parameter HW_OUT						= 8; // Final frame's height's address width
 
-parameter ADD_PIXELS_AT_START		= 0;
-parameter ADD_PIXELS_AT_END		= 0;
-parameter ADD_LINES_AT_START		= 0;
-parameter ADD_LINES_AT_END			= 0;
+parameter ADD_PIXELS_AT_START		= 40;
+parameter ADD_PIXELS_AT_END		= 40;
+parameter ADD_LINES_AT_START		= 96;
+parameter ADD_LINES_AT_END			= 96;
 
 parameter ADD_DATA					= 16'd0; // Data value for added pixels
 
