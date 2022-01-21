@@ -4,57 +4,84 @@
 
 `timescale 1 ps / 1 ps
 module nios_system (
-		inout  wire [7:0]  char_lcd_external_interface_DATA,               //       char_lcd_external_interface.DATA
-		output wire        char_lcd_external_interface_ON,                 //                                  .ON
-		output wire        char_lcd_external_interface_BLON,               //                                  .BLON
-		output wire        char_lcd_external_interface_EN,                 //                                  .EN
-		output wire        char_lcd_external_interface_RS,                 //                                  .RS
-		output wire        char_lcd_external_interface_RW,                 //                                  .RW
-		input  wire        clk_50_2_in_clk,                                //                       clk_50_2_in.clk
-		input  wire        clk_50_in_clk,                                  //                         clk_50_in.clk
-		output wire [22:0] flash_bridge_out_tcm_address_out,               //                  flash_bridge_out.tcm_address_out
-		output wire [0:0]  flash_bridge_out_tcm_read_n_out,                //                                  .tcm_read_n_out
-		output wire [0:0]  flash_bridge_out_tcm_write_n_out,               //                                  .tcm_write_n_out
-		inout  wire [7:0]  flash_bridge_out_tcm_data_out,                  //                                  .tcm_data_out
-		output wire [0:0]  flash_bridge_out_tcm_chipselect_n_out,          //                                  .tcm_chipselect_n_out
-		output wire [8:0]  green_led_external_interface_export,            //      green_led_external_interface.export
-		output wire        mtl_clk_out_clk,                                //                       mtl_clk_out.clk
-		output wire        mtl_controller_external_interface_CLK,          // mtl_controller_external_interface.CLK
-		output wire        mtl_controller_external_interface_HS,           //                                  .HS
-		output wire        mtl_controller_external_interface_VS,           //                                  .VS
-		output wire        mtl_controller_external_interface_DATA_EN,      //                                  .DATA_EN
-		output wire [7:0]  mtl_controller_external_interface_R,            //                                  .R
-		output wire [7:0]  mtl_controller_external_interface_G,            //                                  .G
-		output wire [7:0]  mtl_controller_external_interface_B,            //                                  .B
-		input  wire [3:0]  pushbuttons_external_interface_export,          //    pushbuttons_external_interface.export
-		output wire [17:0] red_leds_external_interface_export,             //       red_leds_external_interface.export
-		input  wire        reset_bridge_in_reset_n,                        //                   reset_bridge_in.reset_n
-		output wire        sdram_clk_out_clk,                              //                     sdram_clk_out.clk
-		output wire [12:0] sdram_wire_addr,                                //                        sdram_wire.addr
-		output wire [1:0]  sdram_wire_ba,                                  //                                  .ba
-		output wire        sdram_wire_cas_n,                               //                                  .cas_n
-		output wire        sdram_wire_cke,                                 //                                  .cke
-		output wire        sdram_wire_cs_n,                                //                                  .cs_n
-		inout  wire [31:0] sdram_wire_dq,                                  //                                  .dq
-		output wire [3:0]  sdram_wire_dqm,                                 //                                  .dqm
-		output wire        sdram_wire_ras_n,                               //                                  .ras_n
-		output wire        sdram_wire_we_n,                                //                                  .we_n
-		inout  wire [15:0] sram_external_interface_DQ,                     //           sram_external_interface.DQ
-		output wire [19:0] sram_external_interface_ADDR,                   //                                  .ADDR
-		output wire        sram_external_interface_LB_N,                   //                                  .LB_N
-		output wire        sram_external_interface_UB_N,                   //                                  .UB_N
-		output wire        sram_external_interface_CE_N,                   //                                  .CE_N
-		output wire        sram_external_interface_OE_N,                   //                                  .OE_N
-		output wire        sram_external_interface_WE_N,                   //                                  .WE_N
-		input  wire [17:0] switches_external_interface_export,             //       switches_external_interface.export
-		output wire        sys_clk_out_clk,                                //                       sys_clk_out.clk
-		input  wire        video_decoder_external_interface_TD_CLK27,      //  video_decoder_external_interface.TD_CLK27
-		input  wire [7:0]  video_decoder_external_interface_TD_DATA,       //                                  .TD_DATA
-		input  wire        video_decoder_external_interface_TD_HS,         //                                  .TD_HS
-		input  wire        video_decoder_external_interface_TD_VS,         //                                  .TD_VS
-		input  wire        video_decoder_external_interface_clk27_reset,   //                                  .clk27_reset
-		output wire        video_decoder_external_interface_TD_RESET,      //                                  .TD_RESET
-		output wire        video_decoder_external_interface_overflow_flag  //                                  .overflow_flag
+		inout  wire        audio_and_video_config_external_interface_SDAT, // audio_and_video_config_external_interface.SDAT
+		output wire        audio_and_video_config_external_interface_SCLK, //                                          .SCLK
+		output wire        audio_clk_out_clk,                              //                             audio_clk_out.clk
+		input  wire        audio_external_interface_ADCDAT,                //                  audio_external_interface.ADCDAT
+		input  wire        audio_external_interface_ADCLRCK,               //                                          .ADCLRCK
+		input  wire        audio_external_interface_BCLK,                  //                                          .BCLK
+		output wire        audio_external_interface_DACDAT,                //                                          .DACDAT
+		input  wire        audio_external_interface_DACLRCK,               //                                          .DACLRCK
+		inout  wire [7:0]  char_lcd_external_interface_DATA,               //               char_lcd_external_interface.DATA
+		output wire        char_lcd_external_interface_ON,                 //                                          .ON
+		output wire        char_lcd_external_interface_BLON,               //                                          .BLON
+		output wire        char_lcd_external_interface_EN,                 //                                          .EN
+		output wire        char_lcd_external_interface_RS,                 //                                          .RS
+		output wire        char_lcd_external_interface_RW,                 //                                          .RW
+		input  wire        clk_50_2_in_clk,                                //                               clk_50_2_in.clk
+		input  wire        clk_50_3_in_clk,                                //                               clk_50_3_in.clk
+		input  wire        clk_50_in_clk,                                  //                                 clk_50_in.clk
+		output wire [22:0] flash_bridge_out_tcm_address_out,               //                          flash_bridge_out.tcm_address_out
+		output wire [0:0]  flash_bridge_out_tcm_read_n_out,                //                                          .tcm_read_n_out
+		output wire [0:0]  flash_bridge_out_tcm_write_n_out,               //                                          .tcm_write_n_out
+		inout  wire [7:0]  flash_bridge_out_tcm_data_out,                  //                                          .tcm_data_out
+		output wire [0:0]  flash_bridge_out_tcm_chipselect_n_out,          //                                          .tcm_chipselect_n_out
+		output wire [8:0]  green_led_external_interface_export,            //              green_led_external_interface.export
+		output wire [6:0]  hex3_hex0_external_interface_HEX0,              //              hex3_hex0_external_interface.HEX0
+		output wire [6:0]  hex3_hex0_external_interface_HEX1,              //                                          .HEX1
+		output wire [6:0]  hex3_hex0_external_interface_HEX2,              //                                          .HEX2
+		output wire [6:0]  hex3_hex0_external_interface_HEX3,              //                                          .HEX3
+		output wire [6:0]  hex7_hex4_external_interface_HEX4,              //              hex7_hex4_external_interface.HEX4
+		output wire [6:0]  hex7_hex4_external_interface_HEX5,              //                                          .HEX5
+		output wire [6:0]  hex7_hex4_external_interface_HEX6,              //                                          .HEX6
+		output wire [6:0]  hex7_hex4_external_interface_HEX7,              //                                          .HEX7
+		output wire        mtl_clk_out_clk,                                //                               mtl_clk_out.clk
+		output wire        mtl_controller_external_interface_CLK,          //         mtl_controller_external_interface.CLK
+		output wire        mtl_controller_external_interface_HS,           //                                          .HS
+		output wire        mtl_controller_external_interface_VS,           //                                          .VS
+		output wire        mtl_controller_external_interface_DATA_EN,      //                                          .DATA_EN
+		output wire [7:0]  mtl_controller_external_interface_R,            //                                          .R
+		output wire [7:0]  mtl_controller_external_interface_G,            //                                          .G
+		output wire [7:0]  mtl_controller_external_interface_B,            //                                          .B
+		inout  wire        ps2_key_external_interface_CLK,                 //                ps2_key_external_interface.CLK
+		inout  wire        ps2_key_external_interface_DAT,                 //                                          .DAT
+		inout  wire        ps2_mouse_external_interface_CLK,               //              ps2_mouse_external_interface.CLK
+		inout  wire        ps2_mouse_external_interface_DAT,               //                                          .DAT
+		input  wire [3:0]  pushbuttons_external_interface_export,          //            pushbuttons_external_interface.export
+		output wire [17:0] red_leds_external_interface_export,             //               red_leds_external_interface.export
+		input  wire        reset_bridge_in_reset_n,                        //                           reset_bridge_in.reset_n
+		inout  wire        sd_card_conduit_end_b_SD_cmd,                   //                       sd_card_conduit_end.b_SD_cmd
+		inout  wire        sd_card_conduit_end_b_SD_dat,                   //                                          .b_SD_dat
+		inout  wire        sd_card_conduit_end_b_SD_dat3,                  //                                          .b_SD_dat3
+		output wire        sd_card_conduit_end_o_SD_clock,                 //                                          .o_SD_clock
+		output wire        sdram_clk_out_clk,                              //                             sdram_clk_out.clk
+		output wire [12:0] sdram_wire_addr,                                //                                sdram_wire.addr
+		output wire [1:0]  sdram_wire_ba,                                  //                                          .ba
+		output wire        sdram_wire_cas_n,                               //                                          .cas_n
+		output wire        sdram_wire_cke,                                 //                                          .cke
+		output wire        sdram_wire_cs_n,                                //                                          .cs_n
+		inout  wire [31:0] sdram_wire_dq,                                  //                                          .dq
+		output wire [3:0]  sdram_wire_dqm,                                 //                                          .dqm
+		output wire        sdram_wire_ras_n,                               //                                          .ras_n
+		output wire        sdram_wire_we_n,                                //                                          .we_n
+		input  wire        serial_port_external_interface_RXD,             //            serial_port_external_interface.RXD
+		output wire        serial_port_external_interface_TXD,             //                                          .TXD
+		inout  wire [15:0] sram_external_interface_DQ,                     //                   sram_external_interface.DQ
+		output wire [19:0] sram_external_interface_ADDR,                   //                                          .ADDR
+		output wire        sram_external_interface_LB_N,                   //                                          .LB_N
+		output wire        sram_external_interface_UB_N,                   //                                          .UB_N
+		output wire        sram_external_interface_CE_N,                   //                                          .CE_N
+		output wire        sram_external_interface_OE_N,                   //                                          .OE_N
+		output wire        sram_external_interface_WE_N,                   //                                          .WE_N
+		input  wire [17:0] switches_external_interface_export,             //               switches_external_interface.export
+		output wire        sys_clk_out_clk,                                //                               sys_clk_out.clk
+		input  wire        video_decoder_external_interface_TD_CLK27,      //          video_decoder_external_interface.TD_CLK27
+		input  wire [7:0]  video_decoder_external_interface_TD_DATA,       //                                          .TD_DATA
+		input  wire        video_decoder_external_interface_TD_HS,         //                                          .TD_HS
+		input  wire        video_decoder_external_interface_TD_VS,         //                                          .TD_VS
+		input  wire        video_decoder_external_interface_clk27_reset,   //                                          .clk27_reset
+		output wire        video_decoder_external_interface_TD_RESET,      //                                          .TD_RESET
+		output wire        video_decoder_external_interface_overflow_flag  //                                          .overflow_flag
 	);
 
 	wire         alpha_blending_avalon_blended_source_valid;                                        // alpha_blending:output_valid -> mtl_dual_clock_buffer:stream_in_valid
@@ -72,11 +99,11 @@ module nios_system (
 	wire         video_chroma_resampler_avalon_chroma_source_ready;                                 // video_csc:stream_in_ready -> video_chroma_resampler:stream_out_ready
 	wire         video_chroma_resampler_avalon_chroma_source_startofpacket;                         // video_chroma_resampler:stream_out_startofpacket -> video_csc:stream_in_startofpacket
 	wire         video_chroma_resampler_avalon_chroma_source_endofpacket;                           // video_chroma_resampler:stream_out_endofpacket -> video_csc:stream_in_endofpacket
-	wire         video_clipper_normal_avalon_clipper_source_valid;                                  // video_clipper_normal:stream_out_valid -> video_scaler_normal:stream_in_valid
-	wire  [15:0] video_clipper_normal_avalon_clipper_source_data;                                   // video_clipper_normal:stream_out_data -> video_scaler_normal:stream_in_data
-	wire         video_clipper_normal_avalon_clipper_source_ready;                                  // video_scaler_normal:stream_in_ready -> video_clipper_normal:stream_out_ready
-	wire         video_clipper_normal_avalon_clipper_source_startofpacket;                          // video_clipper_normal:stream_out_startofpacket -> video_scaler_normal:stream_in_startofpacket
-	wire         video_clipper_normal_avalon_clipper_source_endofpacket;                            // video_clipper_normal:stream_out_endofpacket -> video_scaler_normal:stream_in_endofpacket
+	wire         video_clipper_normal_avalon_clipper_source_valid;                                  // video_clipper_normal:stream_out_valid -> video_dma_controller_normal:stream_valid
+	wire  [15:0] video_clipper_normal_avalon_clipper_source_data;                                   // video_clipper_normal:stream_out_data -> video_dma_controller_normal:stream_data
+	wire         video_clipper_normal_avalon_clipper_source_ready;                                  // video_dma_controller_normal:stream_ready -> video_clipper_normal:stream_out_ready
+	wire         video_clipper_normal_avalon_clipper_source_startofpacket;                          // video_clipper_normal:stream_out_startofpacket -> video_dma_controller_normal:stream_startofpacket
+	wire         video_clipper_normal_avalon_clipper_source_endofpacket;                            // video_clipper_normal:stream_out_endofpacket -> video_dma_controller_normal:stream_endofpacket
 	wire         video_csc_avalon_csc_source_valid;                                                 // video_csc:stream_out_valid -> video_rgb_resampler:stream_in_valid
 	wire  [23:0] video_csc_avalon_csc_source_data;                                                  // video_csc:stream_out_data -> video_rgb_resampler:stream_in_data
 	wire         video_csc_avalon_csc_source_ready;                                                 // video_rgb_resampler:stream_in_ready -> video_csc:stream_out_ready
@@ -92,26 +119,26 @@ module nios_system (
 	wire         video_decoder_avalon_decoder_source_ready;                                         // video_chroma_resampler:stream_in_ready -> video_decoder:stream_out_ready
 	wire         video_decoder_avalon_decoder_source_startofpacket;                                 // video_decoder:stream_out_startofpacket -> video_chroma_resampler:stream_in_startofpacket
 	wire         video_decoder_avalon_decoder_source_endofpacket;                                   // video_decoder:stream_out_endofpacket -> video_chroma_resampler:stream_in_endofpacket
-	wire         dma_controller_foreground_avalon_pixel_source_valid;                               // dma_controller_foreground:stream_valid -> rgb_resampler_foreground:stream_in_valid
-	wire  [15:0] dma_controller_foreground_avalon_pixel_source_data;                                // dma_controller_foreground:stream_data -> rgb_resampler_foreground:stream_in_data
-	wire         dma_controller_foreground_avalon_pixel_source_ready;                               // rgb_resampler_foreground:stream_in_ready -> dma_controller_foreground:stream_ready
-	wire         dma_controller_foreground_avalon_pixel_source_startofpacket;                       // dma_controller_foreground:stream_startofpacket -> rgb_resampler_foreground:stream_in_startofpacket
-	wire         dma_controller_foreground_avalon_pixel_source_endofpacket;                         // dma_controller_foreground:stream_endofpacket -> rgb_resampler_foreground:stream_in_endofpacket
-	wire         video_rgb_resampler_avalon_rgb_source_valid;                                       // video_rgb_resampler:stream_out_valid -> video_clipper_normal:stream_in_valid
-	wire  [15:0] video_rgb_resampler_avalon_rgb_source_data;                                        // video_rgb_resampler:stream_out_data -> video_clipper_normal:stream_in_data
-	wire         video_rgb_resampler_avalon_rgb_source_ready;                                       // video_clipper_normal:stream_in_ready -> video_rgb_resampler:stream_out_ready
-	wire         video_rgb_resampler_avalon_rgb_source_startofpacket;                               // video_rgb_resampler:stream_out_startofpacket -> video_clipper_normal:stream_in_startofpacket
-	wire         video_rgb_resampler_avalon_rgb_source_endofpacket;                                 // video_rgb_resampler:stream_out_endofpacket -> video_clipper_normal:stream_in_endofpacket
-	wire         rgb_resampler_foreground_avalon_rgb_source_valid;                                  // rgb_resampler_foreground:stream_out_valid -> scaler_foreground:stream_in_valid
-	wire  [29:0] rgb_resampler_foreground_avalon_rgb_source_data;                                   // rgb_resampler_foreground:stream_out_data -> scaler_foreground:stream_in_data
-	wire         rgb_resampler_foreground_avalon_rgb_source_ready;                                  // scaler_foreground:stream_in_ready -> rgb_resampler_foreground:stream_out_ready
-	wire         rgb_resampler_foreground_avalon_rgb_source_startofpacket;                          // rgb_resampler_foreground:stream_out_startofpacket -> scaler_foreground:stream_in_startofpacket
-	wire         rgb_resampler_foreground_avalon_rgb_source_endofpacket;                            // rgb_resampler_foreground:stream_out_endofpacket -> scaler_foreground:stream_in_endofpacket
-	wire         video_scaler_normal_avalon_scaler_source_valid;                                    // video_scaler_normal:stream_out_valid -> video_dma_controller_normal:stream_valid
-	wire  [15:0] video_scaler_normal_avalon_scaler_source_data;                                     // video_scaler_normal:stream_out_data -> video_dma_controller_normal:stream_data
-	wire         video_scaler_normal_avalon_scaler_source_ready;                                    // video_dma_controller_normal:stream_ready -> video_scaler_normal:stream_out_ready
-	wire         video_scaler_normal_avalon_scaler_source_startofpacket;                            // video_scaler_normal:stream_out_startofpacket -> video_dma_controller_normal:stream_startofpacket
-	wire         video_scaler_normal_avalon_scaler_source_endofpacket;                              // video_scaler_normal:stream_out_endofpacket -> video_dma_controller_normal:stream_endofpacket
+	wire         pixel_buffer_dma_green_avalon_pixel_source_valid;                                  // pixel_buffer_dma_green:stream_valid -> rgb_resampler_green:stream_in_valid
+	wire  [15:0] pixel_buffer_dma_green_avalon_pixel_source_data;                                   // pixel_buffer_dma_green:stream_data -> rgb_resampler_green:stream_in_data
+	wire         pixel_buffer_dma_green_avalon_pixel_source_ready;                                  // rgb_resampler_green:stream_in_ready -> pixel_buffer_dma_green:stream_ready
+	wire         pixel_buffer_dma_green_avalon_pixel_source_startofpacket;                          // pixel_buffer_dma_green:stream_startofpacket -> rgb_resampler_green:stream_in_startofpacket
+	wire         pixel_buffer_dma_green_avalon_pixel_source_endofpacket;                            // pixel_buffer_dma_green:stream_endofpacket -> rgb_resampler_green:stream_in_endofpacket
+	wire         rgb_resampler_green_avalon_rgb_source_valid;                                       // rgb_resampler_green:stream_out_valid -> scaler_green:stream_in_valid
+	wire  [29:0] rgb_resampler_green_avalon_rgb_source_data;                                        // rgb_resampler_green:stream_out_data -> scaler_green:stream_in_data
+	wire         rgb_resampler_green_avalon_rgb_source_ready;                                       // scaler_green:stream_in_ready -> rgb_resampler_green:stream_out_ready
+	wire         rgb_resampler_green_avalon_rgb_source_startofpacket;                               // rgb_resampler_green:stream_out_startofpacket -> scaler_green:stream_in_startofpacket
+	wire         rgb_resampler_green_avalon_rgb_source_endofpacket;                                 // rgb_resampler_green:stream_out_endofpacket -> scaler_green:stream_in_endofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_valid;                                       // video_rgb_resampler:stream_out_valid -> video_scaler_normal:stream_in_valid
+	wire  [15:0] video_rgb_resampler_avalon_rgb_source_data;                                        // video_rgb_resampler:stream_out_data -> video_scaler_normal:stream_in_data
+	wire         video_rgb_resampler_avalon_rgb_source_ready;                                       // video_scaler_normal:stream_in_ready -> video_rgb_resampler:stream_out_ready
+	wire         video_rgb_resampler_avalon_rgb_source_startofpacket;                               // video_rgb_resampler:stream_out_startofpacket -> video_scaler_normal:stream_in_startofpacket
+	wire         video_rgb_resampler_avalon_rgb_source_endofpacket;                                 // video_rgb_resampler:stream_out_endofpacket -> video_scaler_normal:stream_in_endofpacket
+	wire         video_scaler_normal_avalon_scaler_source_valid;                                    // video_scaler_normal:stream_out_valid -> video_clipper_normal:stream_in_valid
+	wire  [15:0] video_scaler_normal_avalon_scaler_source_data;                                     // video_scaler_normal:stream_out_data -> video_clipper_normal:stream_in_data
+	wire         video_scaler_normal_avalon_scaler_source_ready;                                    // video_clipper_normal:stream_in_ready -> video_scaler_normal:stream_out_ready
+	wire         video_scaler_normal_avalon_scaler_source_startofpacket;                            // video_scaler_normal:stream_out_startofpacket -> video_clipper_normal:stream_in_startofpacket
+	wire         video_scaler_normal_avalon_scaler_source_endofpacket;                              // video_scaler_normal:stream_out_endofpacket -> video_clipper_normal:stream_in_endofpacket
 	wire         flash_controller_tcm_data_outen;                                                   // flash_controller:tcm_data_outen -> flash_bridge:tcs_tcm_data_outen
 	wire         flash_controller_tcm_request;                                                      // flash_controller:tcm_request -> flash_bridge:request
 	wire         flash_controller_tcm_write_n_out;                                                  // flash_controller:tcm_write_n_out -> flash_bridge:tcs_tcm_write_n_out
@@ -121,16 +148,16 @@ module nios_system (
 	wire  [22:0] flash_controller_tcm_address_out;                                                  // flash_controller:tcm_address_out -> flash_bridge:tcs_tcm_address_out
 	wire   [7:0] flash_controller_tcm_data_out;                                                     // flash_controller:tcm_data_out -> flash_bridge:tcs_tcm_data_out
 	wire   [7:0] flash_controller_tcm_data_in;                                                      // flash_bridge:tcs_tcm_data_in -> flash_controller:tcm_data_in
-	wire         dma_controller_foreground_avalon_dma_master_waitrequest;                           // mm_interconnect_0:dma_controller_foreground_avalon_dma_master_waitrequest -> dma_controller_foreground:master_waitrequest
-	wire  [15:0] dma_controller_foreground_avalon_dma_master_readdata;                              // mm_interconnect_0:dma_controller_foreground_avalon_dma_master_readdata -> dma_controller_foreground:master_readdata
-	wire  [31:0] dma_controller_foreground_avalon_dma_master_address;                               // dma_controller_foreground:master_address -> mm_interconnect_0:dma_controller_foreground_avalon_dma_master_address
-	wire         dma_controller_foreground_avalon_dma_master_read;                                  // dma_controller_foreground:master_read -> mm_interconnect_0:dma_controller_foreground_avalon_dma_master_read
-	wire         dma_controller_foreground_avalon_dma_master_readdatavalid;                         // mm_interconnect_0:dma_controller_foreground_avalon_dma_master_readdatavalid -> dma_controller_foreground:master_readdatavalid
-	wire         dma_controller_foreground_avalon_dma_master_lock;                                  // dma_controller_foreground:master_arbiterlock -> mm_interconnect_0:dma_controller_foreground_avalon_dma_master_lock
 	wire         video_dma_controller_normal_avalon_dma_master_waitrequest;                         // mm_interconnect_0:video_dma_controller_normal_avalon_dma_master_waitrequest -> video_dma_controller_normal:master_waitrequest
 	wire  [31:0] video_dma_controller_normal_avalon_dma_master_address;                             // video_dma_controller_normal:master_address -> mm_interconnect_0:video_dma_controller_normal_avalon_dma_master_address
 	wire         video_dma_controller_normal_avalon_dma_master_write;                               // video_dma_controller_normal:master_write -> mm_interconnect_0:video_dma_controller_normal_avalon_dma_master_write
 	wire  [15:0] video_dma_controller_normal_avalon_dma_master_writedata;                           // video_dma_controller_normal:master_writedata -> mm_interconnect_0:video_dma_controller_normal_avalon_dma_master_writedata
+	wire         pixel_buffer_dma_green_avalon_pixel_dma_master_waitrequest;                        // mm_interconnect_0:pixel_buffer_dma_green_avalon_pixel_dma_master_waitrequest -> pixel_buffer_dma_green:master_waitrequest
+	wire  [15:0] pixel_buffer_dma_green_avalon_pixel_dma_master_readdata;                           // mm_interconnect_0:pixel_buffer_dma_green_avalon_pixel_dma_master_readdata -> pixel_buffer_dma_green:master_readdata
+	wire  [31:0] pixel_buffer_dma_green_avalon_pixel_dma_master_address;                            // pixel_buffer_dma_green:master_address -> mm_interconnect_0:pixel_buffer_dma_green_avalon_pixel_dma_master_address
+	wire         pixel_buffer_dma_green_avalon_pixel_dma_master_read;                               // pixel_buffer_dma_green:master_read -> mm_interconnect_0:pixel_buffer_dma_green_avalon_pixel_dma_master_read
+	wire         pixel_buffer_dma_green_avalon_pixel_dma_master_readdatavalid;                      // mm_interconnect_0:pixel_buffer_dma_green_avalon_pixel_dma_master_readdatavalid -> pixel_buffer_dma_green:master_readdatavalid
+	wire         pixel_buffer_dma_green_avalon_pixel_dma_master_lock;                               // pixel_buffer_dma_green:master_arbiterlock -> mm_interconnect_0:pixel_buffer_dma_green_avalon_pixel_dma_master_lock
 	wire  [31:0] cpu_data_master_readdata;                                                          // mm_interconnect_0:cpu_data_master_readdata -> cpu:d_readdata
 	wire         cpu_data_master_waitrequest;                                                       // mm_interconnect_0:cpu_data_master_waitrequest -> cpu:d_waitrequest
 	wire         cpu_data_master_debugaccess;                                                       // cpu:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:cpu_data_master_debugaccess
@@ -152,6 +179,19 @@ module nios_system (
 	wire         mm_interconnect_0_sram_avalon_sram_slave_readdatavalid;                            // sram:readdatavalid -> mm_interconnect_0:sram_avalon_sram_slave_readdatavalid
 	wire         mm_interconnect_0_sram_avalon_sram_slave_write;                                    // mm_interconnect_0:sram_avalon_sram_slave_write -> sram:write
 	wire  [15:0] mm_interconnect_0_sram_avalon_sram_slave_writedata;                                // mm_interconnect_0:sram_avalon_sram_slave_writedata -> sram:writedata
+	wire         mm_interconnect_0_audio_avalon_audio_slave_chipselect;                             // mm_interconnect_0:audio_avalon_audio_slave_chipselect -> audio:chipselect
+	wire  [31:0] mm_interconnect_0_audio_avalon_audio_slave_readdata;                               // audio:readdata -> mm_interconnect_0:audio_avalon_audio_slave_readdata
+	wire   [1:0] mm_interconnect_0_audio_avalon_audio_slave_address;                                // mm_interconnect_0:audio_avalon_audio_slave_address -> audio:address
+	wire         mm_interconnect_0_audio_avalon_audio_slave_read;                                   // mm_interconnect_0:audio_avalon_audio_slave_read -> audio:read
+	wire         mm_interconnect_0_audio_avalon_audio_slave_write;                                  // mm_interconnect_0:audio_avalon_audio_slave_write -> audio:write
+	wire  [31:0] mm_interconnect_0_audio_avalon_audio_slave_writedata;                              // mm_interconnect_0:audio_avalon_audio_slave_writedata -> audio:writedata
+	wire  [31:0] mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_readdata;          // audio_and_video_config:readdata -> mm_interconnect_0:audio_and_video_config_avalon_av_config_slave_readdata
+	wire         mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_waitrequest;       // audio_and_video_config:waitrequest -> mm_interconnect_0:audio_and_video_config_avalon_av_config_slave_waitrequest
+	wire   [1:0] mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_address;           // mm_interconnect_0:audio_and_video_config_avalon_av_config_slave_address -> audio_and_video_config:address
+	wire         mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_read;              // mm_interconnect_0:audio_and_video_config_avalon_av_config_slave_read -> audio_and_video_config:read
+	wire   [3:0] mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_byteenable;        // mm_interconnect_0:audio_and_video_config_avalon_av_config_slave_byteenable -> audio_and_video_config:byteenable
+	wire         mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_write;             // mm_interconnect_0:audio_and_video_config_avalon_av_config_slave_write -> audio_and_video_config:write
+	wire  [31:0] mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_writedata;         // mm_interconnect_0:audio_and_video_config_avalon_av_config_slave_writedata -> audio_and_video_config:writedata
 	wire         mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_chipselect;             // mm_interconnect_0:mtl_char_buffer_avalon_char_buffer_slave_chipselect -> mtl_char_buffer:buf_chipselect
 	wire   [7:0] mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_readdata;               // mtl_char_buffer:buf_readdata -> mm_interconnect_0:mtl_char_buffer_avalon_char_buffer_slave_readdata
 	wire         mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_waitrequest;            // mtl_char_buffer:buf_waitrequest -> mm_interconnect_0:mtl_char_buffer_avalon_char_buffer_slave_waitrequest
@@ -167,12 +207,12 @@ module nios_system (
 	wire   [3:0] mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_byteenable;            // mm_interconnect_0:mtl_char_buffer_avalon_char_control_slave_byteenable -> mtl_char_buffer:ctrl_byteenable
 	wire         mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_write;                 // mm_interconnect_0:mtl_char_buffer_avalon_char_control_slave_write -> mtl_char_buffer:ctrl_write
 	wire  [31:0] mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_writedata;             // mm_interconnect_0:mtl_char_buffer_avalon_char_control_slave_writedata -> mtl_char_buffer:ctrl_writedata
-	wire  [31:0] mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_readdata;     // dma_controller_foreground:slave_readdata -> mm_interconnect_0:dma_controller_foreground_avalon_dma_control_slave_readdata
-	wire   [1:0] mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_address;      // mm_interconnect_0:dma_controller_foreground_avalon_dma_control_slave_address -> dma_controller_foreground:slave_address
-	wire         mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_read;         // mm_interconnect_0:dma_controller_foreground_avalon_dma_control_slave_read -> dma_controller_foreground:slave_read
-	wire   [3:0] mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_byteenable;   // mm_interconnect_0:dma_controller_foreground_avalon_dma_control_slave_byteenable -> dma_controller_foreground:slave_byteenable
-	wire         mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_write;        // mm_interconnect_0:dma_controller_foreground_avalon_dma_control_slave_write -> dma_controller_foreground:slave_write
-	wire  [31:0] mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_writedata;    // mm_interconnect_0:dma_controller_foreground_avalon_dma_control_slave_writedata -> dma_controller_foreground:slave_writedata
+	wire  [31:0] mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_readdata;            // pixel_buffer_dma_green:slave_readdata -> mm_interconnect_0:pixel_buffer_dma_green_avalon_control_slave_readdata
+	wire   [1:0] mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_address;             // mm_interconnect_0:pixel_buffer_dma_green_avalon_control_slave_address -> pixel_buffer_dma_green:slave_address
+	wire         mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_read;                // mm_interconnect_0:pixel_buffer_dma_green_avalon_control_slave_read -> pixel_buffer_dma_green:slave_read
+	wire   [3:0] mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_byteenable;          // mm_interconnect_0:pixel_buffer_dma_green_avalon_control_slave_byteenable -> pixel_buffer_dma_green:slave_byteenable
+	wire         mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_write;               // mm_interconnect_0:pixel_buffer_dma_green_avalon_control_slave_write -> pixel_buffer_dma_green:slave_write
+	wire  [31:0] mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_writedata;           // mm_interconnect_0:pixel_buffer_dma_green_avalon_control_slave_writedata -> pixel_buffer_dma_green:slave_writedata
 	wire  [31:0] mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_readdata;   // video_dma_controller_normal:slave_readdata -> mm_interconnect_0:video_dma_controller_normal_avalon_dma_control_slave_readdata
 	wire   [1:0] mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_address;    // mm_interconnect_0:video_dma_controller_normal_avalon_dma_control_slave_address -> video_dma_controller_normal:slave_address
 	wire         mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_read;       // mm_interconnect_0:video_dma_controller_normal_avalon_dma_control_slave_read -> video_dma_controller_normal:slave_read
@@ -221,6 +261,51 @@ module nios_system (
 	wire   [3:0] mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_byteenable;               // mm_interconnect_0:pushbuttons_avalon_parallel_port_slave_byteenable -> pushbuttons:byteenable
 	wire         mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_write;                    // mm_interconnect_0:pushbuttons_avalon_parallel_port_slave_write -> pushbuttons:write
 	wire  [31:0] mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_writedata;                // mm_interconnect_0:pushbuttons_avalon_parallel_port_slave_writedata -> pushbuttons:writedata
+	wire         mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_chipselect;                 // mm_interconnect_0:HEX3_HEX0_avalon_parallel_port_slave_chipselect -> HEX3_HEX0:chipselect
+	wire  [31:0] mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_readdata;                   // HEX3_HEX0:readdata -> mm_interconnect_0:HEX3_HEX0_avalon_parallel_port_slave_readdata
+	wire   [1:0] mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_address;                    // mm_interconnect_0:HEX3_HEX0_avalon_parallel_port_slave_address -> HEX3_HEX0:address
+	wire         mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_read;                       // mm_interconnect_0:HEX3_HEX0_avalon_parallel_port_slave_read -> HEX3_HEX0:read
+	wire   [3:0] mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_byteenable;                 // mm_interconnect_0:HEX3_HEX0_avalon_parallel_port_slave_byteenable -> HEX3_HEX0:byteenable
+	wire         mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_write;                      // mm_interconnect_0:HEX3_HEX0_avalon_parallel_port_slave_write -> HEX3_HEX0:write
+	wire  [31:0] mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_writedata;                  // mm_interconnect_0:HEX3_HEX0_avalon_parallel_port_slave_writedata -> HEX3_HEX0:writedata
+	wire         mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_chipselect;                 // mm_interconnect_0:HEX7_HEX4_avalon_parallel_port_slave_chipselect -> HEX7_HEX4:chipselect
+	wire  [31:0] mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_readdata;                   // HEX7_HEX4:readdata -> mm_interconnect_0:HEX7_HEX4_avalon_parallel_port_slave_readdata
+	wire   [1:0] mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_address;                    // mm_interconnect_0:HEX7_HEX4_avalon_parallel_port_slave_address -> HEX7_HEX4:address
+	wire         mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_read;                       // mm_interconnect_0:HEX7_HEX4_avalon_parallel_port_slave_read -> HEX7_HEX4:read
+	wire   [3:0] mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_byteenable;                 // mm_interconnect_0:HEX7_HEX4_avalon_parallel_port_slave_byteenable -> HEX7_HEX4:byteenable
+	wire         mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_write;                      // mm_interconnect_0:HEX7_HEX4_avalon_parallel_port_slave_write -> HEX7_HEX4:write
+	wire  [31:0] mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_writedata;                  // mm_interconnect_0:HEX7_HEX4_avalon_parallel_port_slave_writedata -> HEX7_HEX4:writedata
+	wire         mm_interconnect_0_ps2_key_avalon_ps2_slave_chipselect;                             // mm_interconnect_0:ps2_key_avalon_ps2_slave_chipselect -> ps2_key:chipselect
+	wire  [31:0] mm_interconnect_0_ps2_key_avalon_ps2_slave_readdata;                               // ps2_key:readdata -> mm_interconnect_0:ps2_key_avalon_ps2_slave_readdata
+	wire         mm_interconnect_0_ps2_key_avalon_ps2_slave_waitrequest;                            // ps2_key:waitrequest -> mm_interconnect_0:ps2_key_avalon_ps2_slave_waitrequest
+	wire   [0:0] mm_interconnect_0_ps2_key_avalon_ps2_slave_address;                                // mm_interconnect_0:ps2_key_avalon_ps2_slave_address -> ps2_key:address
+	wire         mm_interconnect_0_ps2_key_avalon_ps2_slave_read;                                   // mm_interconnect_0:ps2_key_avalon_ps2_slave_read -> ps2_key:read
+	wire   [3:0] mm_interconnect_0_ps2_key_avalon_ps2_slave_byteenable;                             // mm_interconnect_0:ps2_key_avalon_ps2_slave_byteenable -> ps2_key:byteenable
+	wire         mm_interconnect_0_ps2_key_avalon_ps2_slave_write;                                  // mm_interconnect_0:ps2_key_avalon_ps2_slave_write -> ps2_key:write
+	wire  [31:0] mm_interconnect_0_ps2_key_avalon_ps2_slave_writedata;                              // mm_interconnect_0:ps2_key_avalon_ps2_slave_writedata -> ps2_key:writedata
+	wire         mm_interconnect_0_ps2_mouse_avalon_ps2_slave_chipselect;                           // mm_interconnect_0:ps2_mouse_avalon_ps2_slave_chipselect -> ps2_mouse:chipselect
+	wire  [31:0] mm_interconnect_0_ps2_mouse_avalon_ps2_slave_readdata;                             // ps2_mouse:readdata -> mm_interconnect_0:ps2_mouse_avalon_ps2_slave_readdata
+	wire         mm_interconnect_0_ps2_mouse_avalon_ps2_slave_waitrequest;                          // ps2_mouse:waitrequest -> mm_interconnect_0:ps2_mouse_avalon_ps2_slave_waitrequest
+	wire   [0:0] mm_interconnect_0_ps2_mouse_avalon_ps2_slave_address;                              // mm_interconnect_0:ps2_mouse_avalon_ps2_slave_address -> ps2_mouse:address
+	wire         mm_interconnect_0_ps2_mouse_avalon_ps2_slave_read;                                 // mm_interconnect_0:ps2_mouse_avalon_ps2_slave_read -> ps2_mouse:read
+	wire   [3:0] mm_interconnect_0_ps2_mouse_avalon_ps2_slave_byteenable;                           // mm_interconnect_0:ps2_mouse_avalon_ps2_slave_byteenable -> ps2_mouse:byteenable
+	wire         mm_interconnect_0_ps2_mouse_avalon_ps2_slave_write;                                // mm_interconnect_0:ps2_mouse_avalon_ps2_slave_write -> ps2_mouse:write
+	wire  [31:0] mm_interconnect_0_ps2_mouse_avalon_ps2_slave_writedata;                            // mm_interconnect_0:ps2_mouse_avalon_ps2_slave_writedata -> ps2_mouse:writedata
+	wire         mm_interconnect_0_serial_port_avalon_rs232_slave_chipselect;                       // mm_interconnect_0:serial_port_avalon_rs232_slave_chipselect -> serial_port:chipselect
+	wire  [31:0] mm_interconnect_0_serial_port_avalon_rs232_slave_readdata;                         // serial_port:readdata -> mm_interconnect_0:serial_port_avalon_rs232_slave_readdata
+	wire   [0:0] mm_interconnect_0_serial_port_avalon_rs232_slave_address;                          // mm_interconnect_0:serial_port_avalon_rs232_slave_address -> serial_port:address
+	wire         mm_interconnect_0_serial_port_avalon_rs232_slave_read;                             // mm_interconnect_0:serial_port_avalon_rs232_slave_read -> serial_port:read
+	wire   [3:0] mm_interconnect_0_serial_port_avalon_rs232_slave_byteenable;                       // mm_interconnect_0:serial_port_avalon_rs232_slave_byteenable -> serial_port:byteenable
+	wire         mm_interconnect_0_serial_port_avalon_rs232_slave_write;                            // mm_interconnect_0:serial_port_avalon_rs232_slave_write -> serial_port:write
+	wire  [31:0] mm_interconnect_0_serial_port_avalon_rs232_slave_writedata;                        // mm_interconnect_0:serial_port_avalon_rs232_slave_writedata -> serial_port:writedata
+	wire         mm_interconnect_0_sd_card_avalon_sdcard_slave_chipselect;                          // mm_interconnect_0:sd_card_avalon_sdcard_slave_chipselect -> sd_card:i_avalon_chip_select
+	wire  [31:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_readdata;                            // sd_card:o_avalon_readdata -> mm_interconnect_0:sd_card_avalon_sdcard_slave_readdata
+	wire         mm_interconnect_0_sd_card_avalon_sdcard_slave_waitrequest;                         // sd_card:o_avalon_waitrequest -> mm_interconnect_0:sd_card_avalon_sdcard_slave_waitrequest
+	wire   [7:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_address;                             // mm_interconnect_0:sd_card_avalon_sdcard_slave_address -> sd_card:i_avalon_address
+	wire         mm_interconnect_0_sd_card_avalon_sdcard_slave_read;                                // mm_interconnect_0:sd_card_avalon_sdcard_slave_read -> sd_card:i_avalon_read
+	wire   [3:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_byteenable;                          // mm_interconnect_0:sd_card_avalon_sdcard_slave_byteenable -> sd_card:i_avalon_byteenable
+	wire         mm_interconnect_0_sd_card_avalon_sdcard_slave_write;                               // mm_interconnect_0:sd_card_avalon_sdcard_slave_write -> sd_card:i_avalon_write
+	wire  [31:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_writedata;                           // mm_interconnect_0:sd_card_avalon_sdcard_slave_writedata -> sd_card:i_avalon_writedata
 	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                                    // sysid:readdata -> mm_interconnect_0:sysid_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                                     // mm_interconnect_0:sysid_control_slave_address -> sysid:address
 	wire  [31:0] mm_interconnect_0_performance_counter_control_slave_readdata;                      // performance_counter:readdata -> mm_interconnect_0:performance_counter_control_slave_readdata
@@ -270,27 +355,31 @@ module nios_system (
 	wire   [0:0] mm_interconnect_0_flash_controller_uas_burstcount;                                 // mm_interconnect_0:flash_controller_uas_burstcount -> flash_controller:uas_burstcount
 	wire         irq_mapper_receiver0_irq;                                                          // pushbuttons:irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                                          // switches:irq -> irq_mapper:receiver1_irq
-	wire         irq_mapper_receiver2_irq;                                                          // jtag_uart:av_irq -> irq_mapper:receiver2_irq
-	wire         irq_mapper_receiver3_irq;                                                          // timer:irq -> irq_mapper:receiver3_irq
+	wire         irq_mapper_receiver2_irq;                                                          // audio:irq -> irq_mapper:receiver2_irq
+	wire         irq_mapper_receiver3_irq;                                                          // ps2_key:irq -> irq_mapper:receiver3_irq
+	wire         irq_mapper_receiver4_irq;                                                          // ps2_mouse:irq -> irq_mapper:receiver4_irq
+	wire         irq_mapper_receiver5_irq;                                                          // serial_port:irq -> irq_mapper:receiver5_irq
+	wire         irq_mapper_receiver6_irq;                                                          // jtag_uart:av_irq -> irq_mapper:receiver6_irq
+	wire         irq_mapper_receiver7_irq;                                                          // timer:irq -> irq_mapper:receiver7_irq
 	wire  [31:0] cpu_irq_irq;                                                                       // irq_mapper:sender_irq -> cpu:irq
-	wire         scaler_foreground_avalon_scaler_source_valid;                                      // scaler_foreground:stream_out_valid -> avalon_st_adapter:in_0_valid
-	wire  [29:0] scaler_foreground_avalon_scaler_source_data;                                       // scaler_foreground:stream_out_data -> avalon_st_adapter:in_0_data
-	wire         scaler_foreground_avalon_scaler_source_ready;                                      // avalon_st_adapter:in_0_ready -> scaler_foreground:stream_out_ready
-	wire   [1:0] scaler_foreground_avalon_scaler_source_channel;                                    // scaler_foreground:stream_out_channel -> avalon_st_adapter:in_0_channel
-	wire         scaler_foreground_avalon_scaler_source_startofpacket;                              // scaler_foreground:stream_out_startofpacket -> avalon_st_adapter:in_0_startofpacket
-	wire         scaler_foreground_avalon_scaler_source_endofpacket;                                // scaler_foreground:stream_out_endofpacket -> avalon_st_adapter:in_0_endofpacket
+	wire         scaler_green_avalon_scaler_source_valid;                                           // scaler_green:stream_out_valid -> avalon_st_adapter:in_0_valid
+	wire  [29:0] scaler_green_avalon_scaler_source_data;                                            // scaler_green:stream_out_data -> avalon_st_adapter:in_0_data
+	wire         scaler_green_avalon_scaler_source_ready;                                           // avalon_st_adapter:in_0_ready -> scaler_green:stream_out_ready
+	wire   [1:0] scaler_green_avalon_scaler_source_channel;                                         // scaler_green:stream_out_channel -> avalon_st_adapter:in_0_channel
+	wire         scaler_green_avalon_scaler_source_startofpacket;                                   // scaler_green:stream_out_startofpacket -> avalon_st_adapter:in_0_startofpacket
+	wire         scaler_green_avalon_scaler_source_endofpacket;                                     // scaler_green:stream_out_endofpacket -> avalon_st_adapter:in_0_endofpacket
 	wire         avalon_st_adapter_out_0_valid;                                                     // avalon_st_adapter:out_0_valid -> alpha_blending:background_valid
 	wire  [29:0] avalon_st_adapter_out_0_data;                                                      // avalon_st_adapter:out_0_data -> alpha_blending:background_data
 	wire         avalon_st_adapter_out_0_ready;                                                     // alpha_blending:background_ready -> avalon_st_adapter:out_0_ready
 	wire         avalon_st_adapter_out_0_startofpacket;                                             // avalon_st_adapter:out_0_startofpacket -> alpha_blending:background_startofpacket
 	wire         avalon_st_adapter_out_0_endofpacket;                                               // avalon_st_adapter:out_0_endofpacket -> alpha_blending:background_endofpacket
-	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [Green_LED:reset, alpha_blending:reset, avalon_st_adapter:in_rst_0_reset, char_lcd:reset, cpu:reset_n, dma_controller_foreground:reset, flash_bridge:reset, flash_controller:reset_reset, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:dma_controller_foreground_reset_reset_bridge_in_reset_reset, mtl_char_buffer:reset, mtl_dual_clock_buffer:reset_stream_in, onchip_memory:reset, performance_counter:reset_n, pushbuttons:reset, red_LEDs:reset, rgb_resampler_foreground:reset, rst_translator:in_reset, scaler_foreground:reset, sdram:reset_n, sram:reset, switches:reset, sysid:reset_n, timer:reset_n, video_chroma_resampler:reset, video_clipper_normal:reset, video_csc:reset, video_decoder:reset, video_dma_controller_normal:reset, video_rgb_resampler:reset, video_scaler_normal:reset]
+	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [Green_LED:reset, HEX3_HEX0:reset, HEX7_HEX4:reset, alpha_blending:reset, audio:reset, audio_and_video_config:reset, avalon_st_adapter:in_rst_0_reset, char_lcd:reset, cpu:reset_n, flash_bridge:reset, flash_controller:reset_reset, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:video_dma_controller_normal_reset_reset_bridge_in_reset_reset, mtl_char_buffer:reset, mtl_dual_clock_buffer:reset_stream_in, onchip_memory:reset, performance_counter:reset_n, pixel_buffer_dma_green:reset, ps2_key:reset, ps2_mouse:reset, pushbuttons:reset, red_LEDs:reset, rgb_resampler_green:reset, rst_translator:in_reset, scaler_green:reset, sd_card:i_reset_n, sdram:reset_n, serial_port:reset, sram:reset, switches:reset, sysid:reset_n, timer:reset_n, video_chroma_resampler:reset, video_clipper_normal:reset, video_csc:reset, video_decoder:reset, video_dma_controller_normal:reset, video_rgb_resampler:reset, video_scaler_normal:reset]
 	wire         rst_controller_reset_out_reset_req;                                                // rst_controller:reset_req -> [cpu:reset_req, onchip_memory:reset_req, rst_translator:reset_req_in]
-	wire         cpu_debug_reset_request_reset;                                                     // cpu:debug_reset_request -> [rst_controller:reset_in0, rst_controller_001:reset_in0]
+	wire         cpu_debug_reset_request_reset;                                                     // cpu:debug_reset_request -> [rst_controller:reset_in0, rst_controller_002:reset_in0]
 	wire         sys_sdram_pll_reset_source_reset;                                                  // sys_sdram_pll:reset_source_reset -> rst_controller:reset_in1
-	wire         rst_controller_001_reset_out_reset;                                                // rst_controller_001:reset_out -> mtl_controller:reset
-	wire         video_pll_reset_source_reset;                                                      // video_pll:reset_source_reset -> [rst_controller_001:reset_in1, rst_controller_002:reset_in0]
-	wire         rst_controller_002_reset_out_reset;                                                // rst_controller_002:reset_out -> mtl_dual_clock_buffer:reset_stream_out
+	wire         rst_controller_001_reset_out_reset;                                                // rst_controller_001:reset_out -> audio_pll:ref_reset_reset
+	wire         rst_controller_002_reset_out_reset;                                                // rst_controller_002:reset_out -> [mtl_controller:reset, mtl_dual_clock_buffer:reset_stream_out]
+	wire         video_pll_reset_source_reset;                                                      // video_pll:reset_source_reset -> rst_controller_002:reset_in1
 	wire         rst_controller_003_reset_out_reset;                                                // rst_controller_003:reset_out -> sys_sdram_pll:ref_reset_reset
 	wire         rst_controller_004_reset_out_reset;                                                // rst_controller_004:reset_out -> video_pll:ref_reset_reset
 
@@ -305,6 +394,38 @@ module nios_system (
 		.writedata  (mm_interconnect_0_green_led_avalon_parallel_port_slave_writedata),  //                           .writedata
 		.readdata   (mm_interconnect_0_green_led_avalon_parallel_port_slave_readdata),   //                           .readdata
 		.LEDG       (green_led_external_interface_export)                                //         external_interface.export
+	);
+
+	nios_system_HEX3_HEX0 hex3_hex0 (
+		.clk        (sys_clk_out_clk),                                                   //                        clk.clk
+		.reset      (rst_controller_reset_out_reset),                                    //                      reset.reset
+		.address    (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_address),    // avalon_parallel_port_slave.address
+		.byteenable (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_byteenable), //                           .byteenable
+		.chipselect (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_chipselect), //                           .chipselect
+		.read       (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_read),       //                           .read
+		.write      (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_write),      //                           .write
+		.writedata  (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_writedata),  //                           .writedata
+		.readdata   (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_readdata),   //                           .readdata
+		.HEX0       (hex3_hex0_external_interface_HEX0),                                 //         external_interface.export
+		.HEX1       (hex3_hex0_external_interface_HEX1),                                 //                           .export
+		.HEX2       (hex3_hex0_external_interface_HEX2),                                 //                           .export
+		.HEX3       (hex3_hex0_external_interface_HEX3)                                  //                           .export
+	);
+
+	nios_system_HEX7_HEX4 hex7_hex4 (
+		.clk        (sys_clk_out_clk),                                                   //                        clk.clk
+		.reset      (rst_controller_reset_out_reset),                                    //                      reset.reset
+		.address    (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_address),    // avalon_parallel_port_slave.address
+		.byteenable (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_byteenable), //                           .byteenable
+		.chipselect (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_chipselect), //                           .chipselect
+		.read       (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_read),       //                           .read
+		.write      (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_write),      //                           .write
+		.writedata  (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_writedata),  //                           .writedata
+		.readdata   (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_readdata),   //                           .readdata
+		.HEX4       (hex7_hex4_external_interface_HEX4),                                 //         external_interface.export
+		.HEX5       (hex7_hex4_external_interface_HEX5),                                 //                           .export
+		.HEX6       (hex7_hex4_external_interface_HEX6),                                 //                           .export
+		.HEX7       (hex7_hex4_external_interface_HEX7)                                  //                           .export
 	);
 
 	nios_system_alpha_blending alpha_blending (
@@ -325,6 +446,44 @@ module nios_system (
 		.output_startofpacket     (alpha_blending_avalon_blended_source_startofpacket), //                       .startofpacket
 		.output_endofpacket       (alpha_blending_avalon_blended_source_endofpacket),   //                       .endofpacket
 		.output_valid             (alpha_blending_avalon_blended_source_valid)          //                       .valid
+	);
+
+	nios_system_audio audio (
+		.clk         (sys_clk_out_clk),                                       //                clk.clk
+		.reset       (rst_controller_reset_out_reset),                        //              reset.reset
+		.address     (mm_interconnect_0_audio_avalon_audio_slave_address),    // avalon_audio_slave.address
+		.chipselect  (mm_interconnect_0_audio_avalon_audio_slave_chipselect), //                   .chipselect
+		.read        (mm_interconnect_0_audio_avalon_audio_slave_read),       //                   .read
+		.write       (mm_interconnect_0_audio_avalon_audio_slave_write),      //                   .write
+		.writedata   (mm_interconnect_0_audio_avalon_audio_slave_writedata),  //                   .writedata
+		.readdata    (mm_interconnect_0_audio_avalon_audio_slave_readdata),   //                   .readdata
+		.irq         (irq_mapper_receiver2_irq),                              //          interrupt.irq
+		.AUD_ADCDAT  (audio_external_interface_ADCDAT),                       // external_interface.export
+		.AUD_ADCLRCK (audio_external_interface_ADCLRCK),                      //                   .export
+		.AUD_BCLK    (audio_external_interface_BCLK),                         //                   .export
+		.AUD_DACDAT  (audio_external_interface_DACDAT),                       //                   .export
+		.AUD_DACLRCK (audio_external_interface_DACLRCK)                       //                   .export
+	);
+
+	nios_system_audio_and_video_config audio_and_video_config (
+		.clk         (sys_clk_out_clk),                                                             //                    clk.clk
+		.reset       (rst_controller_reset_out_reset),                                              //                  reset.reset
+		.address     (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_address),     // avalon_av_config_slave.address
+		.byteenable  (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_byteenable),  //                       .byteenable
+		.read        (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_read),        //                       .read
+		.write       (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_write),       //                       .write
+		.writedata   (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_writedata),   //                       .writedata
+		.readdata    (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_readdata),    //                       .readdata
+		.waitrequest (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_waitrequest), //                       .waitrequest
+		.I2C_SDAT    (audio_and_video_config_external_interface_SDAT),                              //     external_interface.export
+		.I2C_SCLK    (audio_and_video_config_external_interface_SCLK)                               //                       .export
+	);
+
+	nios_system_audio_pll audio_pll (
+		.ref_clk_clk        (clk_50_3_in_clk),                    //      ref_clk.clk
+		.ref_reset_reset    (rst_controller_001_reset_out_reset), //    ref_reset.reset
+		.audio_clk_clk      (audio_clk_out_clk),                  //    audio_clk.clk
+		.reset_source_reset ()                                    // reset_source.reset
 	);
 
 	nios_system_char_lcd char_lcd (
@@ -374,28 +533,6 @@ module nios_system (
 		.debug_mem_slave_write               (mm_interconnect_0_cpu_debug_mem_slave_write),       //                          .write
 		.debug_mem_slave_writedata           (mm_interconnect_0_cpu_debug_mem_slave_writedata),   //                          .writedata
 		.dummy_ci_port                       ()                                                   // custom_instruction_master.readra
-	);
-
-	nios_system_dma_controller_foreground dma_controller_foreground (
-		.clk                  (sys_clk_out_clk),                                                                 //                      clk.clk
-		.reset                (rst_controller_reset_out_reset),                                                  //                    reset.reset
-		.master_address       (dma_controller_foreground_avalon_dma_master_address),                             //        avalon_dma_master.address
-		.master_waitrequest   (dma_controller_foreground_avalon_dma_master_waitrequest),                         //                         .waitrequest
-		.master_arbiterlock   (dma_controller_foreground_avalon_dma_master_lock),                                //                         .lock
-		.master_read          (dma_controller_foreground_avalon_dma_master_read),                                //                         .read
-		.master_readdata      (dma_controller_foreground_avalon_dma_master_readdata),                            //                         .readdata
-		.master_readdatavalid (dma_controller_foreground_avalon_dma_master_readdatavalid),                       //                         .readdatavalid
-		.slave_address        (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_address),    // avalon_dma_control_slave.address
-		.slave_byteenable     (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_byteenable), //                         .byteenable
-		.slave_read           (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_read),       //                         .read
-		.slave_write          (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_write),      //                         .write
-		.slave_writedata      (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_writedata),  //                         .writedata
-		.slave_readdata       (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_readdata),   //                         .readdata
-		.stream_ready         (dma_controller_foreground_avalon_pixel_source_ready),                             //      avalon_pixel_source.ready
-		.stream_data          (dma_controller_foreground_avalon_pixel_source_data),                              //                         .data
-		.stream_startofpacket (dma_controller_foreground_avalon_pixel_source_startofpacket),                     //                         .startofpacket
-		.stream_endofpacket   (dma_controller_foreground_avalon_pixel_source_endofpacket),                       //                         .endofpacket
-		.stream_valid         (dma_controller_foreground_avalon_pixel_source_valid)                              //                         .valid
 	);
 
 	nios_system_flash_bridge flash_bridge (
@@ -488,7 +625,7 @@ module nios_system (
 		.av_write_n     (~mm_interconnect_0_jtag_uart_avalon_jtag_slave_write),      //                  .write_n
 		.av_writedata   (mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata),   //                  .writedata
 		.av_waitrequest (mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest), //                  .waitrequest
-		.av_irq         (irq_mapper_receiver2_irq)                                   //               irq.irq
+		.av_irq         (irq_mapper_receiver6_irq)                                   //               irq.irq
 	);
 
 	nios_system_mtl_char_buffer mtl_char_buffer (
@@ -518,7 +655,7 @@ module nios_system (
 
 	nios_system_mtl_controller mtl_controller (
 		.clk           (mtl_clk_out_clk),                                             //                clk.clk
-		.reset         (rst_controller_001_reset_out_reset),                          //              reset.reset
+		.reset         (rst_controller_002_reset_out_reset),                          //              reset.reset
 		.data          (mtl_dual_clock_buffer_avalon_dc_buffer_source_data),          //    avalon_vga_sink.data
 		.startofpacket (mtl_dual_clock_buffer_avalon_dc_buffer_source_startofpacket), //                   .startofpacket
 		.endofpacket   (mtl_dual_clock_buffer_avalon_dc_buffer_source_endofpacket),   //                   .endofpacket
@@ -574,6 +711,60 @@ module nios_system (
 		.writedata     (mm_interconnect_0_performance_counter_control_slave_writedata)      //              .writedata
 	);
 
+	nios_system_pixel_buffer_dma_green pixel_buffer_dma_green (
+		.clk                  (sys_clk_out_clk),                                                          //                     clk.clk
+		.reset                (rst_controller_reset_out_reset),                                           //                   reset.reset
+		.master_readdatavalid (pixel_buffer_dma_green_avalon_pixel_dma_master_readdatavalid),             // avalon_pixel_dma_master.readdatavalid
+		.master_waitrequest   (pixel_buffer_dma_green_avalon_pixel_dma_master_waitrequest),               //                        .waitrequest
+		.master_address       (pixel_buffer_dma_green_avalon_pixel_dma_master_address),                   //                        .address
+		.master_arbiterlock   (pixel_buffer_dma_green_avalon_pixel_dma_master_lock),                      //                        .lock
+		.master_read          (pixel_buffer_dma_green_avalon_pixel_dma_master_read),                      //                        .read
+		.master_readdata      (pixel_buffer_dma_green_avalon_pixel_dma_master_readdata),                  //                        .readdata
+		.slave_address        (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_address),    //    avalon_control_slave.address
+		.slave_byteenable     (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_byteenable), //                        .byteenable
+		.slave_read           (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_read),       //                        .read
+		.slave_write          (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_write),      //                        .write
+		.slave_writedata      (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_writedata),  //                        .writedata
+		.slave_readdata       (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_readdata),   //                        .readdata
+		.stream_ready         (pixel_buffer_dma_green_avalon_pixel_source_ready),                         //     avalon_pixel_source.ready
+		.stream_startofpacket (pixel_buffer_dma_green_avalon_pixel_source_startofpacket),                 //                        .startofpacket
+		.stream_endofpacket   (pixel_buffer_dma_green_avalon_pixel_source_endofpacket),                   //                        .endofpacket
+		.stream_valid         (pixel_buffer_dma_green_avalon_pixel_source_valid),                         //                        .valid
+		.stream_data          (pixel_buffer_dma_green_avalon_pixel_source_data)                           //                        .data
+	);
+
+	nios_system_ps2_key ps2_key (
+		.clk         (sys_clk_out_clk),                                        //                clk.clk
+		.reset       (rst_controller_reset_out_reset),                         //              reset.reset
+		.address     (mm_interconnect_0_ps2_key_avalon_ps2_slave_address),     //   avalon_ps2_slave.address
+		.chipselect  (mm_interconnect_0_ps2_key_avalon_ps2_slave_chipselect),  //                   .chipselect
+		.byteenable  (mm_interconnect_0_ps2_key_avalon_ps2_slave_byteenable),  //                   .byteenable
+		.read        (mm_interconnect_0_ps2_key_avalon_ps2_slave_read),        //                   .read
+		.write       (mm_interconnect_0_ps2_key_avalon_ps2_slave_write),       //                   .write
+		.writedata   (mm_interconnect_0_ps2_key_avalon_ps2_slave_writedata),   //                   .writedata
+		.readdata    (mm_interconnect_0_ps2_key_avalon_ps2_slave_readdata),    //                   .readdata
+		.waitrequest (mm_interconnect_0_ps2_key_avalon_ps2_slave_waitrequest), //                   .waitrequest
+		.irq         (irq_mapper_receiver3_irq),                               //          interrupt.irq
+		.PS2_CLK     (ps2_key_external_interface_CLK),                         // external_interface.export
+		.PS2_DAT     (ps2_key_external_interface_DAT)                          //                   .export
+	);
+
+	nios_system_ps2_key ps2_mouse (
+		.clk         (sys_clk_out_clk),                                          //                clk.clk
+		.reset       (rst_controller_reset_out_reset),                           //              reset.reset
+		.address     (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_address),     //   avalon_ps2_slave.address
+		.chipselect  (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_chipselect),  //                   .chipselect
+		.byteenable  (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_byteenable),  //                   .byteenable
+		.read        (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_read),        //                   .read
+		.write       (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_write),       //                   .write
+		.writedata   (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_writedata),   //                   .writedata
+		.readdata    (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_readdata),    //                   .readdata
+		.waitrequest (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_waitrequest), //                   .waitrequest
+		.irq         (irq_mapper_receiver4_irq),                                 //          interrupt.irq
+		.PS2_CLK     (ps2_mouse_external_interface_CLK),                         // external_interface.export
+		.PS2_DAT     (ps2_mouse_external_interface_DAT)                          //                   .export
+	);
+
 	nios_system_pushbuttons pushbuttons (
 		.clk        (sys_clk_out_clk),                                                     //                        clk.clk
 		.reset      (rst_controller_reset_out_reset),                                      //                      reset.reset
@@ -601,35 +792,52 @@ module nios_system (
 		.LEDR       (red_leds_external_interface_export)                                //         external_interface.export
 	);
 
-	nios_system_rgb_resampler_foreground rgb_resampler_foreground (
-		.clk                      (sys_clk_out_clk),                                             //               clk.clk
-		.reset                    (rst_controller_reset_out_reset),                              //             reset.reset
-		.stream_in_startofpacket  (dma_controller_foreground_avalon_pixel_source_startofpacket), //   avalon_rgb_sink.startofpacket
-		.stream_in_endofpacket    (dma_controller_foreground_avalon_pixel_source_endofpacket),   //                  .endofpacket
-		.stream_in_valid          (dma_controller_foreground_avalon_pixel_source_valid),         //                  .valid
-		.stream_in_ready          (dma_controller_foreground_avalon_pixel_source_ready),         //                  .ready
-		.stream_in_data           (dma_controller_foreground_avalon_pixel_source_data),          //                  .data
-		.stream_out_ready         (rgb_resampler_foreground_avalon_rgb_source_ready),            // avalon_rgb_source.ready
-		.stream_out_startofpacket (rgb_resampler_foreground_avalon_rgb_source_startofpacket),    //                  .startofpacket
-		.stream_out_endofpacket   (rgb_resampler_foreground_avalon_rgb_source_endofpacket),      //                  .endofpacket
-		.stream_out_valid         (rgb_resampler_foreground_avalon_rgb_source_valid),            //                  .valid
-		.stream_out_data          (rgb_resampler_foreground_avalon_rgb_source_data)              //                  .data
+	nios_system_rgb_resampler_green rgb_resampler_green (
+		.clk                      (sys_clk_out_clk),                                          //               clk.clk
+		.reset                    (rst_controller_reset_out_reset),                           //             reset.reset
+		.stream_in_startofpacket  (pixel_buffer_dma_green_avalon_pixel_source_startofpacket), //   avalon_rgb_sink.startofpacket
+		.stream_in_endofpacket    (pixel_buffer_dma_green_avalon_pixel_source_endofpacket),   //                  .endofpacket
+		.stream_in_valid          (pixel_buffer_dma_green_avalon_pixel_source_valid),         //                  .valid
+		.stream_in_ready          (pixel_buffer_dma_green_avalon_pixel_source_ready),         //                  .ready
+		.stream_in_data           (pixel_buffer_dma_green_avalon_pixel_source_data),          //                  .data
+		.stream_out_ready         (rgb_resampler_green_avalon_rgb_source_ready),              // avalon_rgb_source.ready
+		.stream_out_startofpacket (rgb_resampler_green_avalon_rgb_source_startofpacket),      //                  .startofpacket
+		.stream_out_endofpacket   (rgb_resampler_green_avalon_rgb_source_endofpacket),        //                  .endofpacket
+		.stream_out_valid         (rgb_resampler_green_avalon_rgb_source_valid),              //                  .valid
+		.stream_out_data          (rgb_resampler_green_avalon_rgb_source_data)                //                  .data
 	);
 
-	nios_system_scaler_foreground scaler_foreground (
-		.clk                      (sys_clk_out_clk),                                          //                  clk.clk
-		.reset                    (rst_controller_reset_out_reset),                           //                reset.reset
-		.stream_in_startofpacket  (rgb_resampler_foreground_avalon_rgb_source_startofpacket), //   avalon_scaler_sink.startofpacket
-		.stream_in_endofpacket    (rgb_resampler_foreground_avalon_rgb_source_endofpacket),   //                     .endofpacket
-		.stream_in_valid          (rgb_resampler_foreground_avalon_rgb_source_valid),         //                     .valid
-		.stream_in_ready          (rgb_resampler_foreground_avalon_rgb_source_ready),         //                     .ready
-		.stream_in_data           (rgb_resampler_foreground_avalon_rgb_source_data),          //                     .data
-		.stream_out_ready         (scaler_foreground_avalon_scaler_source_ready),             // avalon_scaler_source.ready
-		.stream_out_startofpacket (scaler_foreground_avalon_scaler_source_startofpacket),     //                     .startofpacket
-		.stream_out_endofpacket   (scaler_foreground_avalon_scaler_source_endofpacket),       //                     .endofpacket
-		.stream_out_valid         (scaler_foreground_avalon_scaler_source_valid),             //                     .valid
-		.stream_out_data          (scaler_foreground_avalon_scaler_source_data),              //                     .data
-		.stream_out_channel       (scaler_foreground_avalon_scaler_source_channel)            //                     .channel
+	nios_system_scaler_green scaler_green (
+		.clk                      (sys_clk_out_clk),                                     //                  clk.clk
+		.reset                    (rst_controller_reset_out_reset),                      //                reset.reset
+		.stream_in_startofpacket  (rgb_resampler_green_avalon_rgb_source_startofpacket), //   avalon_scaler_sink.startofpacket
+		.stream_in_endofpacket    (rgb_resampler_green_avalon_rgb_source_endofpacket),   //                     .endofpacket
+		.stream_in_valid          (rgb_resampler_green_avalon_rgb_source_valid),         //                     .valid
+		.stream_in_ready          (rgb_resampler_green_avalon_rgb_source_ready),         //                     .ready
+		.stream_in_data           (rgb_resampler_green_avalon_rgb_source_data),          //                     .data
+		.stream_out_ready         (scaler_green_avalon_scaler_source_ready),             // avalon_scaler_source.ready
+		.stream_out_startofpacket (scaler_green_avalon_scaler_source_startofpacket),     //                     .startofpacket
+		.stream_out_endofpacket   (scaler_green_avalon_scaler_source_endofpacket),       //                     .endofpacket
+		.stream_out_valid         (scaler_green_avalon_scaler_source_valid),             //                     .valid
+		.stream_out_data          (scaler_green_avalon_scaler_source_data),              //                     .data
+		.stream_out_channel       (scaler_green_avalon_scaler_source_channel)            //                     .channel
+	);
+
+	Altera_UP_SD_Card_Avalon_Interface sd_card (
+		.i_avalon_chip_select (mm_interconnect_0_sd_card_avalon_sdcard_slave_chipselect),  // avalon_sdcard_slave.chipselect
+		.i_avalon_address     (mm_interconnect_0_sd_card_avalon_sdcard_slave_address),     //                    .address
+		.i_avalon_read        (mm_interconnect_0_sd_card_avalon_sdcard_slave_read),        //                    .read
+		.i_avalon_write       (mm_interconnect_0_sd_card_avalon_sdcard_slave_write),       //                    .write
+		.i_avalon_byteenable  (mm_interconnect_0_sd_card_avalon_sdcard_slave_byteenable),  //                    .byteenable
+		.i_avalon_writedata   (mm_interconnect_0_sd_card_avalon_sdcard_slave_writedata),   //                    .writedata
+		.o_avalon_readdata    (mm_interconnect_0_sd_card_avalon_sdcard_slave_readdata),    //                    .readdata
+		.o_avalon_waitrequest (mm_interconnect_0_sd_card_avalon_sdcard_slave_waitrequest), //                    .waitrequest
+		.i_clock              (sys_clk_out_clk),                                           //                 clk.clk
+		.i_reset_n            (~rst_controller_reset_out_reset),                           //               reset.reset_n
+		.b_SD_cmd             (sd_card_conduit_end_b_SD_cmd),                              //         conduit_end.export
+		.b_SD_dat             (sd_card_conduit_end_b_SD_dat),                              //                    .export
+		.b_SD_dat3            (sd_card_conduit_end_b_SD_dat3),                             //                    .export
+		.o_SD_clock           (sd_card_conduit_end_o_SD_clock)                             //                    .export
 	);
 
 	nios_system_sdram sdram (
@@ -653,6 +861,21 @@ module nios_system (
 		.zs_dqm         (sdram_wire_dqm),                           //      .export
 		.zs_ras_n       (sdram_wire_ras_n),                         //      .export
 		.zs_we_n        (sdram_wire_we_n)                           //      .export
+	);
+
+	nios_system_serial_port serial_port (
+		.clk        (sys_clk_out_clk),                                             //                clk.clk
+		.reset      (rst_controller_reset_out_reset),                              //              reset.reset
+		.address    (mm_interconnect_0_serial_port_avalon_rs232_slave_address),    // avalon_rs232_slave.address
+		.chipselect (mm_interconnect_0_serial_port_avalon_rs232_slave_chipselect), //                   .chipselect
+		.byteenable (mm_interconnect_0_serial_port_avalon_rs232_slave_byteenable), //                   .byteenable
+		.read       (mm_interconnect_0_serial_port_avalon_rs232_slave_read),       //                   .read
+		.write      (mm_interconnect_0_serial_port_avalon_rs232_slave_write),      //                   .write
+		.writedata  (mm_interconnect_0_serial_port_avalon_rs232_slave_writedata),  //                   .writedata
+		.readdata   (mm_interconnect_0_serial_port_avalon_rs232_slave_readdata),   //                   .readdata
+		.irq        (irq_mapper_receiver5_irq),                                    //          interrupt.irq
+		.UART_RXD   (serial_port_external_interface_RXD),                          // external_interface.export
+		.UART_TXD   (serial_port_external_interface_TXD)                           //                   .export
 	);
 
 	nios_system_sram sram (
@@ -711,7 +934,7 @@ module nios_system (
 		.readdata   (mm_interconnect_0_timer_s1_readdata),   //      .readdata
 		.chipselect (mm_interconnect_0_timer_s1_chipselect), //      .chipselect
 		.write_n    (~mm_interconnect_0_timer_s1_write),     //      .write_n
-		.irq        (irq_mapper_receiver3_irq)               //   irq.irq
+		.irq        (irq_mapper_receiver7_irq)               //   irq.irq
 	);
 
 	nios_system_video_chroma_resampler video_chroma_resampler (
@@ -732,11 +955,11 @@ module nios_system (
 	nios_system_video_clipper_normal video_clipper_normal (
 		.clk                      (sys_clk_out_clk),                                          //                   clk.clk
 		.reset                    (rst_controller_reset_out_reset),                           //                 reset.reset
-		.stream_in_data           (video_rgb_resampler_avalon_rgb_source_data),               //   avalon_clipper_sink.data
-		.stream_in_startofpacket  (video_rgb_resampler_avalon_rgb_source_startofpacket),      //                      .startofpacket
-		.stream_in_endofpacket    (video_rgb_resampler_avalon_rgb_source_endofpacket),        //                      .endofpacket
-		.stream_in_valid          (video_rgb_resampler_avalon_rgb_source_valid),              //                      .valid
-		.stream_in_ready          (video_rgb_resampler_avalon_rgb_source_ready),              //                      .ready
+		.stream_in_data           (video_scaler_normal_avalon_scaler_source_data),            //   avalon_clipper_sink.data
+		.stream_in_startofpacket  (video_scaler_normal_avalon_scaler_source_startofpacket),   //                      .startofpacket
+		.stream_in_endofpacket    (video_scaler_normal_avalon_scaler_source_endofpacket),     //                      .endofpacket
+		.stream_in_valid          (video_scaler_normal_avalon_scaler_source_valid),           //                      .valid
+		.stream_in_ready          (video_scaler_normal_avalon_scaler_source_ready),           //                      .ready
 		.stream_out_ready         (video_clipper_normal_avalon_clipper_source_ready),         // avalon_clipper_source.ready
 		.stream_out_data          (video_clipper_normal_avalon_clipper_source_data),          //                      .data
 		.stream_out_startofpacket (video_clipper_normal_avalon_clipper_source_startofpacket), //                      .startofpacket
@@ -779,11 +1002,11 @@ module nios_system (
 	nios_system_video_dma_controller_normal video_dma_controller_normal (
 		.clk                  (sys_clk_out_clk),                                                                   //                      clk.clk
 		.reset                (rst_controller_reset_out_reset),                                                    //                    reset.reset
-		.stream_data          (video_scaler_normal_avalon_scaler_source_data),                                     //          avalon_dma_sink.data
-		.stream_startofpacket (video_scaler_normal_avalon_scaler_source_startofpacket),                            //                         .startofpacket
-		.stream_endofpacket   (video_scaler_normal_avalon_scaler_source_endofpacket),                              //                         .endofpacket
-		.stream_valid         (video_scaler_normal_avalon_scaler_source_valid),                                    //                         .valid
-		.stream_ready         (video_scaler_normal_avalon_scaler_source_ready),                                    //                         .ready
+		.stream_data          (video_clipper_normal_avalon_clipper_source_data),                                   //          avalon_dma_sink.data
+		.stream_startofpacket (video_clipper_normal_avalon_clipper_source_startofpacket),                          //                         .startofpacket
+		.stream_endofpacket   (video_clipper_normal_avalon_clipper_source_endofpacket),                            //                         .endofpacket
+		.stream_valid         (video_clipper_normal_avalon_clipper_source_valid),                                  //                         .valid
+		.stream_ready         (video_clipper_normal_avalon_clipper_source_ready),                                  //                         .ready
 		.slave_address        (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_address),    // avalon_dma_control_slave.address
 		.slave_byteenable     (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_byteenable), //                         .byteenable
 		.slave_read           (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_read),       //                         .read
@@ -819,170 +1042,228 @@ module nios_system (
 	);
 
 	nios_system_video_scaler_normal video_scaler_normal (
-		.clk                      (sys_clk_out_clk),                                          //                  clk.clk
-		.reset                    (rst_controller_reset_out_reset),                           //                reset.reset
-		.stream_in_startofpacket  (video_clipper_normal_avalon_clipper_source_startofpacket), //   avalon_scaler_sink.startofpacket
-		.stream_in_endofpacket    (video_clipper_normal_avalon_clipper_source_endofpacket),   //                     .endofpacket
-		.stream_in_valid          (video_clipper_normal_avalon_clipper_source_valid),         //                     .valid
-		.stream_in_ready          (video_clipper_normal_avalon_clipper_source_ready),         //                     .ready
-		.stream_in_data           (video_clipper_normal_avalon_clipper_source_data),          //                     .data
-		.stream_out_ready         (video_scaler_normal_avalon_scaler_source_ready),           // avalon_scaler_source.ready
-		.stream_out_startofpacket (video_scaler_normal_avalon_scaler_source_startofpacket),   //                     .startofpacket
-		.stream_out_endofpacket   (video_scaler_normal_avalon_scaler_source_endofpacket),     //                     .endofpacket
-		.stream_out_valid         (video_scaler_normal_avalon_scaler_source_valid),           //                     .valid
-		.stream_out_data          (video_scaler_normal_avalon_scaler_source_data)             //                     .data
+		.clk                      (sys_clk_out_clk),                                        //                  clk.clk
+		.reset                    (rst_controller_reset_out_reset),                         //                reset.reset
+		.stream_in_startofpacket  (video_rgb_resampler_avalon_rgb_source_startofpacket),    //   avalon_scaler_sink.startofpacket
+		.stream_in_endofpacket    (video_rgb_resampler_avalon_rgb_source_endofpacket),      //                     .endofpacket
+		.stream_in_valid          (video_rgb_resampler_avalon_rgb_source_valid),            //                     .valid
+		.stream_in_ready          (video_rgb_resampler_avalon_rgb_source_ready),            //                     .ready
+		.stream_in_data           (video_rgb_resampler_avalon_rgb_source_data),             //                     .data
+		.stream_out_ready         (video_scaler_normal_avalon_scaler_source_ready),         // avalon_scaler_source.ready
+		.stream_out_startofpacket (video_scaler_normal_avalon_scaler_source_startofpacket), //                     .startofpacket
+		.stream_out_endofpacket   (video_scaler_normal_avalon_scaler_source_endofpacket),   //                     .endofpacket
+		.stream_out_valid         (video_scaler_normal_avalon_scaler_source_valid),         //                     .valid
+		.stream_out_data          (video_scaler_normal_avalon_scaler_source_data)           //                     .data
 	);
 
 	nios_system_mm_interconnect_0 mm_interconnect_0 (
-		.sys_sdram_pll_sys_clk_clk                                       (sys_clk_out_clk),                                                                   //                                 sys_sdram_pll_sys_clk.clk
-		.dma_controller_foreground_reset_reset_bridge_in_reset_reset     (rst_controller_reset_out_reset),                                                    // dma_controller_foreground_reset_reset_bridge_in_reset.reset
-		.cpu_data_master_address                                         (cpu_data_master_address),                                                           //                                       cpu_data_master.address
-		.cpu_data_master_waitrequest                                     (cpu_data_master_waitrequest),                                                       //                                                      .waitrequest
-		.cpu_data_master_byteenable                                      (cpu_data_master_byteenable),                                                        //                                                      .byteenable
-		.cpu_data_master_read                                            (cpu_data_master_read),                                                              //                                                      .read
-		.cpu_data_master_readdata                                        (cpu_data_master_readdata),                                                          //                                                      .readdata
-		.cpu_data_master_readdatavalid                                   (cpu_data_master_readdatavalid),                                                     //                                                      .readdatavalid
-		.cpu_data_master_write                                           (cpu_data_master_write),                                                             //                                                      .write
-		.cpu_data_master_writedata                                       (cpu_data_master_writedata),                                                         //                                                      .writedata
-		.cpu_data_master_debugaccess                                     (cpu_data_master_debugaccess),                                                       //                                                      .debugaccess
-		.cpu_instruction_master_address                                  (cpu_instruction_master_address),                                                    //                                cpu_instruction_master.address
-		.cpu_instruction_master_waitrequest                              (cpu_instruction_master_waitrequest),                                                //                                                      .waitrequest
-		.cpu_instruction_master_read                                     (cpu_instruction_master_read),                                                       //                                                      .read
-		.cpu_instruction_master_readdata                                 (cpu_instruction_master_readdata),                                                   //                                                      .readdata
-		.cpu_instruction_master_readdatavalid                            (cpu_instruction_master_readdatavalid),                                              //                                                      .readdatavalid
-		.dma_controller_foreground_avalon_dma_master_address             (dma_controller_foreground_avalon_dma_master_address),                               //           dma_controller_foreground_avalon_dma_master.address
-		.dma_controller_foreground_avalon_dma_master_waitrequest         (dma_controller_foreground_avalon_dma_master_waitrequest),                           //                                                      .waitrequest
-		.dma_controller_foreground_avalon_dma_master_read                (dma_controller_foreground_avalon_dma_master_read),                                  //                                                      .read
-		.dma_controller_foreground_avalon_dma_master_readdata            (dma_controller_foreground_avalon_dma_master_readdata),                              //                                                      .readdata
-		.dma_controller_foreground_avalon_dma_master_readdatavalid       (dma_controller_foreground_avalon_dma_master_readdatavalid),                         //                                                      .readdatavalid
-		.dma_controller_foreground_avalon_dma_master_lock                (dma_controller_foreground_avalon_dma_master_lock),                                  //                                                      .lock
-		.video_dma_controller_normal_avalon_dma_master_address           (video_dma_controller_normal_avalon_dma_master_address),                             //         video_dma_controller_normal_avalon_dma_master.address
-		.video_dma_controller_normal_avalon_dma_master_waitrequest       (video_dma_controller_normal_avalon_dma_master_waitrequest),                         //                                                      .waitrequest
-		.video_dma_controller_normal_avalon_dma_master_write             (video_dma_controller_normal_avalon_dma_master_write),                               //                                                      .write
-		.video_dma_controller_normal_avalon_dma_master_writedata         (video_dma_controller_normal_avalon_dma_master_writedata),                           //                                                      .writedata
-		.char_lcd_avalon_lcd_slave_address                               (mm_interconnect_0_char_lcd_avalon_lcd_slave_address),                               //                             char_lcd_avalon_lcd_slave.address
-		.char_lcd_avalon_lcd_slave_write                                 (mm_interconnect_0_char_lcd_avalon_lcd_slave_write),                                 //                                                      .write
-		.char_lcd_avalon_lcd_slave_read                                  (mm_interconnect_0_char_lcd_avalon_lcd_slave_read),                                  //                                                      .read
-		.char_lcd_avalon_lcd_slave_readdata                              (mm_interconnect_0_char_lcd_avalon_lcd_slave_readdata),                              //                                                      .readdata
-		.char_lcd_avalon_lcd_slave_writedata                             (mm_interconnect_0_char_lcd_avalon_lcd_slave_writedata),                             //                                                      .writedata
-		.char_lcd_avalon_lcd_slave_waitrequest                           (mm_interconnect_0_char_lcd_avalon_lcd_slave_waitrequest),                           //                                                      .waitrequest
-		.char_lcd_avalon_lcd_slave_chipselect                            (mm_interconnect_0_char_lcd_avalon_lcd_slave_chipselect),                            //                                                      .chipselect
-		.cpu_debug_mem_slave_address                                     (mm_interconnect_0_cpu_debug_mem_slave_address),                                     //                                   cpu_debug_mem_slave.address
-		.cpu_debug_mem_slave_write                                       (mm_interconnect_0_cpu_debug_mem_slave_write),                                       //                                                      .write
-		.cpu_debug_mem_slave_read                                        (mm_interconnect_0_cpu_debug_mem_slave_read),                                        //                                                      .read
-		.cpu_debug_mem_slave_readdata                                    (mm_interconnect_0_cpu_debug_mem_slave_readdata),                                    //                                                      .readdata
-		.cpu_debug_mem_slave_writedata                                   (mm_interconnect_0_cpu_debug_mem_slave_writedata),                                   //                                                      .writedata
-		.cpu_debug_mem_slave_byteenable                                  (mm_interconnect_0_cpu_debug_mem_slave_byteenable),                                  //                                                      .byteenable
-		.cpu_debug_mem_slave_waitrequest                                 (mm_interconnect_0_cpu_debug_mem_slave_waitrequest),                                 //                                                      .waitrequest
-		.cpu_debug_mem_slave_debugaccess                                 (mm_interconnect_0_cpu_debug_mem_slave_debugaccess),                                 //                                                      .debugaccess
-		.dma_controller_foreground_avalon_dma_control_slave_address      (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_address),      //    dma_controller_foreground_avalon_dma_control_slave.address
-		.dma_controller_foreground_avalon_dma_control_slave_write        (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_write),        //                                                      .write
-		.dma_controller_foreground_avalon_dma_control_slave_read         (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_read),         //                                                      .read
-		.dma_controller_foreground_avalon_dma_control_slave_readdata     (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_readdata),     //                                                      .readdata
-		.dma_controller_foreground_avalon_dma_control_slave_writedata    (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_writedata),    //                                                      .writedata
-		.dma_controller_foreground_avalon_dma_control_slave_byteenable   (mm_interconnect_0_dma_controller_foreground_avalon_dma_control_slave_byteenable),   //                                                      .byteenable
-		.flash_controller_uas_address                                    (mm_interconnect_0_flash_controller_uas_address),                                    //                                  flash_controller_uas.address
-		.flash_controller_uas_write                                      (mm_interconnect_0_flash_controller_uas_write),                                      //                                                      .write
-		.flash_controller_uas_read                                       (mm_interconnect_0_flash_controller_uas_read),                                       //                                                      .read
-		.flash_controller_uas_readdata                                   (mm_interconnect_0_flash_controller_uas_readdata),                                   //                                                      .readdata
-		.flash_controller_uas_writedata                                  (mm_interconnect_0_flash_controller_uas_writedata),                                  //                                                      .writedata
-		.flash_controller_uas_burstcount                                 (mm_interconnect_0_flash_controller_uas_burstcount),                                 //                                                      .burstcount
-		.flash_controller_uas_byteenable                                 (mm_interconnect_0_flash_controller_uas_byteenable),                                 //                                                      .byteenable
-		.flash_controller_uas_readdatavalid                              (mm_interconnect_0_flash_controller_uas_readdatavalid),                              //                                                      .readdatavalid
-		.flash_controller_uas_waitrequest                                (mm_interconnect_0_flash_controller_uas_waitrequest),                                //                                                      .waitrequest
-		.flash_controller_uas_lock                                       (mm_interconnect_0_flash_controller_uas_lock),                                       //                                                      .lock
-		.flash_controller_uas_debugaccess                                (mm_interconnect_0_flash_controller_uas_debugaccess),                                //                                                      .debugaccess
-		.Green_LED_avalon_parallel_port_slave_address                    (mm_interconnect_0_green_led_avalon_parallel_port_slave_address),                    //                  Green_LED_avalon_parallel_port_slave.address
-		.Green_LED_avalon_parallel_port_slave_write                      (mm_interconnect_0_green_led_avalon_parallel_port_slave_write),                      //                                                      .write
-		.Green_LED_avalon_parallel_port_slave_read                       (mm_interconnect_0_green_led_avalon_parallel_port_slave_read),                       //                                                      .read
-		.Green_LED_avalon_parallel_port_slave_readdata                   (mm_interconnect_0_green_led_avalon_parallel_port_slave_readdata),                   //                                                      .readdata
-		.Green_LED_avalon_parallel_port_slave_writedata                  (mm_interconnect_0_green_led_avalon_parallel_port_slave_writedata),                  //                                                      .writedata
-		.Green_LED_avalon_parallel_port_slave_byteenable                 (mm_interconnect_0_green_led_avalon_parallel_port_slave_byteenable),                 //                                                      .byteenable
-		.Green_LED_avalon_parallel_port_slave_chipselect                 (mm_interconnect_0_green_led_avalon_parallel_port_slave_chipselect),                 //                                                      .chipselect
-		.jtag_uart_avalon_jtag_slave_address                             (mm_interconnect_0_jtag_uart_avalon_jtag_slave_address),                             //                           jtag_uart_avalon_jtag_slave.address
-		.jtag_uart_avalon_jtag_slave_write                               (mm_interconnect_0_jtag_uart_avalon_jtag_slave_write),                               //                                                      .write
-		.jtag_uart_avalon_jtag_slave_read                                (mm_interconnect_0_jtag_uart_avalon_jtag_slave_read),                                //                                                      .read
-		.jtag_uart_avalon_jtag_slave_readdata                            (mm_interconnect_0_jtag_uart_avalon_jtag_slave_readdata),                            //                                                      .readdata
-		.jtag_uart_avalon_jtag_slave_writedata                           (mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata),                           //                                                      .writedata
-		.jtag_uart_avalon_jtag_slave_waitrequest                         (mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest),                         //                                                      .waitrequest
-		.jtag_uart_avalon_jtag_slave_chipselect                          (mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect),                          //                                                      .chipselect
-		.mtl_char_buffer_avalon_char_buffer_slave_address                (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_address),                //              mtl_char_buffer_avalon_char_buffer_slave.address
-		.mtl_char_buffer_avalon_char_buffer_slave_write                  (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_write),                  //                                                      .write
-		.mtl_char_buffer_avalon_char_buffer_slave_read                   (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_read),                   //                                                      .read
-		.mtl_char_buffer_avalon_char_buffer_slave_readdata               (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_readdata),               //                                                      .readdata
-		.mtl_char_buffer_avalon_char_buffer_slave_writedata              (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_writedata),              //                                                      .writedata
-		.mtl_char_buffer_avalon_char_buffer_slave_byteenable             (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_byteenable),             //                                                      .byteenable
-		.mtl_char_buffer_avalon_char_buffer_slave_waitrequest            (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_waitrequest),            //                                                      .waitrequest
-		.mtl_char_buffer_avalon_char_buffer_slave_chipselect             (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_chipselect),             //                                                      .chipselect
-		.mtl_char_buffer_avalon_char_control_slave_address               (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_address),               //             mtl_char_buffer_avalon_char_control_slave.address
-		.mtl_char_buffer_avalon_char_control_slave_write                 (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_write),                 //                                                      .write
-		.mtl_char_buffer_avalon_char_control_slave_read                  (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_read),                  //                                                      .read
-		.mtl_char_buffer_avalon_char_control_slave_readdata              (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_readdata),              //                                                      .readdata
-		.mtl_char_buffer_avalon_char_control_slave_writedata             (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_writedata),             //                                                      .writedata
-		.mtl_char_buffer_avalon_char_control_slave_byteenable            (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_byteenable),            //                                                      .byteenable
-		.mtl_char_buffer_avalon_char_control_slave_chipselect            (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_chipselect),            //                                                      .chipselect
-		.onchip_memory_s1_address                                        (mm_interconnect_0_onchip_memory_s1_address),                                        //                                      onchip_memory_s1.address
-		.onchip_memory_s1_write                                          (mm_interconnect_0_onchip_memory_s1_write),                                          //                                                      .write
-		.onchip_memory_s1_readdata                                       (mm_interconnect_0_onchip_memory_s1_readdata),                                       //                                                      .readdata
-		.onchip_memory_s1_writedata                                      (mm_interconnect_0_onchip_memory_s1_writedata),                                      //                                                      .writedata
-		.onchip_memory_s1_byteenable                                     (mm_interconnect_0_onchip_memory_s1_byteenable),                                     //                                                      .byteenable
-		.onchip_memory_s1_chipselect                                     (mm_interconnect_0_onchip_memory_s1_chipselect),                                     //                                                      .chipselect
-		.onchip_memory_s1_clken                                          (mm_interconnect_0_onchip_memory_s1_clken),                                          //                                                      .clken
-		.performance_counter_control_slave_address                       (mm_interconnect_0_performance_counter_control_slave_address),                       //                     performance_counter_control_slave.address
-		.performance_counter_control_slave_write                         (mm_interconnect_0_performance_counter_control_slave_write),                         //                                                      .write
-		.performance_counter_control_slave_readdata                      (mm_interconnect_0_performance_counter_control_slave_readdata),                      //                                                      .readdata
-		.performance_counter_control_slave_writedata                     (mm_interconnect_0_performance_counter_control_slave_writedata),                     //                                                      .writedata
-		.performance_counter_control_slave_begintransfer                 (mm_interconnect_0_performance_counter_control_slave_begintransfer),                 //                                                      .begintransfer
-		.pushbuttons_avalon_parallel_port_slave_address                  (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_address),                  //                pushbuttons_avalon_parallel_port_slave.address
-		.pushbuttons_avalon_parallel_port_slave_write                    (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_write),                    //                                                      .write
-		.pushbuttons_avalon_parallel_port_slave_read                     (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_read),                     //                                                      .read
-		.pushbuttons_avalon_parallel_port_slave_readdata                 (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_readdata),                 //                                                      .readdata
-		.pushbuttons_avalon_parallel_port_slave_writedata                (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_writedata),                //                                                      .writedata
-		.pushbuttons_avalon_parallel_port_slave_byteenable               (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_byteenable),               //                                                      .byteenable
-		.pushbuttons_avalon_parallel_port_slave_chipselect               (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_chipselect),               //                                                      .chipselect
-		.red_LEDs_avalon_parallel_port_slave_address                     (mm_interconnect_0_red_leds_avalon_parallel_port_slave_address),                     //                   red_LEDs_avalon_parallel_port_slave.address
-		.red_LEDs_avalon_parallel_port_slave_write                       (mm_interconnect_0_red_leds_avalon_parallel_port_slave_write),                       //                                                      .write
-		.red_LEDs_avalon_parallel_port_slave_read                        (mm_interconnect_0_red_leds_avalon_parallel_port_slave_read),                        //                                                      .read
-		.red_LEDs_avalon_parallel_port_slave_readdata                    (mm_interconnect_0_red_leds_avalon_parallel_port_slave_readdata),                    //                                                      .readdata
-		.red_LEDs_avalon_parallel_port_slave_writedata                   (mm_interconnect_0_red_leds_avalon_parallel_port_slave_writedata),                   //                                                      .writedata
-		.red_LEDs_avalon_parallel_port_slave_byteenable                  (mm_interconnect_0_red_leds_avalon_parallel_port_slave_byteenable),                  //                                                      .byteenable
-		.red_LEDs_avalon_parallel_port_slave_chipselect                  (mm_interconnect_0_red_leds_avalon_parallel_port_slave_chipselect),                  //                                                      .chipselect
-		.sdram_s1_address                                                (mm_interconnect_0_sdram_s1_address),                                                //                                              sdram_s1.address
-		.sdram_s1_write                                                  (mm_interconnect_0_sdram_s1_write),                                                  //                                                      .write
-		.sdram_s1_read                                                   (mm_interconnect_0_sdram_s1_read),                                                   //                                                      .read
-		.sdram_s1_readdata                                               (mm_interconnect_0_sdram_s1_readdata),                                               //                                                      .readdata
-		.sdram_s1_writedata                                              (mm_interconnect_0_sdram_s1_writedata),                                              //                                                      .writedata
-		.sdram_s1_byteenable                                             (mm_interconnect_0_sdram_s1_byteenable),                                             //                                                      .byteenable
-		.sdram_s1_readdatavalid                                          (mm_interconnect_0_sdram_s1_readdatavalid),                                          //                                                      .readdatavalid
-		.sdram_s1_waitrequest                                            (mm_interconnect_0_sdram_s1_waitrequest),                                            //                                                      .waitrequest
-		.sdram_s1_chipselect                                             (mm_interconnect_0_sdram_s1_chipselect),                                             //                                                      .chipselect
-		.sram_avalon_sram_slave_address                                  (mm_interconnect_0_sram_avalon_sram_slave_address),                                  //                                sram_avalon_sram_slave.address
-		.sram_avalon_sram_slave_write                                    (mm_interconnect_0_sram_avalon_sram_slave_write),                                    //                                                      .write
-		.sram_avalon_sram_slave_read                                     (mm_interconnect_0_sram_avalon_sram_slave_read),                                     //                                                      .read
-		.sram_avalon_sram_slave_readdata                                 (mm_interconnect_0_sram_avalon_sram_slave_readdata),                                 //                                                      .readdata
-		.sram_avalon_sram_slave_writedata                                (mm_interconnect_0_sram_avalon_sram_slave_writedata),                                //                                                      .writedata
-		.sram_avalon_sram_slave_byteenable                               (mm_interconnect_0_sram_avalon_sram_slave_byteenable),                               //                                                      .byteenable
-		.sram_avalon_sram_slave_readdatavalid                            (mm_interconnect_0_sram_avalon_sram_slave_readdatavalid),                            //                                                      .readdatavalid
-		.switches_avalon_parallel_port_slave_address                     (mm_interconnect_0_switches_avalon_parallel_port_slave_address),                     //                   switches_avalon_parallel_port_slave.address
-		.switches_avalon_parallel_port_slave_write                       (mm_interconnect_0_switches_avalon_parallel_port_slave_write),                       //                                                      .write
-		.switches_avalon_parallel_port_slave_read                        (mm_interconnect_0_switches_avalon_parallel_port_slave_read),                        //                                                      .read
-		.switches_avalon_parallel_port_slave_readdata                    (mm_interconnect_0_switches_avalon_parallel_port_slave_readdata),                    //                                                      .readdata
-		.switches_avalon_parallel_port_slave_writedata                   (mm_interconnect_0_switches_avalon_parallel_port_slave_writedata),                   //                                                      .writedata
-		.switches_avalon_parallel_port_slave_byteenable                  (mm_interconnect_0_switches_avalon_parallel_port_slave_byteenable),                  //                                                      .byteenable
-		.switches_avalon_parallel_port_slave_chipselect                  (mm_interconnect_0_switches_avalon_parallel_port_slave_chipselect),                  //                                                      .chipselect
-		.sysid_control_slave_address                                     (mm_interconnect_0_sysid_control_slave_address),                                     //                                   sysid_control_slave.address
-		.sysid_control_slave_readdata                                    (mm_interconnect_0_sysid_control_slave_readdata),                                    //                                                      .readdata
-		.timer_s1_address                                                (mm_interconnect_0_timer_s1_address),                                                //                                              timer_s1.address
-		.timer_s1_write                                                  (mm_interconnect_0_timer_s1_write),                                                  //                                                      .write
-		.timer_s1_readdata                                               (mm_interconnect_0_timer_s1_readdata),                                               //                                                      .readdata
-		.timer_s1_writedata                                              (mm_interconnect_0_timer_s1_writedata),                                              //                                                      .writedata
-		.timer_s1_chipselect                                             (mm_interconnect_0_timer_s1_chipselect),                                             //                                                      .chipselect
-		.video_dma_controller_normal_avalon_dma_control_slave_address    (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_address),    //  video_dma_controller_normal_avalon_dma_control_slave.address
-		.video_dma_controller_normal_avalon_dma_control_slave_write      (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_write),      //                                                      .write
-		.video_dma_controller_normal_avalon_dma_control_slave_read       (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_read),       //                                                      .read
-		.video_dma_controller_normal_avalon_dma_control_slave_readdata   (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_readdata),   //                                                      .readdata
-		.video_dma_controller_normal_avalon_dma_control_slave_writedata  (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_writedata),  //                                                      .writedata
-		.video_dma_controller_normal_avalon_dma_control_slave_byteenable (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_byteenable)  //                                                      .byteenable
+		.sys_sdram_pll_sys_clk_clk                                       (sys_clk_out_clk),                                                                   //                                   sys_sdram_pll_sys_clk.clk
+		.video_dma_controller_normal_reset_reset_bridge_in_reset_reset   (rst_controller_reset_out_reset),                                                    // video_dma_controller_normal_reset_reset_bridge_in_reset.reset
+		.cpu_data_master_address                                         (cpu_data_master_address),                                                           //                                         cpu_data_master.address
+		.cpu_data_master_waitrequest                                     (cpu_data_master_waitrequest),                                                       //                                                        .waitrequest
+		.cpu_data_master_byteenable                                      (cpu_data_master_byteenable),                                                        //                                                        .byteenable
+		.cpu_data_master_read                                            (cpu_data_master_read),                                                              //                                                        .read
+		.cpu_data_master_readdata                                        (cpu_data_master_readdata),                                                          //                                                        .readdata
+		.cpu_data_master_readdatavalid                                   (cpu_data_master_readdatavalid),                                                     //                                                        .readdatavalid
+		.cpu_data_master_write                                           (cpu_data_master_write),                                                             //                                                        .write
+		.cpu_data_master_writedata                                       (cpu_data_master_writedata),                                                         //                                                        .writedata
+		.cpu_data_master_debugaccess                                     (cpu_data_master_debugaccess),                                                       //                                                        .debugaccess
+		.cpu_instruction_master_address                                  (cpu_instruction_master_address),                                                    //                                  cpu_instruction_master.address
+		.cpu_instruction_master_waitrequest                              (cpu_instruction_master_waitrequest),                                                //                                                        .waitrequest
+		.cpu_instruction_master_read                                     (cpu_instruction_master_read),                                                       //                                                        .read
+		.cpu_instruction_master_readdata                                 (cpu_instruction_master_readdata),                                                   //                                                        .readdata
+		.cpu_instruction_master_readdatavalid                            (cpu_instruction_master_readdatavalid),                                              //                                                        .readdatavalid
+		.pixel_buffer_dma_green_avalon_pixel_dma_master_address          (pixel_buffer_dma_green_avalon_pixel_dma_master_address),                            //          pixel_buffer_dma_green_avalon_pixel_dma_master.address
+		.pixel_buffer_dma_green_avalon_pixel_dma_master_waitrequest      (pixel_buffer_dma_green_avalon_pixel_dma_master_waitrequest),                        //                                                        .waitrequest
+		.pixel_buffer_dma_green_avalon_pixel_dma_master_read             (pixel_buffer_dma_green_avalon_pixel_dma_master_read),                               //                                                        .read
+		.pixel_buffer_dma_green_avalon_pixel_dma_master_readdata         (pixel_buffer_dma_green_avalon_pixel_dma_master_readdata),                           //                                                        .readdata
+		.pixel_buffer_dma_green_avalon_pixel_dma_master_readdatavalid    (pixel_buffer_dma_green_avalon_pixel_dma_master_readdatavalid),                      //                                                        .readdatavalid
+		.pixel_buffer_dma_green_avalon_pixel_dma_master_lock             (pixel_buffer_dma_green_avalon_pixel_dma_master_lock),                               //                                                        .lock
+		.video_dma_controller_normal_avalon_dma_master_address           (video_dma_controller_normal_avalon_dma_master_address),                             //           video_dma_controller_normal_avalon_dma_master.address
+		.video_dma_controller_normal_avalon_dma_master_waitrequest       (video_dma_controller_normal_avalon_dma_master_waitrequest),                         //                                                        .waitrequest
+		.video_dma_controller_normal_avalon_dma_master_write             (video_dma_controller_normal_avalon_dma_master_write),                               //                                                        .write
+		.video_dma_controller_normal_avalon_dma_master_writedata         (video_dma_controller_normal_avalon_dma_master_writedata),                           //                                                        .writedata
+		.audio_avalon_audio_slave_address                                (mm_interconnect_0_audio_avalon_audio_slave_address),                                //                                audio_avalon_audio_slave.address
+		.audio_avalon_audio_slave_write                                  (mm_interconnect_0_audio_avalon_audio_slave_write),                                  //                                                        .write
+		.audio_avalon_audio_slave_read                                   (mm_interconnect_0_audio_avalon_audio_slave_read),                                   //                                                        .read
+		.audio_avalon_audio_slave_readdata                               (mm_interconnect_0_audio_avalon_audio_slave_readdata),                               //                                                        .readdata
+		.audio_avalon_audio_slave_writedata                              (mm_interconnect_0_audio_avalon_audio_slave_writedata),                              //                                                        .writedata
+		.audio_avalon_audio_slave_chipselect                             (mm_interconnect_0_audio_avalon_audio_slave_chipselect),                             //                                                        .chipselect
+		.audio_and_video_config_avalon_av_config_slave_address           (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_address),           //           audio_and_video_config_avalon_av_config_slave.address
+		.audio_and_video_config_avalon_av_config_slave_write             (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_write),             //                                                        .write
+		.audio_and_video_config_avalon_av_config_slave_read              (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_read),              //                                                        .read
+		.audio_and_video_config_avalon_av_config_slave_readdata          (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_readdata),          //                                                        .readdata
+		.audio_and_video_config_avalon_av_config_slave_writedata         (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_writedata),         //                                                        .writedata
+		.audio_and_video_config_avalon_av_config_slave_byteenable        (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_byteenable),        //                                                        .byteenable
+		.audio_and_video_config_avalon_av_config_slave_waitrequest       (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_waitrequest),       //                                                        .waitrequest
+		.char_lcd_avalon_lcd_slave_address                               (mm_interconnect_0_char_lcd_avalon_lcd_slave_address),                               //                               char_lcd_avalon_lcd_slave.address
+		.char_lcd_avalon_lcd_slave_write                                 (mm_interconnect_0_char_lcd_avalon_lcd_slave_write),                                 //                                                        .write
+		.char_lcd_avalon_lcd_slave_read                                  (mm_interconnect_0_char_lcd_avalon_lcd_slave_read),                                  //                                                        .read
+		.char_lcd_avalon_lcd_slave_readdata                              (mm_interconnect_0_char_lcd_avalon_lcd_slave_readdata),                              //                                                        .readdata
+		.char_lcd_avalon_lcd_slave_writedata                             (mm_interconnect_0_char_lcd_avalon_lcd_slave_writedata),                             //                                                        .writedata
+		.char_lcd_avalon_lcd_slave_waitrequest                           (mm_interconnect_0_char_lcd_avalon_lcd_slave_waitrequest),                           //                                                        .waitrequest
+		.char_lcd_avalon_lcd_slave_chipselect                            (mm_interconnect_0_char_lcd_avalon_lcd_slave_chipselect),                            //                                                        .chipselect
+		.cpu_debug_mem_slave_address                                     (mm_interconnect_0_cpu_debug_mem_slave_address),                                     //                                     cpu_debug_mem_slave.address
+		.cpu_debug_mem_slave_write                                       (mm_interconnect_0_cpu_debug_mem_slave_write),                                       //                                                        .write
+		.cpu_debug_mem_slave_read                                        (mm_interconnect_0_cpu_debug_mem_slave_read),                                        //                                                        .read
+		.cpu_debug_mem_slave_readdata                                    (mm_interconnect_0_cpu_debug_mem_slave_readdata),                                    //                                                        .readdata
+		.cpu_debug_mem_slave_writedata                                   (mm_interconnect_0_cpu_debug_mem_slave_writedata),                                   //                                                        .writedata
+		.cpu_debug_mem_slave_byteenable                                  (mm_interconnect_0_cpu_debug_mem_slave_byteenable),                                  //                                                        .byteenable
+		.cpu_debug_mem_slave_waitrequest                                 (mm_interconnect_0_cpu_debug_mem_slave_waitrequest),                                 //                                                        .waitrequest
+		.cpu_debug_mem_slave_debugaccess                                 (mm_interconnect_0_cpu_debug_mem_slave_debugaccess),                                 //                                                        .debugaccess
+		.flash_controller_uas_address                                    (mm_interconnect_0_flash_controller_uas_address),                                    //                                    flash_controller_uas.address
+		.flash_controller_uas_write                                      (mm_interconnect_0_flash_controller_uas_write),                                      //                                                        .write
+		.flash_controller_uas_read                                       (mm_interconnect_0_flash_controller_uas_read),                                       //                                                        .read
+		.flash_controller_uas_readdata                                   (mm_interconnect_0_flash_controller_uas_readdata),                                   //                                                        .readdata
+		.flash_controller_uas_writedata                                  (mm_interconnect_0_flash_controller_uas_writedata),                                  //                                                        .writedata
+		.flash_controller_uas_burstcount                                 (mm_interconnect_0_flash_controller_uas_burstcount),                                 //                                                        .burstcount
+		.flash_controller_uas_byteenable                                 (mm_interconnect_0_flash_controller_uas_byteenable),                                 //                                                        .byteenable
+		.flash_controller_uas_readdatavalid                              (mm_interconnect_0_flash_controller_uas_readdatavalid),                              //                                                        .readdatavalid
+		.flash_controller_uas_waitrequest                                (mm_interconnect_0_flash_controller_uas_waitrequest),                                //                                                        .waitrequest
+		.flash_controller_uas_lock                                       (mm_interconnect_0_flash_controller_uas_lock),                                       //                                                        .lock
+		.flash_controller_uas_debugaccess                                (mm_interconnect_0_flash_controller_uas_debugaccess),                                //                                                        .debugaccess
+		.Green_LED_avalon_parallel_port_slave_address                    (mm_interconnect_0_green_led_avalon_parallel_port_slave_address),                    //                    Green_LED_avalon_parallel_port_slave.address
+		.Green_LED_avalon_parallel_port_slave_write                      (mm_interconnect_0_green_led_avalon_parallel_port_slave_write),                      //                                                        .write
+		.Green_LED_avalon_parallel_port_slave_read                       (mm_interconnect_0_green_led_avalon_parallel_port_slave_read),                       //                                                        .read
+		.Green_LED_avalon_parallel_port_slave_readdata                   (mm_interconnect_0_green_led_avalon_parallel_port_slave_readdata),                   //                                                        .readdata
+		.Green_LED_avalon_parallel_port_slave_writedata                  (mm_interconnect_0_green_led_avalon_parallel_port_slave_writedata),                  //                                                        .writedata
+		.Green_LED_avalon_parallel_port_slave_byteenable                 (mm_interconnect_0_green_led_avalon_parallel_port_slave_byteenable),                 //                                                        .byteenable
+		.Green_LED_avalon_parallel_port_slave_chipselect                 (mm_interconnect_0_green_led_avalon_parallel_port_slave_chipselect),                 //                                                        .chipselect
+		.HEX3_HEX0_avalon_parallel_port_slave_address                    (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_address),                    //                    HEX3_HEX0_avalon_parallel_port_slave.address
+		.HEX3_HEX0_avalon_parallel_port_slave_write                      (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_write),                      //                                                        .write
+		.HEX3_HEX0_avalon_parallel_port_slave_read                       (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_read),                       //                                                        .read
+		.HEX3_HEX0_avalon_parallel_port_slave_readdata                   (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_readdata),                   //                                                        .readdata
+		.HEX3_HEX0_avalon_parallel_port_slave_writedata                  (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_writedata),                  //                                                        .writedata
+		.HEX3_HEX0_avalon_parallel_port_slave_byteenable                 (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_byteenable),                 //                                                        .byteenable
+		.HEX3_HEX0_avalon_parallel_port_slave_chipselect                 (mm_interconnect_0_hex3_hex0_avalon_parallel_port_slave_chipselect),                 //                                                        .chipselect
+		.HEX7_HEX4_avalon_parallel_port_slave_address                    (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_address),                    //                    HEX7_HEX4_avalon_parallel_port_slave.address
+		.HEX7_HEX4_avalon_parallel_port_slave_write                      (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_write),                      //                                                        .write
+		.HEX7_HEX4_avalon_parallel_port_slave_read                       (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_read),                       //                                                        .read
+		.HEX7_HEX4_avalon_parallel_port_slave_readdata                   (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_readdata),                   //                                                        .readdata
+		.HEX7_HEX4_avalon_parallel_port_slave_writedata                  (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_writedata),                  //                                                        .writedata
+		.HEX7_HEX4_avalon_parallel_port_slave_byteenable                 (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_byteenable),                 //                                                        .byteenable
+		.HEX7_HEX4_avalon_parallel_port_slave_chipselect                 (mm_interconnect_0_hex7_hex4_avalon_parallel_port_slave_chipselect),                 //                                                        .chipselect
+		.jtag_uart_avalon_jtag_slave_address                             (mm_interconnect_0_jtag_uart_avalon_jtag_slave_address),                             //                             jtag_uart_avalon_jtag_slave.address
+		.jtag_uart_avalon_jtag_slave_write                               (mm_interconnect_0_jtag_uart_avalon_jtag_slave_write),                               //                                                        .write
+		.jtag_uart_avalon_jtag_slave_read                                (mm_interconnect_0_jtag_uart_avalon_jtag_slave_read),                                //                                                        .read
+		.jtag_uart_avalon_jtag_slave_readdata                            (mm_interconnect_0_jtag_uart_avalon_jtag_slave_readdata),                            //                                                        .readdata
+		.jtag_uart_avalon_jtag_slave_writedata                           (mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata),                           //                                                        .writedata
+		.jtag_uart_avalon_jtag_slave_waitrequest                         (mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest),                         //                                                        .waitrequest
+		.jtag_uart_avalon_jtag_slave_chipselect                          (mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect),                          //                                                        .chipselect
+		.mtl_char_buffer_avalon_char_buffer_slave_address                (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_address),                //                mtl_char_buffer_avalon_char_buffer_slave.address
+		.mtl_char_buffer_avalon_char_buffer_slave_write                  (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_write),                  //                                                        .write
+		.mtl_char_buffer_avalon_char_buffer_slave_read                   (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_read),                   //                                                        .read
+		.mtl_char_buffer_avalon_char_buffer_slave_readdata               (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_readdata),               //                                                        .readdata
+		.mtl_char_buffer_avalon_char_buffer_slave_writedata              (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_writedata),              //                                                        .writedata
+		.mtl_char_buffer_avalon_char_buffer_slave_byteenable             (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_byteenable),             //                                                        .byteenable
+		.mtl_char_buffer_avalon_char_buffer_slave_waitrequest            (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_waitrequest),            //                                                        .waitrequest
+		.mtl_char_buffer_avalon_char_buffer_slave_chipselect             (mm_interconnect_0_mtl_char_buffer_avalon_char_buffer_slave_chipselect),             //                                                        .chipselect
+		.mtl_char_buffer_avalon_char_control_slave_address               (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_address),               //               mtl_char_buffer_avalon_char_control_slave.address
+		.mtl_char_buffer_avalon_char_control_slave_write                 (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_write),                 //                                                        .write
+		.mtl_char_buffer_avalon_char_control_slave_read                  (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_read),                  //                                                        .read
+		.mtl_char_buffer_avalon_char_control_slave_readdata              (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_readdata),              //                                                        .readdata
+		.mtl_char_buffer_avalon_char_control_slave_writedata             (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_writedata),             //                                                        .writedata
+		.mtl_char_buffer_avalon_char_control_slave_byteenable            (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_byteenable),            //                                                        .byteenable
+		.mtl_char_buffer_avalon_char_control_slave_chipselect            (mm_interconnect_0_mtl_char_buffer_avalon_char_control_slave_chipselect),            //                                                        .chipselect
+		.onchip_memory_s1_address                                        (mm_interconnect_0_onchip_memory_s1_address),                                        //                                        onchip_memory_s1.address
+		.onchip_memory_s1_write                                          (mm_interconnect_0_onchip_memory_s1_write),                                          //                                                        .write
+		.onchip_memory_s1_readdata                                       (mm_interconnect_0_onchip_memory_s1_readdata),                                       //                                                        .readdata
+		.onchip_memory_s1_writedata                                      (mm_interconnect_0_onchip_memory_s1_writedata),                                      //                                                        .writedata
+		.onchip_memory_s1_byteenable                                     (mm_interconnect_0_onchip_memory_s1_byteenable),                                     //                                                        .byteenable
+		.onchip_memory_s1_chipselect                                     (mm_interconnect_0_onchip_memory_s1_chipselect),                                     //                                                        .chipselect
+		.onchip_memory_s1_clken                                          (mm_interconnect_0_onchip_memory_s1_clken),                                          //                                                        .clken
+		.performance_counter_control_slave_address                       (mm_interconnect_0_performance_counter_control_slave_address),                       //                       performance_counter_control_slave.address
+		.performance_counter_control_slave_write                         (mm_interconnect_0_performance_counter_control_slave_write),                         //                                                        .write
+		.performance_counter_control_slave_readdata                      (mm_interconnect_0_performance_counter_control_slave_readdata),                      //                                                        .readdata
+		.performance_counter_control_slave_writedata                     (mm_interconnect_0_performance_counter_control_slave_writedata),                     //                                                        .writedata
+		.performance_counter_control_slave_begintransfer                 (mm_interconnect_0_performance_counter_control_slave_begintransfer),                 //                                                        .begintransfer
+		.pixel_buffer_dma_green_avalon_control_slave_address             (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_address),             //             pixel_buffer_dma_green_avalon_control_slave.address
+		.pixel_buffer_dma_green_avalon_control_slave_write               (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_write),               //                                                        .write
+		.pixel_buffer_dma_green_avalon_control_slave_read                (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_read),                //                                                        .read
+		.pixel_buffer_dma_green_avalon_control_slave_readdata            (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_readdata),            //                                                        .readdata
+		.pixel_buffer_dma_green_avalon_control_slave_writedata           (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_writedata),           //                                                        .writedata
+		.pixel_buffer_dma_green_avalon_control_slave_byteenable          (mm_interconnect_0_pixel_buffer_dma_green_avalon_control_slave_byteenable),          //                                                        .byteenable
+		.ps2_key_avalon_ps2_slave_address                                (mm_interconnect_0_ps2_key_avalon_ps2_slave_address),                                //                                ps2_key_avalon_ps2_slave.address
+		.ps2_key_avalon_ps2_slave_write                                  (mm_interconnect_0_ps2_key_avalon_ps2_slave_write),                                  //                                                        .write
+		.ps2_key_avalon_ps2_slave_read                                   (mm_interconnect_0_ps2_key_avalon_ps2_slave_read),                                   //                                                        .read
+		.ps2_key_avalon_ps2_slave_readdata                               (mm_interconnect_0_ps2_key_avalon_ps2_slave_readdata),                               //                                                        .readdata
+		.ps2_key_avalon_ps2_slave_writedata                              (mm_interconnect_0_ps2_key_avalon_ps2_slave_writedata),                              //                                                        .writedata
+		.ps2_key_avalon_ps2_slave_byteenable                             (mm_interconnect_0_ps2_key_avalon_ps2_slave_byteenable),                             //                                                        .byteenable
+		.ps2_key_avalon_ps2_slave_waitrequest                            (mm_interconnect_0_ps2_key_avalon_ps2_slave_waitrequest),                            //                                                        .waitrequest
+		.ps2_key_avalon_ps2_slave_chipselect                             (mm_interconnect_0_ps2_key_avalon_ps2_slave_chipselect),                             //                                                        .chipselect
+		.ps2_mouse_avalon_ps2_slave_address                              (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_address),                              //                              ps2_mouse_avalon_ps2_slave.address
+		.ps2_mouse_avalon_ps2_slave_write                                (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_write),                                //                                                        .write
+		.ps2_mouse_avalon_ps2_slave_read                                 (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_read),                                 //                                                        .read
+		.ps2_mouse_avalon_ps2_slave_readdata                             (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_readdata),                             //                                                        .readdata
+		.ps2_mouse_avalon_ps2_slave_writedata                            (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_writedata),                            //                                                        .writedata
+		.ps2_mouse_avalon_ps2_slave_byteenable                           (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_byteenable),                           //                                                        .byteenable
+		.ps2_mouse_avalon_ps2_slave_waitrequest                          (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_waitrequest),                          //                                                        .waitrequest
+		.ps2_mouse_avalon_ps2_slave_chipselect                           (mm_interconnect_0_ps2_mouse_avalon_ps2_slave_chipselect),                           //                                                        .chipselect
+		.pushbuttons_avalon_parallel_port_slave_address                  (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_address),                  //                  pushbuttons_avalon_parallel_port_slave.address
+		.pushbuttons_avalon_parallel_port_slave_write                    (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_write),                    //                                                        .write
+		.pushbuttons_avalon_parallel_port_slave_read                     (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_read),                     //                                                        .read
+		.pushbuttons_avalon_parallel_port_slave_readdata                 (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_readdata),                 //                                                        .readdata
+		.pushbuttons_avalon_parallel_port_slave_writedata                (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_writedata),                //                                                        .writedata
+		.pushbuttons_avalon_parallel_port_slave_byteenable               (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_byteenable),               //                                                        .byteenable
+		.pushbuttons_avalon_parallel_port_slave_chipselect               (mm_interconnect_0_pushbuttons_avalon_parallel_port_slave_chipselect),               //                                                        .chipselect
+		.red_LEDs_avalon_parallel_port_slave_address                     (mm_interconnect_0_red_leds_avalon_parallel_port_slave_address),                     //                     red_LEDs_avalon_parallel_port_slave.address
+		.red_LEDs_avalon_parallel_port_slave_write                       (mm_interconnect_0_red_leds_avalon_parallel_port_slave_write),                       //                                                        .write
+		.red_LEDs_avalon_parallel_port_slave_read                        (mm_interconnect_0_red_leds_avalon_parallel_port_slave_read),                        //                                                        .read
+		.red_LEDs_avalon_parallel_port_slave_readdata                    (mm_interconnect_0_red_leds_avalon_parallel_port_slave_readdata),                    //                                                        .readdata
+		.red_LEDs_avalon_parallel_port_slave_writedata                   (mm_interconnect_0_red_leds_avalon_parallel_port_slave_writedata),                   //                                                        .writedata
+		.red_LEDs_avalon_parallel_port_slave_byteenable                  (mm_interconnect_0_red_leds_avalon_parallel_port_slave_byteenable),                  //                                                        .byteenable
+		.red_LEDs_avalon_parallel_port_slave_chipselect                  (mm_interconnect_0_red_leds_avalon_parallel_port_slave_chipselect),                  //                                                        .chipselect
+		.sd_card_avalon_sdcard_slave_address                             (mm_interconnect_0_sd_card_avalon_sdcard_slave_address),                             //                             sd_card_avalon_sdcard_slave.address
+		.sd_card_avalon_sdcard_slave_write                               (mm_interconnect_0_sd_card_avalon_sdcard_slave_write),                               //                                                        .write
+		.sd_card_avalon_sdcard_slave_read                                (mm_interconnect_0_sd_card_avalon_sdcard_slave_read),                                //                                                        .read
+		.sd_card_avalon_sdcard_slave_readdata                            (mm_interconnect_0_sd_card_avalon_sdcard_slave_readdata),                            //                                                        .readdata
+		.sd_card_avalon_sdcard_slave_writedata                           (mm_interconnect_0_sd_card_avalon_sdcard_slave_writedata),                           //                                                        .writedata
+		.sd_card_avalon_sdcard_slave_byteenable                          (mm_interconnect_0_sd_card_avalon_sdcard_slave_byteenable),                          //                                                        .byteenable
+		.sd_card_avalon_sdcard_slave_waitrequest                         (mm_interconnect_0_sd_card_avalon_sdcard_slave_waitrequest),                         //                                                        .waitrequest
+		.sd_card_avalon_sdcard_slave_chipselect                          (mm_interconnect_0_sd_card_avalon_sdcard_slave_chipselect),                          //                                                        .chipselect
+		.sdram_s1_address                                                (mm_interconnect_0_sdram_s1_address),                                                //                                                sdram_s1.address
+		.sdram_s1_write                                                  (mm_interconnect_0_sdram_s1_write),                                                  //                                                        .write
+		.sdram_s1_read                                                   (mm_interconnect_0_sdram_s1_read),                                                   //                                                        .read
+		.sdram_s1_readdata                                               (mm_interconnect_0_sdram_s1_readdata),                                               //                                                        .readdata
+		.sdram_s1_writedata                                              (mm_interconnect_0_sdram_s1_writedata),                                              //                                                        .writedata
+		.sdram_s1_byteenable                                             (mm_interconnect_0_sdram_s1_byteenable),                                             //                                                        .byteenable
+		.sdram_s1_readdatavalid                                          (mm_interconnect_0_sdram_s1_readdatavalid),                                          //                                                        .readdatavalid
+		.sdram_s1_waitrequest                                            (mm_interconnect_0_sdram_s1_waitrequest),                                            //                                                        .waitrequest
+		.sdram_s1_chipselect                                             (mm_interconnect_0_sdram_s1_chipselect),                                             //                                                        .chipselect
+		.serial_port_avalon_rs232_slave_address                          (mm_interconnect_0_serial_port_avalon_rs232_slave_address),                          //                          serial_port_avalon_rs232_slave.address
+		.serial_port_avalon_rs232_slave_write                            (mm_interconnect_0_serial_port_avalon_rs232_slave_write),                            //                                                        .write
+		.serial_port_avalon_rs232_slave_read                             (mm_interconnect_0_serial_port_avalon_rs232_slave_read),                             //                                                        .read
+		.serial_port_avalon_rs232_slave_readdata                         (mm_interconnect_0_serial_port_avalon_rs232_slave_readdata),                         //                                                        .readdata
+		.serial_port_avalon_rs232_slave_writedata                        (mm_interconnect_0_serial_port_avalon_rs232_slave_writedata),                        //                                                        .writedata
+		.serial_port_avalon_rs232_slave_byteenable                       (mm_interconnect_0_serial_port_avalon_rs232_slave_byteenable),                       //                                                        .byteenable
+		.serial_port_avalon_rs232_slave_chipselect                       (mm_interconnect_0_serial_port_avalon_rs232_slave_chipselect),                       //                                                        .chipselect
+		.sram_avalon_sram_slave_address                                  (mm_interconnect_0_sram_avalon_sram_slave_address),                                  //                                  sram_avalon_sram_slave.address
+		.sram_avalon_sram_slave_write                                    (mm_interconnect_0_sram_avalon_sram_slave_write),                                    //                                                        .write
+		.sram_avalon_sram_slave_read                                     (mm_interconnect_0_sram_avalon_sram_slave_read),                                     //                                                        .read
+		.sram_avalon_sram_slave_readdata                                 (mm_interconnect_0_sram_avalon_sram_slave_readdata),                                 //                                                        .readdata
+		.sram_avalon_sram_slave_writedata                                (mm_interconnect_0_sram_avalon_sram_slave_writedata),                                //                                                        .writedata
+		.sram_avalon_sram_slave_byteenable                               (mm_interconnect_0_sram_avalon_sram_slave_byteenable),                               //                                                        .byteenable
+		.sram_avalon_sram_slave_readdatavalid                            (mm_interconnect_0_sram_avalon_sram_slave_readdatavalid),                            //                                                        .readdatavalid
+		.switches_avalon_parallel_port_slave_address                     (mm_interconnect_0_switches_avalon_parallel_port_slave_address),                     //                     switches_avalon_parallel_port_slave.address
+		.switches_avalon_parallel_port_slave_write                       (mm_interconnect_0_switches_avalon_parallel_port_slave_write),                       //                                                        .write
+		.switches_avalon_parallel_port_slave_read                        (mm_interconnect_0_switches_avalon_parallel_port_slave_read),                        //                                                        .read
+		.switches_avalon_parallel_port_slave_readdata                    (mm_interconnect_0_switches_avalon_parallel_port_slave_readdata),                    //                                                        .readdata
+		.switches_avalon_parallel_port_slave_writedata                   (mm_interconnect_0_switches_avalon_parallel_port_slave_writedata),                   //                                                        .writedata
+		.switches_avalon_parallel_port_slave_byteenable                  (mm_interconnect_0_switches_avalon_parallel_port_slave_byteenable),                  //                                                        .byteenable
+		.switches_avalon_parallel_port_slave_chipselect                  (mm_interconnect_0_switches_avalon_parallel_port_slave_chipselect),                  //                                                        .chipselect
+		.sysid_control_slave_address                                     (mm_interconnect_0_sysid_control_slave_address),                                     //                                     sysid_control_slave.address
+		.sysid_control_slave_readdata                                    (mm_interconnect_0_sysid_control_slave_readdata),                                    //                                                        .readdata
+		.timer_s1_address                                                (mm_interconnect_0_timer_s1_address),                                                //                                                timer_s1.address
+		.timer_s1_write                                                  (mm_interconnect_0_timer_s1_write),                                                  //                                                        .write
+		.timer_s1_readdata                                               (mm_interconnect_0_timer_s1_readdata),                                               //                                                        .readdata
+		.timer_s1_writedata                                              (mm_interconnect_0_timer_s1_writedata),                                              //                                                        .writedata
+		.timer_s1_chipselect                                             (mm_interconnect_0_timer_s1_chipselect),                                             //                                                        .chipselect
+		.video_dma_controller_normal_avalon_dma_control_slave_address    (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_address),    //    video_dma_controller_normal_avalon_dma_control_slave.address
+		.video_dma_controller_normal_avalon_dma_control_slave_write      (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_write),      //                                                        .write
+		.video_dma_controller_normal_avalon_dma_control_slave_read       (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_read),       //                                                        .read
+		.video_dma_controller_normal_avalon_dma_control_slave_readdata   (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_readdata),   //                                                        .readdata
+		.video_dma_controller_normal_avalon_dma_control_slave_writedata  (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_writedata),  //                                                        .writedata
+		.video_dma_controller_normal_avalon_dma_control_slave_byteenable (mm_interconnect_0_video_dma_controller_normal_avalon_dma_control_slave_byteenable)  //                                                        .byteenable
 	);
 
 	nios_system_irq_mapper irq_mapper (
@@ -992,6 +1273,10 @@ module nios_system (
 		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
 		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
 		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
+		.receiver4_irq (irq_mapper_receiver4_irq),       // receiver4.irq
+		.receiver5_irq (irq_mapper_receiver5_irq),       // receiver5.irq
+		.receiver6_irq (irq_mapper_receiver6_irq),       // receiver6.irq
+		.receiver7_irq (irq_mapper_receiver7_irq),       // receiver7.irq
 		.sender_irq    (cpu_irq_irq)                     //    sender.irq
 	);
 
@@ -1013,19 +1298,19 @@ module nios_system (
 		.outUseReady     (1),
 		.outReadyLatency (0)
 	) avalon_st_adapter (
-		.in_clk_0_clk        (sys_clk_out_clk),                                      // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_reset_out_reset),                       // in_rst_0.reset
-		.in_0_data           (scaler_foreground_avalon_scaler_source_data),          //     in_0.data
-		.in_0_valid          (scaler_foreground_avalon_scaler_source_valid),         //         .valid
-		.in_0_ready          (scaler_foreground_avalon_scaler_source_ready),         //         .ready
-		.in_0_startofpacket  (scaler_foreground_avalon_scaler_source_startofpacket), //         .startofpacket
-		.in_0_endofpacket    (scaler_foreground_avalon_scaler_source_endofpacket),   //         .endofpacket
-		.in_0_channel        (scaler_foreground_avalon_scaler_source_channel),       //         .channel
-		.out_0_data          (avalon_st_adapter_out_0_data),                         //    out_0.data
-		.out_0_valid         (avalon_st_adapter_out_0_valid),                        //         .valid
-		.out_0_ready         (avalon_st_adapter_out_0_ready),                        //         .ready
-		.out_0_startofpacket (avalon_st_adapter_out_0_startofpacket),                //         .startofpacket
-		.out_0_endofpacket   (avalon_st_adapter_out_0_endofpacket)                   //         .endofpacket
+		.in_clk_0_clk        (sys_clk_out_clk),                                 // in_clk_0.clk
+		.in_rst_0_reset      (rst_controller_reset_out_reset),                  // in_rst_0.reset
+		.in_0_data           (scaler_green_avalon_scaler_source_data),          //     in_0.data
+		.in_0_valid          (scaler_green_avalon_scaler_source_valid),         //         .valid
+		.in_0_ready          (scaler_green_avalon_scaler_source_ready),         //         .ready
+		.in_0_startofpacket  (scaler_green_avalon_scaler_source_startofpacket), //         .startofpacket
+		.in_0_endofpacket    (scaler_green_avalon_scaler_source_endofpacket),   //         .endofpacket
+		.in_0_channel        (scaler_green_avalon_scaler_source_channel),       //         .channel
+		.out_0_data          (avalon_st_adapter_out_0_data),                    //    out_0.data
+		.out_0_valid         (avalon_st_adapter_out_0_valid),                   //         .valid
+		.out_0_ready         (avalon_st_adapter_out_0_ready),                   //         .ready
+		.out_0_startofpacket (avalon_st_adapter_out_0_startofpacket),           //         .startofpacket
+		.out_0_endofpacket   (avalon_st_adapter_out_0_endofpacket)              //         .endofpacket
 	);
 
 	altera_reset_controller #(
@@ -1092,7 +1377,7 @@ module nios_system (
 	);
 
 	altera_reset_controller #(
-		.NUM_RESET_INPUTS          (2),
+		.NUM_RESET_INPUTS          (1),
 		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
 		.SYNC_DEPTH                (2),
 		.RESET_REQUEST_PRESENT     (0),
@@ -1117,12 +1402,12 @@ module nios_system (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_001 (
-		.reset_in0      (cpu_debug_reset_request_reset),      // reset_in0.reset
-		.reset_in1      (video_pll_reset_source_reset),       // reset_in1.reset
-		.clk            (mtl_clk_out_clk),                    //       clk.clk
+		.reset_in0      (~reset_bridge_in_reset_n),           // reset_in0.reset
+		.clk            (clk_50_3_in_clk),                    //       clk.clk
 		.reset_out      (rst_controller_001_reset_out_reset), // reset_out.reset
 		.reset_req      (),                                   // (terminated)
 		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_in1      (1'b0),                               // (terminated)
 		.reset_req_in1  (1'b0),                               // (terminated)
 		.reset_in2      (1'b0),                               // (terminated)
 		.reset_req_in2  (1'b0),                               // (terminated)
@@ -1155,7 +1440,7 @@ module nios_system (
 	);
 
 	altera_reset_controller #(
-		.NUM_RESET_INPUTS          (1),
+		.NUM_RESET_INPUTS          (2),
 		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
 		.SYNC_DEPTH                (2),
 		.RESET_REQUEST_PRESENT     (0),
@@ -1180,12 +1465,12 @@ module nios_system (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_002 (
-		.reset_in0      (video_pll_reset_source_reset),       // reset_in0.reset
+		.reset_in0      (cpu_debug_reset_request_reset),      // reset_in0.reset
+		.reset_in1      (video_pll_reset_source_reset),       // reset_in1.reset
 		.clk            (mtl_clk_out_clk),                    //       clk.clk
 		.reset_out      (rst_controller_002_reset_out_reset), // reset_out.reset
 		.reset_req      (),                                   // (terminated)
 		.reset_req_in0  (1'b0),                               // (terminated)
-		.reset_in1      (1'b0),                               // (terminated)
 		.reset_req_in1  (1'b0),                               // (terminated)
 		.reset_in2      (1'b0),                               // (terminated)
 		.reset_req_in2  (1'b0),                               // (terminated)

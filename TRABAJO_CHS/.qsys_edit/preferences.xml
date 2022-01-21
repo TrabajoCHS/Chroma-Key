@@ -3,13 +3,15 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="559" />
+   <connections preferredWidth="639" />
    <irq preferredWidth="34" />
    <name preferredWidth="176" />
+   <export preferredWidth="212" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
- <window width="974" height="1047" x="953" y="0" />
+ <library
+   expandedCategories="Library,Library/University Program/Audio &amp; Video,Project,Library/University Program/Audio &amp; Video/Video,Library/University Program" />
+ <window width="1936" height="1056" x="-8" y="-8" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />
 </preferences>

@@ -422,8 +422,36 @@ assign 	GPIO[35]		= 1'bZ;
         .video_decoder_external_interface_TD_VS         (TD_VS),         //                                  .TD_VS
         .video_decoder_external_interface_clk27_reset   (),   //                                  .clk27_reset
         .video_decoder_external_interface_TD_RESET      (TD_RESET_N),      //                                  .TD_RESET
-        .video_decoder_external_interface_overflow_flag ()  //                                  .overflow_flag
+        .video_decoder_external_interface_overflow_flag (),		                 
+        .audio_and_video_config_external_interface_SDAT (I2C_SDAT), // audio_and_video_config_external_interface.SDAT
+        .audio_and_video_config_external_interface_SCLK (I2C_SCLK), //                                          .SCLK
+        .audio_external_interface_ADCDAT                (AUD_ADCDAT),                //                  audio_external_interface.ADCDAT
+        .audio_external_interface_ADCLRCK               (AUD_ADCLRCK),               //                                          .ADCLRCK
+        .audio_external_interface_BCLK                  (AUD_BCLK),                  //                                          .BCLK
+        .audio_external_interface_DACDAT                (AUD_DACDAT),                //                                          .DACDAT
+        .audio_external_interface_DACLRCK               (AUD_DACLRCK),               //                                          .DACLRCK
+        .clk_50_3_in_clk                                (CLOCK3_50),                                //                               clk_50_3_in.clk
+        .audio_clk_out_clk                              (AUDIO_XCK),                              //                             audio_clk_out.clk
+        .hex3_hex0_external_interface_HEX0              (HEX0),              //              hex3_hex0_external_interface.HEX0
+        .hex3_hex0_external_interface_HEX1              (HEX1),              //                                          .HEX1
+        .hex3_hex0_external_interface_HEX2              (HEX2),              //                                          .HEX2
+        .hex3_hex0_external_interface_HEX3              (HEX3),              //                                          .HEX3
+        .hex7_hex4_external_interface_HEX4              (HEX4),              //              hex7_hex4_external_interface.HEX4
+        .hex7_hex4_external_interface_HEX5              (HEX5),              //                                          .HEX5
+        .hex7_hex4_external_interface_HEX6              (HEX6),              //                                          .HEX6
+        .hex7_hex4_external_interface_HEX7              (HEX7),              //                                          .HEX7
+        .ps2_key_external_interface_CLK                 (PS2_KBCLK),                 //                ps2_key_external_interface.CLK
+        .ps2_key_external_interface_DAT                 (PS2_KBDAT),                 //                                          .DAT
+        .ps2_mouse_external_interface_CLK               (PS2_MSCLK),               //              ps2_mouse_external_interface.CLK
+        .ps2_mouse_external_interface_DAT               (PS2_MSDAT),               //                                          .DAT
+        .serial_port_external_interface_RXD             (UART_RXD),             //            serial_port_external_interface.RXD
+        .serial_port_external_interface_TXD             (UART_TX),             //                                          .TXD
+        .sd_card_conduit_end_b_SD_cmd                   (SD_CMD),                   //                       sd_card_conduit_end.b_SD_cmd
+        .sd_card_conduit_end_b_SD_dat                   (SD_DAT[0]),                   //                                          .b_SD_dat
+        .sd_card_conduit_end_b_SD_dat3                  (SD_DAT[3]),                  //                                          .b_SD_dat3
+        .sd_card_conduit_end_o_SD_clock                 (SD_CLK)                  //                                          .o_SD_clock  //                                  .overflow_flag
     );
-
+	 
+	                
 
 endmodule
