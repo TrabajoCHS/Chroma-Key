@@ -35,6 +35,11 @@ module altera_up_avalon_video_alpha_blender (
 	// Inputs
 	clk,
 	reset,
+	chipselect,
+	address,
+	write,
+	writedata,
+	read,
 
 	background_data,
 	background_startofpacket,
@@ -61,7 +66,9 @@ module altera_up_avalon_video_alpha_blender (
 	output_startofpacket,
 	output_endofpacket,
 	output_empty,
-	output_valid
+	output_valid,
+	
+	readdata
 );
 
 /*****************************************************************************
@@ -75,6 +82,11 @@ module altera_up_avalon_video_alpha_blender (
 // Inputs
 input						clk;
 input						reset;
+input						chipselect;
+input			[2 : 0]	address;
+input 					write;
+input			[31: 0]	writedata,
+input 					read;
 
 input			[29: 0]	background_data;
 input						background_startofpacket;
@@ -102,6 +114,8 @@ output					output_startofpacket;
 output					output_endofpacket;
 output		[ 1: 0]	output_empty;
 output					output_valid;
+
+output 		[31: 0]	readdata;
 
 /*****************************************************************************
  *                           Constant Declarations                           *

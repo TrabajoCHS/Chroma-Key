@@ -1,5 +1,5 @@
 Fitter report for ChromaKey
-Mon Jan 24 15:43:18 2022
+Fri Jan 28 10:26:19 2022
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -76,7 +76,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                                ;
 +------------------------------------+----------------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Jan 24 15:43:18 2022                    ;
+; Fitter Status                      ; Successful - Fri Jan 28 10:26:19 2022                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; ChromaKey                                                ;
 ; Top-level Entity Name              ; ChromaKey                                                ;
@@ -7392,7 +7392,6 @@ Info (176353): Automatically promoted node nios_system:u0|altera_reset_controlle
 Info (176233): Starting register packing
 Warning (176250): Ignoring invalid fast I/O register assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (176251): Ignoring some wildcard destinations of fast I/O register assignments
-    Info (176252): Wildcard assignment "Fast Output Enable Register=ON" to "oe" matches multiple destination nodes -- some destinations are not valid targets for this assignment
     Info (176252): Wildcard assignment "Fast Output Register=ON" to "m_data[9]" matches multiple destination nodes -- some destinations are not valid targets for this assignment
     Info (176252): Wildcard assignment "Fast Output Register=ON" to "m_data[8]" matches multiple destination nodes -- some destinations are not valid targets for this assignment
     Info (176252): Wildcard assignment "Fast Output Register=ON" to "m_data[7]" matches multiple destination nodes -- some destinations are not valid targets for this assignment
@@ -7428,6 +7427,7 @@ Warning (176251): Ignoring some wildcard destinations of fast I/O register assig
     Info (176252): Wildcard assignment "Fast Output Register=ON" to "m_cmd[2]" matches multiple destination nodes -- some destinations are not valid targets for this assignment
     Info (176252): Wildcard assignment "Fast Output Register=ON" to "m_cmd[1]" matches multiple destination nodes -- some destinations are not valid targets for this assignment
     Info (176252): Wildcard assignment "Fast Output Register=ON" to "m_cmd[0]" matches multiple destination nodes -- some destinations are not valid targets for this assignment
+    Info (176252): Wildcard assignment "Fast Output Enable Register=ON" to "oe" matches multiple destination nodes -- some destinations are not valid targets for this assignment
 Info (176235): Finished register packing
     Extra Info (176218): Packed 26 registers into blocks of type Block RAM
     Extra Info (176218): Packed 138 registers into blocks of type Embedded multiplier block
@@ -7621,7 +7621,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SMA_CLKOUT" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_CTS" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_RTS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:14
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:13
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
@@ -7635,7 +7635,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 1.24 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.23 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -7845,10 +7845,10 @@ Warning (169064): Following 42 pins have no output enable or a GND or VCC output
     Info (169065): Pin SD_DAT[3] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/TRABAJO_CHS/ChromaKey.v Line: 219
 Info (144001): Generated suppressed messages file C:/Users/patvalma/Documents/GitHub/Chroma-Key/TRABAJO_CHS/output_files/ChromaKey.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 192 warnings
-    Info: Peak virtual memory: 6022 megabytes
-    Info: Processing ended: Mon Jan 24 15:43:21 2022
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:01:09
+    Info: Peak virtual memory: 6024 megabytes
+    Info: Processing ended: Fri Jan 28 10:26:22 2022
+    Info: Elapsed time: 00:00:51
+    Info: Total CPU time (on all processors): 00:01:10
 
 
 +----------------------------+

@@ -3,15 +3,15 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="687" />
+   <connections preferredWidth="719" />
    <irq preferredWidth="34" />
    <name preferredWidth="176" />
    <export preferredWidth="212" />
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library/University Program/Audio &amp; Video,Library/University Program,Library,Library/DSP,Project,Library/University Program/Audio &amp; Video/Video,Library/DSP/Video and Image Processing" />
- <window width="1936" height="1056" x="-8" y="-8" />
+   expandedCategories="Library/DSP,Library/University Program,Library/University Program/Audio &amp; Video/Video,Project/IP,Project,Library,Library/DSP/Video and Image Processing,Library/University Program/Audio &amp; Video" />
+ <window width="976" height="1056" x="794" y="0" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />
 </preferences>
