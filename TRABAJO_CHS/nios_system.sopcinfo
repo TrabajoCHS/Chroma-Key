@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="nios_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 593 (Future versions may contain additional information.) -->
- <!-- 2022.01.21.11:00:55 -->
+ <!-- 2022.01.28.09:59:47 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1642759255</value>
+  <value>1643360387</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -25158,15 +25158,15 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>pixel_buffer_dma_green</moduleName>
-    <slaveName>clk</slaveName>
-    <name>pixel_buffer_dma_green.clk</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
     <moduleName>video_dma_controller_normal</moduleName>
     <slaveName>clk</slaveName>
     <name>video_dma_controller_normal.clk</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>scaler_green</moduleName>
+    <slaveName>clk</slaveName>
+    <name>scaler_green.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -25176,9 +25176,9 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>scaler_green</moduleName>
+    <moduleName>pixel_buffer_dma_green</moduleName>
     <slaveName>clk</slaveName>
-    <name>scaler_green.clk</name>
+    <name>pixel_buffer_dma_green.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -25349,7 +25349,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1642759255</value>
+   <value>1643360387</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -25369,7 +25369,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1642759255</value>
+   <value>1643360387</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -25385,7 +25385,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1642759255</value>
+   <value>1643360387</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -27160,7 +27160,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="drop_top">
    <type>int</type>
-   <value>0</value>
+   <value>24</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -27168,7 +27168,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="drop_bottom">
    <type>int</type>
-   <value>0</value>
+   <value>24</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -27192,7 +27192,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="add_top">
    <type>int</type>
-   <value>96</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -27200,7 +27200,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="add_bottom">
    <type>int</type>
-   <value>96</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -30521,7 +30521,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="height_scaling">
    <type>java.lang.String</type>
-   <value>0.5</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -30553,7 +30553,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="height_in">
    <type>int</type>
-   <value>480</value>
+   <value>240</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -34018,33 +34018,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="sys_sdram_pll.sys_clk/pixel_buffer_dma_green.clk"
-   kind="clock"
-   version="17.1"
-   start="sys_sdram_pll.sys_clk"
-   end="pixel_buffer_dma_green.clk">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>sys_sdram_pll</startModule>
-  <startConnectionPoint>sys_clk</startConnectionPoint>
-  <endModule>pixel_buffer_dma_green</endModule>
-  <endConnectionPoint>clk</endConnectionPoint>
- </connection>
- <connection
    name="sys_sdram_pll.sys_clk/video_dma_controller_normal.clk"
    kind="clock"
    version="17.1"
@@ -34069,6 +34042,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>sys_sdram_pll</startModule>
   <startConnectionPoint>sys_clk</startConnectionPoint>
   <endModule>video_dma_controller_normal</endModule>
+  <endConnectionPoint>clk</endConnectionPoint>
+ </connection>
+ <connection
+   name="sys_sdram_pll.sys_clk/scaler_green.clk"
+   kind="clock"
+   version="17.1"
+   start="sys_sdram_pll.sys_clk"
+   end="scaler_green.clk">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>sys_sdram_pll</startModule>
+  <startConnectionPoint>sys_clk</startConnectionPoint>
+  <endModule>scaler_green</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
@@ -34099,11 +34099,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="sys_sdram_pll.sys_clk/scaler_green.clk"
+   name="sys_sdram_pll.sys_clk/pixel_buffer_dma_green.clk"
    kind="clock"
    version="17.1"
    start="sys_sdram_pll.sys_clk"
-   end="scaler_green.clk">
+   end="pixel_buffer_dma_green.clk">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -34122,7 +34122,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>sys_sdram_pll</startModule>
   <startConnectionPoint>sys_clk</startConnectionPoint>
-  <endModule>scaler_green</endModule>
+  <endModule>pixel_buffer_dma_green</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
@@ -35432,33 +35432,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="cpu.debug_reset_request/rgb_resampler_green.reset"
-   kind="reset"
-   version="17.1"
-   start="cpu.debug_reset_request"
-   end="rgb_resampler_green.reset">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>cpu</startModule>
-  <startConnectionPoint>debug_reset_request</startConnectionPoint>
-  <endModule>rgb_resampler_green</endModule>
-  <endConnectionPoint>reset</endConnectionPoint>
- </connection>
- <connection
    name="cpu.debug_reset_request/scaler_green.reset"
    kind="reset"
    version="17.1"
@@ -35483,6 +35456,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>cpu</startModule>
   <startConnectionPoint>debug_reset_request</startConnectionPoint>
   <endModule>scaler_green</endModule>
+  <endConnectionPoint>reset</endConnectionPoint>
+ </connection>
+ <connection
+   name="cpu.debug_reset_request/rgb_resampler_green.reset"
+   kind="reset"
+   version="17.1"
+   start="cpu.debug_reset_request"
+   end="rgb_resampler_green.reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>cpu</startModule>
+  <startConnectionPoint>debug_reset_request</startConnectionPoint>
+  <endModule>rgb_resampler_green</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -36539,33 +36539,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="sys_sdram_pll.reset_source/rgb_resampler_green.reset"
-   kind="reset"
-   version="17.1"
-   start="sys_sdram_pll.reset_source"
-   end="rgb_resampler_green.reset">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>sys_sdram_pll</startModule>
-  <startConnectionPoint>reset_source</startConnectionPoint>
-  <endModule>rgb_resampler_green</endModule>
-  <endConnectionPoint>reset</endConnectionPoint>
- </connection>
- <connection
    name="sys_sdram_pll.reset_source/scaler_green.reset"
    kind="reset"
    version="17.1"
@@ -36590,6 +36563,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>sys_sdram_pll</startModule>
   <startConnectionPoint>reset_source</startConnectionPoint>
   <endModule>scaler_green</endModule>
+  <endConnectionPoint>reset</endConnectionPoint>
+ </connection>
+ <connection
+   name="sys_sdram_pll.reset_source/rgb_resampler_green.reset"
+   kind="reset"
+   version="17.1"
+   start="sys_sdram_pll.reset_source"
+   end="rgb_resampler_green.reset">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>sys_sdram_pll</startModule>
+  <startConnectionPoint>reset_source</startConnectionPoint>
+  <endModule>rgb_resampler_green</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection

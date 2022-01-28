@@ -169,6 +169,22 @@
          type = "String";
       }
    }
+   element dma_controller_yellow
+   {
+      datum _sortIndex
+      {
+         value = "48";
+         type = "int";
+      }
+   }
+   element dma_controller_yellow.avalon_dma_control_slave
+   {
+      datum baseAddress
+      {
+         value = "268440320";
+         type = "String";
+      }
+   }
    element flash_bridge
    {
       datum _sortIndex
@@ -385,11 +401,27 @@
          type = "int";
       }
    }
+   element rgb_resampler_yellow
+   {
+      datum _sortIndex
+      {
+         value = "49";
+         type = "int";
+      }
+   }
    element scaler_green
    {
       datum _sortIndex
       {
          value = "47";
+         type = "int";
+      }
+   }
+   element scaler_yellow
+   {
+      datum _sortIndex
+      {
+         value = "50";
          type = "int";
       }
    }
@@ -1053,6 +1085,23 @@
   <parameter name="userDefinedSettings" value="" />
  </module>
  <module
+   name="dma_controller_yellow"
+   kind="altera_up_avalon_video_dma_controller"
+   version="17.1"
+   enabled="0">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="addr_mode" value="X-Y" />
+  <parameter name="back_start_address" value="152043520" />
+  <parameter name="color_bits" value="16" />
+  <parameter name="color_planes" value="1" />
+  <parameter name="dma_enabled" value="true" />
+  <parameter name="height" value="240" />
+  <parameter name="mode">From Memory to Stream</parameter>
+  <parameter name="start_address" value="152043520" />
+  <parameter name="width" value="400" />
+ </module>
+ <module
    name="flash_bridge"
    kind="altera_tristate_conduit_bridge"
    version="17.1"
@@ -1304,10 +1353,36 @@
   <parameter name="output_type" value="30-bit RGB" />
  </module>
  <module
+   name="rgb_resampler_yellow"
+   kind="altera_up_avalon_video_rgb_resampler"
+   version="17.1"
+   enabled="0">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="alpha" value="1023" />
+  <parameter name="input_type" value="16-bit RGB" />
+  <parameter name="output_type" value="30-bit RGB" />
+ </module>
+ <module
    name="scaler_green"
    kind="altera_up_avalon_video_scaler"
    version="17.1"
    enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="color_bits" value="10" />
+  <parameter name="color_planes" value="3" />
+  <parameter name="height_in" value="240" />
+  <parameter name="height_scaling" value="2" />
+  <parameter name="include_channel" value="false" />
+  <parameter name="width_in" value="400" />
+  <parameter name="width_scaling" value="2" />
+ </module>
+ <module
+   name="scaler_yellow"
+   kind="altera_up_avalon_video_scaler"
+   version="17.1"
+   enabled="0">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="color_bits" value="10" />
@@ -1460,20 +1535,20 @@
    enabled="1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
-  <parameter name="add_bottom" value="96" />
+  <parameter name="add_bottom" value="0" />
   <parameter name="add_left" value="40" />
   <parameter name="add_right" value="40" />
-  <parameter name="add_top" value="96" />
+  <parameter name="add_top" value="0" />
   <parameter name="add_value_plane_1" value="0" />
   <parameter name="add_value_plane_2" value="0" />
   <parameter name="add_value_plane_3" value="0" />
   <parameter name="add_value_plane_4" value="0" />
   <parameter name="color_bits" value="16" />
   <parameter name="color_planes" value="1" />
-  <parameter name="drop_bottom" value="0" />
+  <parameter name="drop_bottom" value="24" />
   <parameter name="drop_left" value="0" />
   <parameter name="drop_right" value="0" />
-  <parameter name="drop_top" value="0" />
+  <parameter name="drop_top" value="24" />
   <parameter name="height_in" value="288" />
   <parameter name="width_in" value="720" />
  </module>
@@ -1548,8 +1623,8 @@
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="color_bits" value="16" />
   <parameter name="color_planes" value="1" />
-  <parameter name="height_in" value="480" />
-  <parameter name="height_scaling" value="0.5" />
+  <parameter name="height_in" value="240" />
+  <parameter name="height_scaling" value="1" />
   <parameter name="include_channel" value="false" />
   <parameter name="width_in" value="800" />
   <parameter name="width_scaling" value="0.5" />
@@ -1558,6 +1633,15 @@
    kind="avalon"
    version="17.1"
    start="video_dma_controller_normal.avalon_dma_master"
+   end="sram.avalon_sram_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x09000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="dma_controller_yellow.avalon_dma_master"
    end="sram.avalon_sram_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x09000000" />
@@ -1624,6 +1708,15 @@
    end="video_dma_controller_normal.avalon_dma_control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x10001400" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="cpu.data_master"
+   end="dma_controller_yellow.avalon_dma_control_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x10001300" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1872,6 +1965,11 @@
  <connection
    kind="avalon_streaming"
    version="17.1"
+   start="dma_controller_yellow.avalon_pixel_source"
+   end="rgb_resampler_yellow.avalon_rgb_sink" />
+ <connection
+   kind="avalon_streaming"
+   version="17.1"
    start="pixel_buffer_dma_green.avalon_pixel_source"
    end="rgb_resampler_green.avalon_rgb_sink" />
  <connection
@@ -1879,6 +1977,11 @@
    version="17.1"
    start="video_rgb_resampler.avalon_rgb_source"
    end="video_clipper_normal.avalon_clipper_sink" />
+ <connection
+   kind="avalon_streaming"
+   version="17.1"
+   start="rgb_resampler_yellow.avalon_rgb_source"
+   end="scaler_yellow.avalon_scaler_sink" />
  <connection
    kind="avalon_streaming"
    version="17.1"
@@ -2088,12 +2191,27 @@
    kind="clock"
    version="17.1"
    start="sys_sdram_pll.sys_clk"
-   end="pixel_buffer_dma_green.clk" />
+   end="video_dma_controller_normal.clk" />
  <connection
    kind="clock"
    version="17.1"
    start="sys_sdram_pll.sys_clk"
-   end="video_dma_controller_normal.clk" />
+   end="dma_controller_yellow.clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="sys_sdram_pll.sys_clk"
+   end="rgb_resampler_yellow.clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="sys_sdram_pll.sys_clk"
+   end="scaler_yellow.clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="sys_sdram_pll.sys_clk"
+   end="scaler_green.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -2103,7 +2221,7 @@
    kind="clock"
    version="17.1"
    start="sys_sdram_pll.sys_clk"
-   end="scaler_green.clk" />
+   end="pixel_buffer_dma_green.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -2342,12 +2460,27 @@
    kind="reset"
    version="17.1"
    start="cpu.debug_reset_request"
-   end="rgb_resampler_green.reset" />
+   end="dma_controller_yellow.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="cpu.debug_reset_request"
+   end="rgb_resampler_yellow.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="cpu.debug_reset_request"
+   end="scaler_yellow.reset" />
  <connection
    kind="reset"
    version="17.1"
    start="cpu.debug_reset_request"
    end="scaler_green.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="cpu.debug_reset_request"
+   end="rgb_resampler_green.reset" />
  <connection
    kind="reset"
    version="17.1"
@@ -2547,12 +2680,27 @@
    kind="reset"
    version="17.1"
    start="sys_sdram_pll.reset_source"
-   end="rgb_resampler_green.reset" />
+   end="dma_controller_yellow.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="sys_sdram_pll.reset_source"
+   end="rgb_resampler_yellow.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="sys_sdram_pll.reset_source"
+   end="scaler_yellow.reset" />
  <connection
    kind="reset"
    version="17.1"
    start="sys_sdram_pll.reset_source"
    end="scaler_green.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="sys_sdram_pll.reset_source"
+   end="rgb_resampler_green.reset" />
  <connection
    kind="reset"
    version="17.1"
