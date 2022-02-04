@@ -40,13 +40,13 @@
 // Generation parameters:
 //   output_name:        nios_system_avalon_st_adapter_002_data_format_adapter_0
 //   usePackets:         true
-//   hasInEmpty:         true
-//   inEmptyWidth:       2
-//   hasOutEmpty:        false 
-//   outEmptyWidth:      0
+//   hasInEmpty:         false
+//   inEmptyWidth:       0
+//   hasOutEmpty:        true 
+//   outEmptyWidth:      2
 //   inDataWidth:        30
 //   outDataWidth:       30
-//   channelWidth:       0
+//   channelWidth:       2
 //   inErrorWidth:       0
 //   outErrorWidth:      0
 //   inSymbolsPerBeat:   3
@@ -67,15 +67,17 @@ module nios_system_avalon_st_adapter_002_data_format_adapter_0 (
  output reg         in_ready,
  input              in_valid,
  input [30-1 : 0]    in_data,
+ input [2-1 : 0] in_channel,
  input              in_startofpacket,
  input              in_endofpacket,
- input [2-1 : 0] in_empty,
  // Interface: out
  input                out_ready,
  output reg           out_valid,
  output reg [30-1: 0]  out_data,
+ output reg [2-1: 0] out_channel,
  output reg           out_startofpacket,
  output reg           out_endofpacket,
+ output reg [2-1 : 0] out_empty,
 
   // Interface: clk
  input              clk,
@@ -89,8 +91,10 @@ module nios_system_avalon_st_adapter_002_data_format_adapter_0 (
       in_ready = out_ready; 
       out_valid = in_valid;
       out_data = in_data;
+      out_channel = in_channel;
       out_startofpacket = in_startofpacket;
       out_endofpacket = in_endofpacket;
+      out_empty = 0;
    end
 
 endmodule

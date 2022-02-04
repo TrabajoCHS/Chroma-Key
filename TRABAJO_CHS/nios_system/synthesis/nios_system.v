@@ -140,7 +140,7 @@ module nios_system (
 	wire         rgb_resampler_green_avalon_rgb_source_startofpacket;                               // rgb_resampler_green:stream_out_startofpacket -> scaler_green:stream_in_startofpacket
 	wire         rgb_resampler_green_avalon_rgb_source_endofpacket;                                 // rgb_resampler_green:stream_out_endofpacket -> scaler_green:stream_in_endofpacket
 	wire         rgb_resampler_yellow_avalon_rgb_source_valid;                                      // rgb_resampler_yellow:stream_out_valid -> scaler_yellow:stream_in_valid
-	wire  [29:0] rgb_resampler_yellow_avalon_rgb_source_data;                                       // rgb_resampler_yellow:stream_out_data -> scaler_yellow:stream_in_data
+	wire  [39:0] rgb_resampler_yellow_avalon_rgb_source_data;                                       // rgb_resampler_yellow:stream_out_data -> scaler_yellow:stream_in_data
 	wire         rgb_resampler_yellow_avalon_rgb_source_ready;                                      // scaler_yellow:stream_in_ready -> rgb_resampler_yellow:stream_out_ready
 	wire         rgb_resampler_yellow_avalon_rgb_source_startofpacket;                              // rgb_resampler_yellow:stream_out_startofpacket -> scaler_yellow:stream_in_startofpacket
 	wire         rgb_resampler_yellow_avalon_rgb_source_endofpacket;                                // rgb_resampler_yellow:stream_out_endofpacket -> scaler_yellow:stream_in_endofpacket
@@ -328,6 +328,12 @@ module nios_system (
 	wire   [3:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_byteenable;                          // mm_interconnect_0:sd_card_avalon_sdcard_slave_byteenable -> sd_card:i_avalon_byteenable
 	wire         mm_interconnect_0_sd_card_avalon_sdcard_slave_write;                               // mm_interconnect_0:sd_card_avalon_sdcard_slave_write -> sd_card:i_avalon_write
 	wire  [31:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_writedata;                           // mm_interconnect_0:sd_card_avalon_sdcard_slave_writedata -> sd_card:i_avalon_writedata
+	wire         mm_interconnect_0_avalon_chroma_process_avalon_slave_chipselect;                   // mm_interconnect_0:Avalon_Chroma_Process_avalon_slave_chipselect -> Avalon_Chroma_Process:chipselect
+	wire  [31:0] mm_interconnect_0_avalon_chroma_process_avalon_slave_readdata;                     // Avalon_Chroma_Process:readdata -> mm_interconnect_0:Avalon_Chroma_Process_avalon_slave_readdata
+	wire   [2:0] mm_interconnect_0_avalon_chroma_process_avalon_slave_address;                      // mm_interconnect_0:Avalon_Chroma_Process_avalon_slave_address -> Avalon_Chroma_Process:address
+	wire         mm_interconnect_0_avalon_chroma_process_avalon_slave_read;                         // mm_interconnect_0:Avalon_Chroma_Process_avalon_slave_read -> Avalon_Chroma_Process:read
+	wire         mm_interconnect_0_avalon_chroma_process_avalon_slave_write;                        // mm_interconnect_0:Avalon_Chroma_Process_avalon_slave_write -> Avalon_Chroma_Process:write
+	wire  [31:0] mm_interconnect_0_avalon_chroma_process_avalon_slave_writedata;                    // mm_interconnect_0:Avalon_Chroma_Process_avalon_slave_writedata -> Avalon_Chroma_Process:writedata
 	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                                    // sysid:readdata -> mm_interconnect_0:sysid_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                                     // mm_interconnect_0:sysid_control_slave_address -> sysid:address
 	wire  [31:0] mm_interconnect_0_performance_counter_control_slave_readdata;                      // performance_counter:readdata -> mm_interconnect_0:performance_counter_control_slave_readdata
@@ -384,41 +390,41 @@ module nios_system (
 	wire         irq_mapper_receiver6_irq;                                                          // jtag_uart:av_irq -> irq_mapper:receiver6_irq
 	wire         irq_mapper_receiver7_irq;                                                          // timer:irq -> irq_mapper:receiver7_irq
 	wire  [31:0] cpu_irq_irq;                                                                       // irq_mapper:sender_irq -> cpu:irq
-	wire         scaler_yellow_avalon_scaler_source_valid;                                          // scaler_yellow:stream_out_valid -> avalon_st_adapter:in_0_valid
-	wire  [29:0] scaler_yellow_avalon_scaler_source_data;                                           // scaler_yellow:stream_out_data -> avalon_st_adapter:in_0_data
-	wire         scaler_yellow_avalon_scaler_source_ready;                                          // avalon_st_adapter:in_0_ready -> scaler_yellow:stream_out_ready
-	wire   [1:0] scaler_yellow_avalon_scaler_source_channel;                                        // scaler_yellow:stream_out_channel -> avalon_st_adapter:in_0_channel
-	wire         scaler_yellow_avalon_scaler_source_startofpacket;                                  // scaler_yellow:stream_out_startofpacket -> avalon_st_adapter:in_0_startofpacket
-	wire         scaler_yellow_avalon_scaler_source_endofpacket;                                    // scaler_yellow:stream_out_endofpacket -> avalon_st_adapter:in_0_endofpacket
-	wire         avalon_st_adapter_out_0_valid;                                                     // avalon_st_adapter:out_0_valid -> Avalon_Chroma_Process:avalon_streaming_sink_valid
-	wire  [29:0] avalon_st_adapter_out_0_data;                                                      // avalon_st_adapter:out_0_data -> Avalon_Chroma_Process:avalon_streaming_sink_data
-	wire         avalon_st_adapter_out_0_ready;                                                     // Avalon_Chroma_Process:avalon_streaming_sink_ready -> avalon_st_adapter:out_0_ready
-	wire         avalon_st_adapter_out_0_startofpacket;                                             // avalon_st_adapter:out_0_startofpacket -> Avalon_Chroma_Process:avalon_streaming_sink_startofpacket
-	wire         avalon_st_adapter_out_0_endofpacket;                                               // avalon_st_adapter:out_0_endofpacket -> Avalon_Chroma_Process:avalon_streaming_sink_endofpacket
-	wire   [1:0] avalon_st_adapter_out_0_empty;                                                     // avalon_st_adapter:out_0_empty -> Avalon_Chroma_Process:avalon_streaming_sink_empty
-	wire         scaler_green_avalon_scaler_source_valid;                                           // scaler_green:stream_out_valid -> avalon_st_adapter_001:in_0_valid
-	wire  [29:0] scaler_green_avalon_scaler_source_data;                                            // scaler_green:stream_out_data -> avalon_st_adapter_001:in_0_data
-	wire         scaler_green_avalon_scaler_source_ready;                                           // avalon_st_adapter_001:in_0_ready -> scaler_green:stream_out_ready
-	wire   [1:0] scaler_green_avalon_scaler_source_channel;                                         // scaler_green:stream_out_channel -> avalon_st_adapter_001:in_0_channel
-	wire         scaler_green_avalon_scaler_source_startofpacket;                                   // scaler_green:stream_out_startofpacket -> avalon_st_adapter_001:in_0_startofpacket
-	wire         scaler_green_avalon_scaler_source_endofpacket;                                     // scaler_green:stream_out_endofpacket -> avalon_st_adapter_001:in_0_endofpacket
-	wire         avalon_st_adapter_001_out_0_valid;                                                 // avalon_st_adapter_001:out_0_valid -> Avalon_Chroma_Process:avalon_streaming_sink_1_valid
-	wire  [29:0] avalon_st_adapter_001_out_0_data;                                                  // avalon_st_adapter_001:out_0_data -> Avalon_Chroma_Process:avalon_streaming_sink_1_data
-	wire         avalon_st_adapter_001_out_0_ready;                                                 // Avalon_Chroma_Process:avalon_streaming_sink_1_ready -> avalon_st_adapter_001:out_0_ready
-	wire         avalon_st_adapter_001_out_0_startofpacket;                                         // avalon_st_adapter_001:out_0_startofpacket -> Avalon_Chroma_Process:avalon_streaming_sink_1_startofpacket
-	wire         avalon_st_adapter_001_out_0_endofpacket;                                           // avalon_st_adapter_001:out_0_endofpacket -> Avalon_Chroma_Process:avalon_streaming_sink_1_endofpacket
-	wire   [1:0] avalon_st_adapter_001_out_0_empty;                                                 // avalon_st_adapter_001:out_0_empty -> Avalon_Chroma_Process:avalon_streaming_sink_1_empty
-	wire         avalon_chroma_process_avalon_streaming_source_valid;                               // Avalon_Chroma_Process:avalon_streaming_source_valid -> avalon_st_adapter_002:in_0_valid
-	wire  [29:0] avalon_chroma_process_avalon_streaming_source_data;                                // Avalon_Chroma_Process:avalon_streaming_source_data -> avalon_st_adapter_002:in_0_data
-	wire         avalon_chroma_process_avalon_streaming_source_ready;                               // avalon_st_adapter_002:in_0_ready -> Avalon_Chroma_Process:avalon_streaming_source_ready
-	wire         avalon_chroma_process_avalon_streaming_source_startofpacket;                       // Avalon_Chroma_Process:avalon_streaming_source_startofpacket -> avalon_st_adapter_002:in_0_startofpacket
-	wire         avalon_chroma_process_avalon_streaming_source_endofpacket;                         // Avalon_Chroma_Process:avalon_streaming_source_endofpacket -> avalon_st_adapter_002:in_0_endofpacket
-	wire   [1:0] avalon_chroma_process_avalon_streaming_source_empty;                               // Avalon_Chroma_Process:avalon_streaming_source_empty -> avalon_st_adapter_002:in_0_empty
-	wire         avalon_st_adapter_002_out_0_valid;                                                 // avalon_st_adapter_002:out_0_valid -> alpha_blending:background_valid
-	wire  [29:0] avalon_st_adapter_002_out_0_data;                                                  // avalon_st_adapter_002:out_0_data -> alpha_blending:background_data
-	wire         avalon_st_adapter_002_out_0_ready;                                                 // alpha_blending:background_ready -> avalon_st_adapter_002:out_0_ready
-	wire         avalon_st_adapter_002_out_0_startofpacket;                                         // avalon_st_adapter_002:out_0_startofpacket -> alpha_blending:background_startofpacket
-	wire         avalon_st_adapter_002_out_0_endofpacket;                                           // avalon_st_adapter_002:out_0_endofpacket -> alpha_blending:background_endofpacket
+	wire         avalon_chroma_process_avalon_chroma_source_valid;                                  // Avalon_Chroma_Process:output_valid -> avalon_st_adapter:in_0_valid
+	wire  [29:0] avalon_chroma_process_avalon_chroma_source_data;                                   // Avalon_Chroma_Process:output_data -> avalon_st_adapter:in_0_data
+	wire         avalon_chroma_process_avalon_chroma_source_ready;                                  // avalon_st_adapter:in_0_ready -> Avalon_Chroma_Process:output_ready
+	wire         avalon_chroma_process_avalon_chroma_source_startofpacket;                          // Avalon_Chroma_Process:output_startofpacket -> avalon_st_adapter:in_0_startofpacket
+	wire         avalon_chroma_process_avalon_chroma_source_endofpacket;                            // Avalon_Chroma_Process:output_endofpacket -> avalon_st_adapter:in_0_endofpacket
+	wire   [1:0] avalon_chroma_process_avalon_chroma_source_empty;                                  // Avalon_Chroma_Process:output_empty -> avalon_st_adapter:in_0_empty
+	wire         avalon_st_adapter_out_0_valid;                                                     // avalon_st_adapter:out_0_valid -> alpha_blending:background_valid
+	wire  [29:0] avalon_st_adapter_out_0_data;                                                      // avalon_st_adapter:out_0_data -> alpha_blending:background_data
+	wire         avalon_st_adapter_out_0_ready;                                                     // alpha_blending:background_ready -> avalon_st_adapter:out_0_ready
+	wire         avalon_st_adapter_out_0_startofpacket;                                             // avalon_st_adapter:out_0_startofpacket -> alpha_blending:background_startofpacket
+	wire         avalon_st_adapter_out_0_endofpacket;                                               // avalon_st_adapter:out_0_endofpacket -> alpha_blending:background_endofpacket
+	wire         scaler_yellow_avalon_scaler_source_valid;                                          // scaler_yellow:stream_out_valid -> avalon_st_adapter_001:in_0_valid
+	wire  [39:0] scaler_yellow_avalon_scaler_source_data;                                           // scaler_yellow:stream_out_data -> avalon_st_adapter_001:in_0_data
+	wire         scaler_yellow_avalon_scaler_source_ready;                                          // avalon_st_adapter_001:in_0_ready -> scaler_yellow:stream_out_ready
+	wire   [1:0] scaler_yellow_avalon_scaler_source_channel;                                        // scaler_yellow:stream_out_channel -> avalon_st_adapter_001:in_0_channel
+	wire         scaler_yellow_avalon_scaler_source_startofpacket;                                  // scaler_yellow:stream_out_startofpacket -> avalon_st_adapter_001:in_0_startofpacket
+	wire         scaler_yellow_avalon_scaler_source_endofpacket;                                    // scaler_yellow:stream_out_endofpacket -> avalon_st_adapter_001:in_0_endofpacket
+	wire         avalon_st_adapter_001_out_0_valid;                                                 // avalon_st_adapter_001:out_0_valid -> Avalon_Chroma_Process:pixel_fondo_valid
+	wire  [39:0] avalon_st_adapter_001_out_0_data;                                                  // avalon_st_adapter_001:out_0_data -> Avalon_Chroma_Process:pixel_fondo
+	wire         avalon_st_adapter_001_out_0_ready;                                                 // Avalon_Chroma_Process:pixel_fondo_ready -> avalon_st_adapter_001:out_0_ready
+	wire         avalon_st_adapter_001_out_0_startofpacket;                                         // avalon_st_adapter_001:out_0_startofpacket -> Avalon_Chroma_Process:pixel_fondo_startofpacket
+	wire         avalon_st_adapter_001_out_0_endofpacket;                                           // avalon_st_adapter_001:out_0_endofpacket -> Avalon_Chroma_Process:pixel_fondo_endofpacket
+	wire   [1:0] avalon_st_adapter_001_out_0_empty;                                                 // avalon_st_adapter_001:out_0_empty -> Avalon_Chroma_Process:pixel_fondo_empty
+	wire         scaler_green_avalon_scaler_source_valid;                                           // scaler_green:stream_out_valid -> avalon_st_adapter_002:in_0_valid
+	wire  [29:0] scaler_green_avalon_scaler_source_data;                                            // scaler_green:stream_out_data -> avalon_st_adapter_002:in_0_data
+	wire         scaler_green_avalon_scaler_source_ready;                                           // avalon_st_adapter_002:in_0_ready -> scaler_green:stream_out_ready
+	wire   [1:0] scaler_green_avalon_scaler_source_channel;                                         // scaler_green:stream_out_channel -> avalon_st_adapter_002:in_0_channel
+	wire         scaler_green_avalon_scaler_source_startofpacket;                                   // scaler_green:stream_out_startofpacket -> avalon_st_adapter_002:in_0_startofpacket
+	wire         scaler_green_avalon_scaler_source_endofpacket;                                     // scaler_green:stream_out_endofpacket -> avalon_st_adapter_002:in_0_endofpacket
+	wire         avalon_st_adapter_002_out_0_valid;                                                 // avalon_st_adapter_002:out_0_valid -> Avalon_Chroma_Process:pixel_video_valid
+	wire  [29:0] avalon_st_adapter_002_out_0_data;                                                  // avalon_st_adapter_002:out_0_data -> Avalon_Chroma_Process:pixel_video
+	wire         avalon_st_adapter_002_out_0_ready;                                                 // Avalon_Chroma_Process:pixel_video_ready -> avalon_st_adapter_002:out_0_ready
+	wire         avalon_st_adapter_002_out_0_startofpacket;                                         // avalon_st_adapter_002:out_0_startofpacket -> Avalon_Chroma_Process:pixel_video_startofpacket
+	wire         avalon_st_adapter_002_out_0_endofpacket;                                           // avalon_st_adapter_002:out_0_endofpacket -> Avalon_Chroma_Process:pixel_video_endofpacket
+	wire   [1:0] avalon_st_adapter_002_out_0_empty;                                                 // avalon_st_adapter_002:out_0_empty -> Avalon_Chroma_Process:pixel_video_empty
 	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [Avalon_Chroma_Process:reset, Green_LED:reset, HEX3_HEX0:reset, HEX7_HEX4:reset, alpha_blending:reset, audio:reset, audio_and_video_config:reset, avalon_st_adapter:in_rst_0_reset, avalon_st_adapter_001:in_rst_0_reset, avalon_st_adapter_002:in_rst_0_reset, char_lcd:reset, cpu:reset_n, dma_controller_yellow:reset, flash_bridge:reset, flash_controller:reset_reset, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:video_dma_controller_normal_reset_reset_bridge_in_reset_reset, mtl_char_buffer:reset, mtl_dual_clock_buffer:reset_stream_in, onchip_memory:reset, performance_counter:reset_n, pixel_buffer_dma_green:reset, ps2_key:reset, ps2_mouse:reset, pushbuttons:reset, red_LEDs:reset, rgb_resampler_green:reset, rgb_resampler_yellow:reset, rst_translator:in_reset, scaler_green:reset, scaler_yellow:reset, sd_card:i_reset_n, sdram:reset_n, serial_port:reset, sram:reset, switches:reset, sysid:reset_n, timer:reset_n, video_chroma_resampler:reset, video_clipper_normal:reset, video_csc:reset, video_decoder:reset, video_dma_controller_normal:reset, video_rgb_resampler:reset, video_scaler_normal:reset]
 	wire         rst_controller_reset_out_reset_req;                                                // rst_controller:reset_req -> [cpu:reset_req, onchip_memory:reset_req, rst_translator:reset_req_in]
 	wire         cpu_debug_reset_request_reset;                                                     // cpu:debug_reset_request -> [rst_controller:reset_in0, rst_controller_002:reset_in0]
@@ -429,27 +435,33 @@ module nios_system (
 	wire         rst_controller_003_reset_out_reset;                                                // rst_controller_003:reset_out -> sys_sdram_pll:ref_reset_reset
 	wire         rst_controller_004_reset_out_reset;                                                // rst_controller_004:reset_out -> video_pll:ref_reset_reset
 
-	altera_up_avalon_video_alpha_blender avalon_chroma_process (
-		.clk                                   (sys_clk_out_clk),                                             //                   clock.clk
-		.reset                                 (rst_controller_reset_out_reset),                              //                   reset.reset
-		.avalon_streaming_sink_ready           (avalon_st_adapter_out_0_ready),                               //   avalon_streaming_sink.ready
-		.avalon_streaming_sink_data            (avalon_st_adapter_out_0_data),                                //                        .data
-		.avalon_streaming_sink_endofpacket     (avalon_st_adapter_out_0_endofpacket),                         //                        .endofpacket
-		.avalon_streaming_sink_startofpacket   (avalon_st_adapter_out_0_startofpacket),                       //                        .startofpacket
-		.avalon_streaming_sink_empty           (avalon_st_adapter_out_0_empty),                               //                        .empty
-		.avalon_streaming_sink_valid           (avalon_st_adapter_out_0_valid),                               //                        .valid
-		.avalon_streaming_source_ready         (avalon_chroma_process_avalon_streaming_source_ready),         // avalon_streaming_source.ready
-		.avalon_streaming_source_data          (avalon_chroma_process_avalon_streaming_source_data),          //                        .data
-		.avalon_streaming_source_startofpacket (avalon_chroma_process_avalon_streaming_source_startofpacket), //                        .startofpacket
-		.avalon_streaming_source_endofpacket   (avalon_chroma_process_avalon_streaming_source_endofpacket),   //                        .endofpacket
-		.avalon_streaming_source_empty         (avalon_chroma_process_avalon_streaming_source_empty),         //                        .empty
-		.avalon_streaming_source_valid         (avalon_chroma_process_avalon_streaming_source_valid),         //                        .valid
-		.avalon_streaming_sink_1_data          (avalon_st_adapter_001_out_0_data),                            // avalon_streaming_sink_1.data
-		.avalon_streaming_sink_1_startofpacket (avalon_st_adapter_001_out_0_startofpacket),                   //                        .startofpacket
-		.avalon_streaming_sink_1_endofpacket   (avalon_st_adapter_001_out_0_endofpacket),                     //                        .endofpacket
-		.avalon_streaming_sink_1_ready         (avalon_st_adapter_001_out_0_ready),                           //                        .ready
-		.avalon_streaming_sink_1_empty         (avalon_st_adapter_001_out_0_empty),                           //                        .empty
-		.avalon_streaming_sink_1_valid         (avalon_st_adapter_001_out_0_valid)                            //                        .valid
+	altera_up_avalon_chroma_key avalon_chroma_process (
+		.clk                       (sys_clk_out_clk),                                                 //                  clock.clk
+		.reset                     (rst_controller_reset_out_reset),                                  //                  reset.reset
+		.pixel_fondo               (avalon_st_adapter_001_out_0_data),                                // avalon_background_sink.data
+		.pixel_fondo_empty         (avalon_st_adapter_001_out_0_empty),                               //                       .empty
+		.pixel_fondo_endofpacket   (avalon_st_adapter_001_out_0_endofpacket),                         //                       .endofpacket
+		.pixel_fondo_ready         (avalon_st_adapter_001_out_0_ready),                               //                       .ready
+		.pixel_fondo_startofpacket (avalon_st_adapter_001_out_0_startofpacket),                       //                       .startofpacket
+		.pixel_fondo_valid         (avalon_st_adapter_001_out_0_valid),                               //                       .valid
+		.pixel_video               (avalon_st_adapter_002_out_0_data),                                //      avalon_video_sink.data
+		.pixel_video_empty         (avalon_st_adapter_002_out_0_empty),                               //                       .empty
+		.pixel_video_endofpacket   (avalon_st_adapter_002_out_0_endofpacket),                         //                       .endofpacket
+		.pixel_video_ready         (avalon_st_adapter_002_out_0_ready),                               //                       .ready
+		.pixel_video_startofpacket (avalon_st_adapter_002_out_0_startofpacket),                       //                       .startofpacket
+		.pixel_video_valid         (avalon_st_adapter_002_out_0_valid),                               //                       .valid
+		.chipselect                (mm_interconnect_0_avalon_chroma_process_avalon_slave_chipselect), //           avalon_slave.chipselect
+		.address                   (mm_interconnect_0_avalon_chroma_process_avalon_slave_address),    //                       .address
+		.write                     (mm_interconnect_0_avalon_chroma_process_avalon_slave_write),      //                       .write
+		.writedata                 (mm_interconnect_0_avalon_chroma_process_avalon_slave_writedata),  //                       .writedata
+		.read                      (mm_interconnect_0_avalon_chroma_process_avalon_slave_read),       //                       .read
+		.readdata                  (mm_interconnect_0_avalon_chroma_process_avalon_slave_readdata),   //                       .readdata
+		.output_data               (avalon_chroma_process_avalon_chroma_source_data),                 //   avalon_chroma_source.data
+		.output_empty              (avalon_chroma_process_avalon_chroma_source_empty),                //                       .empty
+		.output_ready              (avalon_chroma_process_avalon_chroma_source_ready),                //                       .ready
+		.output_startofpacket      (avalon_chroma_process_avalon_chroma_source_startofpacket),        //                       .startofpacket
+		.output_valid              (avalon_chroma_process_avalon_chroma_source_valid),                //                       .valid
+		.output_endofpacket        (avalon_chroma_process_avalon_chroma_source_endofpacket)           //                       .endofpacket
 	);
 
 	nios_system_Green_LED green_led (
@@ -505,11 +517,11 @@ module nios_system (
 		.foreground_endofpacket   (mtl_char_buffer_avalon_char_source_endofpacket),     //                       .endofpacket
 		.foreground_valid         (mtl_char_buffer_avalon_char_source_valid),           //                       .valid
 		.foreground_ready         (mtl_char_buffer_avalon_char_source_ready),           //                       .ready
-		.background_data          (avalon_st_adapter_002_out_0_data),                   // avalon_background_sink.data
-		.background_startofpacket (avalon_st_adapter_002_out_0_startofpacket),          //                       .startofpacket
-		.background_endofpacket   (avalon_st_adapter_002_out_0_endofpacket),            //                       .endofpacket
-		.background_valid         (avalon_st_adapter_002_out_0_valid),                  //                       .valid
-		.background_ready         (avalon_st_adapter_002_out_0_ready),                  //                       .ready
+		.background_data          (avalon_st_adapter_out_0_data),                       // avalon_background_sink.data
+		.background_startofpacket (avalon_st_adapter_out_0_startofpacket),              //                       .startofpacket
+		.background_endofpacket   (avalon_st_adapter_out_0_endofpacket),                //                       .endofpacket
+		.background_valid         (avalon_st_adapter_out_0_valid),                      //                       .valid
+		.background_ready         (avalon_st_adapter_out_0_ready),                      //                       .ready
 		.output_ready             (alpha_blending_avalon_blended_source_ready),         //  avalon_blended_source.ready
 		.output_data              (alpha_blending_avalon_blended_source_data),          //                       .data
 		.output_startofpacket     (alpha_blending_avalon_blended_source_startofpacket), //                       .startofpacket
@@ -898,7 +910,7 @@ module nios_system (
 		.stream_out_data          (rgb_resampler_green_avalon_rgb_source_data)                //                  .data
 	);
 
-	nios_system_rgb_resampler_green rgb_resampler_yellow (
+	nios_system_rgb_resampler_yellow rgb_resampler_yellow (
 		.clk                      (sys_clk_out_clk),                                         //               clk.clk
 		.reset                    (rst_controller_reset_out_reset),                          //             reset.reset
 		.stream_in_startofpacket  (dma_controller_yellow_avalon_pixel_source_startofpacket), //   avalon_rgb_sink.startofpacket
@@ -929,7 +941,7 @@ module nios_system (
 		.stream_out_channel       (scaler_green_avalon_scaler_source_channel)            //                     .channel
 	);
 
-	nios_system_scaler_green scaler_yellow (
+	nios_system_scaler_yellow scaler_yellow (
 		.clk                      (sys_clk_out_clk),                                      //                  clk.clk
 		.reset                    (rst_controller_reset_out_reset),                       //                reset.reset
 		.stream_in_startofpacket  (rgb_resampler_yellow_avalon_rgb_source_startofpacket), //   avalon_scaler_sink.startofpacket
@@ -1224,6 +1236,12 @@ module nios_system (
 		.audio_and_video_config_avalon_av_config_slave_writedata         (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_writedata),         //                                                        .writedata
 		.audio_and_video_config_avalon_av_config_slave_byteenable        (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_byteenable),        //                                                        .byteenable
 		.audio_and_video_config_avalon_av_config_slave_waitrequest       (mm_interconnect_0_audio_and_video_config_avalon_av_config_slave_waitrequest),       //                                                        .waitrequest
+		.Avalon_Chroma_Process_avalon_slave_address                      (mm_interconnect_0_avalon_chroma_process_avalon_slave_address),                      //                      Avalon_Chroma_Process_avalon_slave.address
+		.Avalon_Chroma_Process_avalon_slave_write                        (mm_interconnect_0_avalon_chroma_process_avalon_slave_write),                        //                                                        .write
+		.Avalon_Chroma_Process_avalon_slave_read                         (mm_interconnect_0_avalon_chroma_process_avalon_slave_read),                         //                                                        .read
+		.Avalon_Chroma_Process_avalon_slave_readdata                     (mm_interconnect_0_avalon_chroma_process_avalon_slave_readdata),                     //                                                        .readdata
+		.Avalon_Chroma_Process_avalon_slave_writedata                    (mm_interconnect_0_avalon_chroma_process_avalon_slave_writedata),                    //                                                        .writedata
+		.Avalon_Chroma_Process_avalon_slave_chipselect                   (mm_interconnect_0_avalon_chroma_process_avalon_slave_chipselect),                   //                                                        .chipselect
 		.char_lcd_avalon_lcd_slave_address                               (mm_interconnect_0_char_lcd_avalon_lcd_slave_address),                               //                               char_lcd_avalon_lcd_slave.address
 		.char_lcd_avalon_lcd_slave_write                                 (mm_interconnect_0_char_lcd_avalon_lcd_slave_write),                                 //                                                        .write
 		.char_lcd_avalon_lcd_slave_read                                  (mm_interconnect_0_char_lcd_avalon_lcd_slave_read),                                  //                                                        .read
@@ -1418,74 +1436,6 @@ module nios_system (
 		.inBitsPerSymbol (10),
 		.inUsePackets    (1),
 		.inDataWidth     (30),
-		.inChannelWidth  (2),
-		.inErrorWidth    (0),
-		.inUseEmptyPort  (0),
-		.inUseValid      (1),
-		.inUseReady      (1),
-		.inReadyLatency  (0),
-		.outDataWidth    (30),
-		.outChannelWidth (0),
-		.outErrorWidth   (0),
-		.outUseEmptyPort (1),
-		.outUseValid     (1),
-		.outUseReady     (1),
-		.outReadyLatency (0)
-	) avalon_st_adapter (
-		.in_clk_0_clk        (sys_clk_out_clk),                                  // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_reset_out_reset),                   // in_rst_0.reset
-		.in_0_data           (scaler_yellow_avalon_scaler_source_data),          //     in_0.data
-		.in_0_valid          (scaler_yellow_avalon_scaler_source_valid),         //         .valid
-		.in_0_ready          (scaler_yellow_avalon_scaler_source_ready),         //         .ready
-		.in_0_startofpacket  (scaler_yellow_avalon_scaler_source_startofpacket), //         .startofpacket
-		.in_0_endofpacket    (scaler_yellow_avalon_scaler_source_endofpacket),   //         .endofpacket
-		.in_0_channel        (scaler_yellow_avalon_scaler_source_channel),       //         .channel
-		.out_0_data          (avalon_st_adapter_out_0_data),                     //    out_0.data
-		.out_0_valid         (avalon_st_adapter_out_0_valid),                    //         .valid
-		.out_0_ready         (avalon_st_adapter_out_0_ready),                    //         .ready
-		.out_0_startofpacket (avalon_st_adapter_out_0_startofpacket),            //         .startofpacket
-		.out_0_endofpacket   (avalon_st_adapter_out_0_endofpacket),              //         .endofpacket
-		.out_0_empty         (avalon_st_adapter_out_0_empty)                     //         .empty
-	);
-
-	nios_system_avalon_st_adapter #(
-		.inBitsPerSymbol (10),
-		.inUsePackets    (1),
-		.inDataWidth     (30),
-		.inChannelWidth  (2),
-		.inErrorWidth    (0),
-		.inUseEmptyPort  (0),
-		.inUseValid      (1),
-		.inUseReady      (1),
-		.inReadyLatency  (0),
-		.outDataWidth    (30),
-		.outChannelWidth (0),
-		.outErrorWidth   (0),
-		.outUseEmptyPort (1),
-		.outUseValid     (1),
-		.outUseReady     (1),
-		.outReadyLatency (0)
-	) avalon_st_adapter_001 (
-		.in_clk_0_clk        (sys_clk_out_clk),                                 // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_reset_out_reset),                  // in_rst_0.reset
-		.in_0_data           (scaler_green_avalon_scaler_source_data),          //     in_0.data
-		.in_0_valid          (scaler_green_avalon_scaler_source_valid),         //         .valid
-		.in_0_ready          (scaler_green_avalon_scaler_source_ready),         //         .ready
-		.in_0_startofpacket  (scaler_green_avalon_scaler_source_startofpacket), //         .startofpacket
-		.in_0_endofpacket    (scaler_green_avalon_scaler_source_endofpacket),   //         .endofpacket
-		.in_0_channel        (scaler_green_avalon_scaler_source_channel),       //         .channel
-		.out_0_data          (avalon_st_adapter_001_out_0_data),                //    out_0.data
-		.out_0_valid         (avalon_st_adapter_001_out_0_valid),               //         .valid
-		.out_0_ready         (avalon_st_adapter_001_out_0_ready),               //         .ready
-		.out_0_startofpacket (avalon_st_adapter_001_out_0_startofpacket),       //         .startofpacket
-		.out_0_endofpacket   (avalon_st_adapter_001_out_0_endofpacket),         //         .endofpacket
-		.out_0_empty         (avalon_st_adapter_001_out_0_empty)                //         .empty
-	);
-
-	nios_system_avalon_st_adapter_002 #(
-		.inBitsPerSymbol (10),
-		.inUsePackets    (1),
-		.inDataWidth     (30),
 		.inChannelWidth  (0),
 		.inErrorWidth    (0),
 		.inUseEmptyPort  (1),
@@ -1499,20 +1449,88 @@ module nios_system (
 		.outUseValid     (1),
 		.outUseReady     (1),
 		.outReadyLatency (0)
+	) avalon_st_adapter (
+		.in_clk_0_clk        (sys_clk_out_clk),                                          // in_clk_0.clk
+		.in_rst_0_reset      (rst_controller_reset_out_reset),                           // in_rst_0.reset
+		.in_0_data           (avalon_chroma_process_avalon_chroma_source_data),          //     in_0.data
+		.in_0_valid          (avalon_chroma_process_avalon_chroma_source_valid),         //         .valid
+		.in_0_ready          (avalon_chroma_process_avalon_chroma_source_ready),         //         .ready
+		.in_0_startofpacket  (avalon_chroma_process_avalon_chroma_source_startofpacket), //         .startofpacket
+		.in_0_endofpacket    (avalon_chroma_process_avalon_chroma_source_endofpacket),   //         .endofpacket
+		.in_0_empty          (avalon_chroma_process_avalon_chroma_source_empty),         //         .empty
+		.out_0_data          (avalon_st_adapter_out_0_data),                             //    out_0.data
+		.out_0_valid         (avalon_st_adapter_out_0_valid),                            //         .valid
+		.out_0_ready         (avalon_st_adapter_out_0_ready),                            //         .ready
+		.out_0_startofpacket (avalon_st_adapter_out_0_startofpacket),                    //         .startofpacket
+		.out_0_endofpacket   (avalon_st_adapter_out_0_endofpacket)                       //         .endofpacket
+	);
+
+	nios_system_avalon_st_adapter_001 #(
+		.inBitsPerSymbol (10),
+		.inUsePackets    (1),
+		.inDataWidth     (40),
+		.inChannelWidth  (2),
+		.inErrorWidth    (0),
+		.inUseEmptyPort  (0),
+		.inUseValid      (1),
+		.inUseReady      (1),
+		.inReadyLatency  (0),
+		.outDataWidth    (40),
+		.outChannelWidth (0),
+		.outErrorWidth   (0),
+		.outUseEmptyPort (1),
+		.outUseValid     (1),
+		.outUseReady     (1),
+		.outReadyLatency (0)
+	) avalon_st_adapter_001 (
+		.in_clk_0_clk        (sys_clk_out_clk),                                  // in_clk_0.clk
+		.in_rst_0_reset      (rst_controller_reset_out_reset),                   // in_rst_0.reset
+		.in_0_data           (scaler_yellow_avalon_scaler_source_data),          //     in_0.data
+		.in_0_valid          (scaler_yellow_avalon_scaler_source_valid),         //         .valid
+		.in_0_ready          (scaler_yellow_avalon_scaler_source_ready),         //         .ready
+		.in_0_startofpacket  (scaler_yellow_avalon_scaler_source_startofpacket), //         .startofpacket
+		.in_0_endofpacket    (scaler_yellow_avalon_scaler_source_endofpacket),   //         .endofpacket
+		.in_0_channel        (scaler_yellow_avalon_scaler_source_channel),       //         .channel
+		.out_0_data          (avalon_st_adapter_001_out_0_data),                 //    out_0.data
+		.out_0_valid         (avalon_st_adapter_001_out_0_valid),                //         .valid
+		.out_0_ready         (avalon_st_adapter_001_out_0_ready),                //         .ready
+		.out_0_startofpacket (avalon_st_adapter_001_out_0_startofpacket),        //         .startofpacket
+		.out_0_endofpacket   (avalon_st_adapter_001_out_0_endofpacket),          //         .endofpacket
+		.out_0_empty         (avalon_st_adapter_001_out_0_empty)                 //         .empty
+	);
+
+	nios_system_avalon_st_adapter_002 #(
+		.inBitsPerSymbol (10),
+		.inUsePackets    (1),
+		.inDataWidth     (30),
+		.inChannelWidth  (2),
+		.inErrorWidth    (0),
+		.inUseEmptyPort  (0),
+		.inUseValid      (1),
+		.inUseReady      (1),
+		.inReadyLatency  (0),
+		.outDataWidth    (30),
+		.outChannelWidth (0),
+		.outErrorWidth   (0),
+		.outUseEmptyPort (1),
+		.outUseValid     (1),
+		.outUseReady     (1),
+		.outReadyLatency (0)
 	) avalon_st_adapter_002 (
-		.in_clk_0_clk        (sys_clk_out_clk),                                             // in_clk_0.clk
-		.in_rst_0_reset      (rst_controller_reset_out_reset),                              // in_rst_0.reset
-		.in_0_data           (avalon_chroma_process_avalon_streaming_source_data),          //     in_0.data
-		.in_0_valid          (avalon_chroma_process_avalon_streaming_source_valid),         //         .valid
-		.in_0_ready          (avalon_chroma_process_avalon_streaming_source_ready),         //         .ready
-		.in_0_startofpacket  (avalon_chroma_process_avalon_streaming_source_startofpacket), //         .startofpacket
-		.in_0_endofpacket    (avalon_chroma_process_avalon_streaming_source_endofpacket),   //         .endofpacket
-		.in_0_empty          (avalon_chroma_process_avalon_streaming_source_empty),         //         .empty
-		.out_0_data          (avalon_st_adapter_002_out_0_data),                            //    out_0.data
-		.out_0_valid         (avalon_st_adapter_002_out_0_valid),                           //         .valid
-		.out_0_ready         (avalon_st_adapter_002_out_0_ready),                           //         .ready
-		.out_0_startofpacket (avalon_st_adapter_002_out_0_startofpacket),                   //         .startofpacket
-		.out_0_endofpacket   (avalon_st_adapter_002_out_0_endofpacket)                      //         .endofpacket
+		.in_clk_0_clk        (sys_clk_out_clk),                                 // in_clk_0.clk
+		.in_rst_0_reset      (rst_controller_reset_out_reset),                  // in_rst_0.reset
+		.in_0_data           (scaler_green_avalon_scaler_source_data),          //     in_0.data
+		.in_0_valid          (scaler_green_avalon_scaler_source_valid),         //         .valid
+		.in_0_ready          (scaler_green_avalon_scaler_source_ready),         //         .ready
+		.in_0_startofpacket  (scaler_green_avalon_scaler_source_startofpacket), //         .startofpacket
+		.in_0_endofpacket    (scaler_green_avalon_scaler_source_endofpacket),   //         .endofpacket
+		.in_0_channel        (scaler_green_avalon_scaler_source_channel),       //         .channel
+		.out_0_data          (avalon_st_adapter_002_out_0_data),                //    out_0.data
+		.out_0_valid         (avalon_st_adapter_002_out_0_valid),               //         .valid
+		.out_0_ready         (avalon_st_adapter_002_out_0_ready),               //         .ready
+		.out_0_startofpacket (avalon_st_adapter_002_out_0_startofpacket),       //         .startofpacket
+		.out_0_endofpacket   (avalon_st_adapter_002_out_0_endofpacket),         //         .endofpacket
+		.out_0_empty         (avalon_st_adapter_002_out_0_empty)                //         .empty
 	);
 
 	altera_reset_controller #(

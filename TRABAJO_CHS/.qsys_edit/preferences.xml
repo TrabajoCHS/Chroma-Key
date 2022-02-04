@@ -5,13 +5,13 @@
   <columns>
    <connections preferredWidth="719" />
    <irq preferredWidth="34" />
-   <name preferredWidth="176" />
-   <export preferredWidth="212" />
+   <name preferredWidth="287" />
+   <export preferredWidth="57" />
+   <description preferredWidth="77" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/DSP,Library/University Program,Library/University Program/Audio &amp; Video/Video,Project/IP,Project,Library,Library/DSP/Video and Image Processing,Library/University Program/Audio &amp; Video" />
- <window width="976" height="1056" x="794" y="0" />
+ <library expandedCategories="Library,Project,Project/IP" />
+ <window width="1920" height="1040" x="0" y="0" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />
 </preferences>

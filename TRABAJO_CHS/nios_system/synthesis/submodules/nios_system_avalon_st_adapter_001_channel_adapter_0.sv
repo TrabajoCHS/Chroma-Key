@@ -42,12 +42,12 @@
 //   in_max_channel:      0
 //   out_channel_width:   0
 //   out_max_channel:     0
-//   data_width:          16
+//   data_width:          40
 //   error_width:         0
 //   use_ready:           true
 //   use_packets:         true
-//   use_empty:           0
-//   empty_width:         0
+//   use_empty:           1
+//   empty_width:         2
 
 // ------------------------------------------
 
@@ -57,16 +57,18 @@ module nios_system_avalon_st_adapter_001_channel_adapter_0
  // Interface: in
  output reg         in_ready,
  input              in_valid,
- input     [16-1: 0] in_data,
+ input     [40-1: 0] in_data,
  input [2-1: 0] in_channel,
  input              in_startofpacket,
  input              in_endofpacket,
+ input [2-1: 0] in_empty,
  // Interface: out
  input               out_ready,
  output reg          out_valid,
- output reg [16-1: 0] out_data,
+ output reg [40-1: 0] out_data,
  output reg          out_startofpacket,
  output reg          out_endofpacket,
+ output reg [2-1: 0] out_empty,
   // Interface: clk
  input              clk,
  // Interface: reset
@@ -86,6 +88,7 @@ module nios_system_avalon_st_adapter_001_channel_adapter_0
       out_data = in_data;
       out_startofpacket = in_startofpacket;
       out_endofpacket = in_endofpacket;
+      out_empty = in_empty;
 
       out_channel = in_channel; //TODO delete this to avoid Quartus warnings
 

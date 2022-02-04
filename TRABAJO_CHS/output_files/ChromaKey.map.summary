@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Failed - Fri Jan 28 11:00:37 2022
+Analysis & Synthesis Status : Successful - Fri Feb 04 12:06:34 2022
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 Revision Name : ChromaKey
 Top-level Entity Name : ChromaKey
 Family : Cyclone IV E
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
+Total logic elements : 13,433
+    Total combinational functions : 11,110
+    Dedicated logic registers : 7,899
+Total registers : 7899
+Total pins : 358
+Total virtual pins : 0
+Total memory bits : 384,000
+Embedded Multiplier 9-bit elements : 16
+Total PLLs : 2
