@@ -39,8 +39,8 @@ void LCD_cursor( int, int );
 void LCD_text( char * );
 void LCD_cursor_off( void );
 void MTL_text (int, int, char *);
-void MTL_box (int, int, int, int, short);
-void ReadImage(const char *,byte **, int32 *, int32 *, int32 *);
+void MTL_box (int, int, int, int, byte *);
+void PrintImage(const char *);
 
 int main(void)
 {
@@ -58,11 +58,6 @@ int main(void)
 	int HEX_bits = 0x0000000F; 								// patrón para los display HEX
 	int SW_value, KEY_value, delay_count;*/
 
-    /*byte *pixels;
-    int32 width;
-    int32 height;
-    int32 bytesPerPixel;*/
-
 	printf("Hola desde Nios II\n");
 
 	/* mensaje a visualizar en la VGA y en el LCD */
@@ -76,8 +71,8 @@ int main(void)
 	LCD_text (text_bottom_row);
 	LCD_cursor_off ();						// apaga el cursor del LCD
 
-	MTL_box (0, 0, 50*8-1, 30*8-1, 0x187F); // Pinta de Negro toda la pantalla
-	//ReadImage("/mnt/rozipfs/imagen00.bmp",&pixels, &width, &height, &bytesPerPixel);
+	PrintImage("/mnt/rozipfs/imagen02.bmp");
+	//MTL_box (0, 0, 50*8-1, 30*8-1, pixels); // Pinta de Negro toda la pantalla
 }
 
 /****************************************************************************************
@@ -138,8 +133,9 @@ void MTL_text(int x, int y, char * text_ptr)
 /****************************************************************************************
  * Dibujar un rectangulo en la pantalla MTL
 ****************************************************************************************/
-void MTL_box(int x1, int y1, int x2, int y2, short pixel_color)
+void MTL_box(int x1, int y1, int x2, int y2, byte *pixels)
 {
+	int i = 0;
 	int offset, row, col;
 	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000 + 0x0100000);  //Activando el bit más significativo se elude la cache de datos
   	volatile short * pixel_buffer = (short *) SRAM_BASE_SIN_CACHE;	// MTL pixel buffer
@@ -151,40 +147,62 @@ void MTL_box(int x1, int y1, int x2, int y2, short pixel_color)
 		while (col <= x2)
 		{
 			offset = (row << 9) + col;
-			*(pixel_buffer + offset) = pixel_color;	//procesa mitad direcciones
+			*(pixel_buffer + offset) = *(pixels + i);	//procesa mitad direcciones
 			++col;
+			++i;
 		}
 	}
 }
 /****************************************************************************************
  * Lee un fichero bmp imagen guardando los datos de pixel, anchura, altura y bytes por pixel
 ****************************************************************************************/
-void ReadImage(const char *fileName,byte **pixels, int32 *width, int32 *height, int32 *bytesPerPixel)
+void PrintImage(const char *fileName)
 {
 	FILE *imageFile = fopen(fileName, "rb");
-	int32 dataOffset;
-	fseek(imageFile, DATA_OFFSET_OFFSET, SEEK_SET);
-	fread(&dataOffset, 4, 1, imageFile);
-	fseek(imageFile, WIDTH_OFFSET, SEEK_SET);
-	fread(width, 4, 1, imageFile);
-	fseek(imageFile, HEIGHT_OFFSET, SEEK_SET);
-	fread(height, 4, 1, imageFile);
-	int16 bitsPerPixel;
-	fseek(imageFile, BITS_PER_PIXEL_OFFSET, SEEK_SET);
-	fread(&bitsPerPixel, 2, 1, imageFile);
-	*bytesPerPixel = ((int32)bitsPerPixel) / 8;
 
-	int paddedRowSize = (int)(4 * ceil((float)(*width) / 4.0f))*(*bytesPerPixel);
-	int unpaddedRowSize = (*width)*(*bytesPerPixel);
-	int totalSize = unpaddedRowSize*(*height);
-	*pixels = (byte*)malloc(totalSize);
-	int i = 0;
-	byte *currentRowPointer = *pixels+((*height-1)*unpaddedRowSize);
-	for (i = 0; i < *height; i++)
+	int offset, row, col;
+	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000 + 0x0100000);  //Activando el bit más significativo se elude la cache de datos
+  	volatile short * pixel_buffer = (short *) SRAM_BASE_SIN_CACHE;	// MTL pixel buffer
+
+  	/* se asume que las coordenadas del rectangulo son correctas */
+  	for(int i = 0; i < 54; i++) { getc(imageFile);}
+	for (row = 239; row >= 0; row--)
 	{
-		fseek(imageFile, dataOffset+(i*paddedRowSize), SEEK_SET);
-		fread(currentRowPointer, 1, unpaddedRowSize, imageFile);
-		currentRowPointer -= unpaddedRowSize;
+		for(col = 0; col <= 399; col++)
+		{
+			offset = (row << 9) + col;
+			int r, g, b;
+			r = getc(imageFile) >> 3;
+			g = getc(imageFile) >> 2;
+			b = getc(imageFile) >> 3;
+			*(pixel_buffer + offset) = (b << 11 | g << 5 | r);	//procesa mitad direcciones
+		}
 	}
 	fclose(imageFile);
 }
+
+/*
+int32 dataOffset;
+fseek(imageFile, DATA_OFFSET_OFFSET, SEEK_SET);
+fread(&dataOffset, 4, 1, imageFile);
+fseek(imageFile, WIDTH_OFFSET, SEEK_SET);
+fread(width, 4, 1, imageFile);
+fseek(imageFile, HEIGHT_OFFSET, SEEK_SET);
+fread(height, 4, 1, imageFile);
+int16 bitsPerPixel;
+fseek(imageFile, BITS_PER_PIXEL_OFFSET, SEEK_SET);
+fread(&bitsPerPixel, 2, 1, imageFile);
+*bytesPerPixel = ((int32)bitsPerPixel) / 8;
+
+int paddedRowSize = (int)(4 * ceil((float)(*width) / 4.0f))*(*bytesPerPixel);
+int unpaddedRowSize = (*width)*(*bytesPerPixel);
+int totalSize = unpaddedRowSize*(*height);
+*pixels = (byte*)malloc(totalSize);
+int i = 0;
+byte *currentRowPointer = *pixels+((*height-1)*unpaddedRowSize);
+for (i = 0; i < *height; i++)
+{
+	fseek(imageFile, dataOffset+(i*paddedRowSize), SEEK_SET);
+	fread(currentRowPointer, 1, unpaddedRowSize, imageFile);
+	currentRowPointer -= unpaddedRowSize;
+}*/

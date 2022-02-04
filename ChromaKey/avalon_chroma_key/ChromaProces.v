@@ -22,10 +22,6 @@ wire [9:0] imRed, imGreen, imBlue;
 assign threshold = 10'h1FF;
 assign isGreen = (iGreen > threshold) & (iRed < threshold) & (iBlue < threshold);
 
-// for checking green in image
-assign imIsGreen = (imVGA_G == 10'h3FF) & (imVGA_R == 10'h1) & (imVGA_B == 10'h0); //esto es el verde a eliminar
-//cuando todos son del tono que queremos TRUE si no False
-
 //image to display in green screen areas
 
 assign imRed = imVGA_R;

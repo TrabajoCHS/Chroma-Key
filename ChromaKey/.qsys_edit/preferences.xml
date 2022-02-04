@@ -10,9 +10,8 @@
    <name preferredWidth="199" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Project/IP,Library/University Program/Audio &amp; Video,Library,Library/DSP/Video and Image Processing,Library/University Program,Library/University Program/Audio &amp; Video/Video,Project,Library/DSP" />
- <window width="1920" height="1040" x="0" y="0" />
+ <library expandedCategories="Project,Library,Project/IP" />
+ <window width="1936" height="1056" x="-8" y="-8" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />
 </preferences>
