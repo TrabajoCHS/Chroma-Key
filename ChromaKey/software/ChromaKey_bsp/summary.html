@@ -16,16 +16,16 @@
 <td width="20%" bgcolor="#77BBFF">CPU:</td><td>cpu</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Settings File:</td><td>.\settings.bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Settings File:</td><td>C:\Users\jhovarne\Documents\GitHub\Chroma-Key\ChromaKey\software\ChromaKey_bsp\settings.bsp</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>04-feb-2022 9:40:40</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Feb 4, 2022 12:22:27 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1643964040146</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1643973747576</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\jhovarne\Documents\GitHub\Chroma-Key\ChromaKey\software\ChromaKey_bsp</td>
@@ -41,13 +41,16 @@
 <td>mtl_char_buffer_avalon_char_buffer_slave</td><td>0x10001800 - 0x10001FFF</td><td>2048</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>dma_controller_yellow</td><td>0x10001400 - 0x1000140F</td><td>16</td><td class="listing">&nbsp;</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>video_dma_controller</td><td>0x10001300 - 0x1000130F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>mtl_char_buffer_avalon_char_control_slave</td><td>0x10001200 - 0x10001207</td><td>8</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>mtl_pixel_buffer_dma</td><td>0x10001100 - 0x1000110F</td><td>16</td><td class="listing">&nbsp;</td>
+<td>pixel_buffer_dma_green</td><td>0x10001100 - 0x1000110F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>performance_counter</td><td>0x10001080 - 0x100010BF</td><td>64</td><td class="listing">&nbsp;</td>
@@ -147,6 +150,19 @@
 <td>.stack</td><td>sdram</td>
 </tr>
 </table>
+<br>
+<br>
+<h3>Software Packages</h3>
+<table border="1" bgcolor="#FFFFCC" width="50%">
+<tr bgcolor="#77BBFF" mode="wrap">
+<th align="left" width="15%">Software Package</th><th align="left" width="15%">Version</th>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>altera_ro_zipfs</td><td>default</td>
+</tr>
+</table>
+<br>
+<br>
 <h3>Settings</h3>
 <table border="1" bgcolor="#FFFFCC" width="60%">
 <tr bgcolor="#77BBFF">
@@ -196,6 +212,87 @@
 </tr>
 <tr mode="wrap">
 <td width="20%">Description:</td><td>Small-footprint (polled mode) driver</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">altera_ro_zipfs.ro_zipfs_base</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>ALTERA_RO_ZIPFS_BASE</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>0x0</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>0x8000000</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>HexNumber</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Base address of flash memory device</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">altera_ro_zipfs.ro_zipfs_name</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>ALTERA_RO_ZIPFS_NAME</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>/mnt/rozipfs</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>/mnt/rozipfs</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>QuotedString</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Mount point</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">altera_ro_zipfs.ro_zipfs_offset</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>ALTERA_RO_ZIPFS_OFFSET</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>0x100000</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>0x100000</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>HexNumber</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Offset of file system from base of flash</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>

@@ -19,7 +19,7 @@ module nios_system_avalon_st_adapter #(
 		parameter outDataWidth    = 30,
 		parameter outChannelWidth = 0,
 		parameter outErrorWidth   = 0,
-		parameter outUseEmptyPort = 0,
+		parameter outUseEmptyPort = 1,
 		parameter outUseValid     = 1,
 		parameter outUseReady     = 1,
 		parameter outReadyLatency = 0
@@ -36,8 +36,17 @@ module nios_system_avalon_st_adapter #(
 		output wire        out_0_valid,         //         .valid
 		input  wire        out_0_ready,         //         .ready
 		output wire        out_0_startofpacket, //         .startofpacket
-		output wire        out_0_endofpacket    //         .endofpacket
+		output wire        out_0_endofpacket,   //         .endofpacket
+		output wire [1:0]  out_0_empty          //         .empty
 	);
+
+	wire         data_format_adapter_0_out_valid;         // data_format_adapter_0:out_valid -> channel_adapter_0:in_valid
+	wire  [29:0] data_format_adapter_0_out_data;          // data_format_adapter_0:out_data -> channel_adapter_0:in_data
+	wire         data_format_adapter_0_out_ready;         // channel_adapter_0:in_ready -> data_format_adapter_0:out_ready
+	wire   [1:0] data_format_adapter_0_out_channel;       // data_format_adapter_0:out_channel -> channel_adapter_0:in_channel
+	wire         data_format_adapter_0_out_startofpacket; // data_format_adapter_0:out_startofpacket -> channel_adapter_0:in_startofpacket
+	wire         data_format_adapter_0_out_endofpacket;   // data_format_adapter_0:out_endofpacket -> channel_adapter_0:in_endofpacket
+	wire   [1:0] data_format_adapter_0_out_empty;         // data_format_adapter_0:out_empty -> channel_adapter_0:in_empty
 
 	generate
 		// If any of the display statements (or deliberately broken
@@ -153,7 +162,7 @@ module nios_system_avalon_st_adapter #(
 			instantiated_with_wrong_parameters_error_see_comment_above
 					outerrorwidth_check ( .error(1'b1) );
 		end
-		if (outUseEmptyPort != 0)
+		if (outUseEmptyPort != 1)
 		begin
 			initial begin
 				$display("Generated module instantiated with wrong parameters");
@@ -191,20 +200,40 @@ module nios_system_avalon_st_adapter #(
 		end
 	endgenerate
 
+	nios_system_avalon_st_adapter_data_format_adapter_0 data_format_adapter_0 (
+		.clk               (in_clk_0_clk),                            //   clk.clk
+		.reset_n           (~in_rst_0_reset),                         // reset.reset_n
+		.in_data           (in_0_data),                               //    in.data
+		.in_valid          (in_0_valid),                              //      .valid
+		.in_ready          (in_0_ready),                              //      .ready
+		.in_startofpacket  (in_0_startofpacket),                      //      .startofpacket
+		.in_endofpacket    (in_0_endofpacket),                        //      .endofpacket
+		.in_channel        (in_0_channel),                            //      .channel
+		.out_data          (data_format_adapter_0_out_data),          //   out.data
+		.out_valid         (data_format_adapter_0_out_valid),         //      .valid
+		.out_ready         (data_format_adapter_0_out_ready),         //      .ready
+		.out_startofpacket (data_format_adapter_0_out_startofpacket), //      .startofpacket
+		.out_endofpacket   (data_format_adapter_0_out_endofpacket),   //      .endofpacket
+		.out_empty         (data_format_adapter_0_out_empty),         //      .empty
+		.out_channel       (data_format_adapter_0_out_channel)        //      .channel
+	);
+
 	nios_system_avalon_st_adapter_channel_adapter_0 channel_adapter_0 (
-		.clk               (in_clk_0_clk),        //   clk.clk
-		.reset_n           (~in_rst_0_reset),     // reset.reset_n
-		.in_data           (in_0_data),           //    in.data
-		.in_valid          (in_0_valid),          //      .valid
-		.in_ready          (in_0_ready),          //      .ready
-		.in_startofpacket  (in_0_startofpacket),  //      .startofpacket
-		.in_endofpacket    (in_0_endofpacket),    //      .endofpacket
-		.in_channel        (in_0_channel),        //      .channel
-		.out_data          (out_0_data),          //   out.data
-		.out_valid         (out_0_valid),         //      .valid
-		.out_ready         (out_0_ready),         //      .ready
-		.out_startofpacket (out_0_startofpacket), //      .startofpacket
-		.out_endofpacket   (out_0_endofpacket)    //      .endofpacket
+		.clk               (in_clk_0_clk),                            //   clk.clk
+		.reset_n           (~in_rst_0_reset),                         // reset.reset_n
+		.in_data           (data_format_adapter_0_out_data),          //    in.data
+		.in_valid          (data_format_adapter_0_out_valid),         //      .valid
+		.in_ready          (data_format_adapter_0_out_ready),         //      .ready
+		.in_startofpacket  (data_format_adapter_0_out_startofpacket), //      .startofpacket
+		.in_endofpacket    (data_format_adapter_0_out_endofpacket),   //      .endofpacket
+		.in_empty          (data_format_adapter_0_out_empty),         //      .empty
+		.in_channel        (data_format_adapter_0_out_channel),       //      .channel
+		.out_data          (out_0_data),                              //   out.data
+		.out_valid         (out_0_valid),                             //      .valid
+		.out_ready         (out_0_ready),                             //      .ready
+		.out_startofpacket (out_0_startofpacket),                     //      .startofpacket
+		.out_endofpacket   (out_0_endofpacket),                       //      .endofpacket
+		.out_empty         (out_0_empty)                              //      .empty
 	);
 
 endmodule

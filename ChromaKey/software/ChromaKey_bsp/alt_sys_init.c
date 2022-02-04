@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Fri Feb 04 09:40:40 CET 2022
+ * Generated: Fri Feb 04 12:22:26 CET 2022
  */
 
 /*
@@ -65,6 +65,7 @@
 #include "altera_avalon_performance_counter.h"
 #include "altera_avalon_sysid_qsys.h"
 #include "altera_avalon_timer.h"
+#include "altera_ro_zipfs.h"
 #include "altera_up_avalon_audio.h"
 #include "altera_up_avalon_audio_and_video_config.h"
 #include "altera_up_avalon_character_lcd.h"
@@ -84,6 +85,7 @@ ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART, jtag_uart);
 ALTERA_AVALON_PERFORMANCE_COUNTER_INSTANCE ( PERFORMANCE_COUNTER, performance_counter);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID, sysid);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER, timer);
+ALTERA_RO_ZIPFS_INSTANCE ( ALTERA_RO_ZIPFS, altera_ro_zipfs);
 ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG_INSTANCE ( AUDIO_CONFIG, audio_config);
 ALTERA_UP_AVALON_AUDIO_INSTANCE ( AUDIO, audio);
 ALTERA_UP_AVALON_CHARACTER_LCD_INSTANCE ( CHAR_LCD, char_lcd);
@@ -97,7 +99,7 @@ ALTERA_UP_AVALON_PS2_INSTANCE ( PS2_KEY, ps2_key);
 ALTERA_UP_AVALON_PS2_INSTANCE ( PS2_MOUSE, ps2_mouse);
 ALTERA_UP_AVALON_RS232_INSTANCE ( SERIAL_PORT, serial_port);
 ALTERA_UP_AVALON_VIDEO_CHARACTER_BUFFER_WITH_DMA_INSTANCE ( MTL_CHAR_BUFFER, mtl_char_buffer);
-ALTERA_UP_AVALON_VIDEO_PIXEL_BUFFER_DMA_INSTANCE ( MTL_PIXEL_BUFFER_DMA, mtl_pixel_buffer_dma);
+ALTERA_UP_AVALON_VIDEO_PIXEL_BUFFER_DMA_INSTANCE ( PIXEL_BUFFER_DMA_GREEN, pixel_buffer_dma_green);
 ALTERA_UP_SD_CARD_AVALON_INTERFACE_INSTANCE ( SD_CARD, SD_Card);
 
 /*
@@ -126,6 +128,7 @@ void alt_sys_init( void )
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART, jtag_uart);
     ALTERA_AVALON_PERFORMANCE_COUNTER_INIT ( PERFORMANCE_COUNTER, performance_counter);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID, sysid);
+    ALTERA_RO_ZIPFS_INIT ( ALTERA_RO_ZIPFS, altera_ro_zipfs);
     ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG_INIT ( AUDIO_CONFIG, audio_config);
     ALTERA_UP_AVALON_AUDIO_INIT ( AUDIO, audio);
     ALTERA_UP_AVALON_CHARACTER_LCD_INIT ( CHAR_LCD, char_lcd);
@@ -139,6 +142,6 @@ void alt_sys_init( void )
     ALTERA_UP_AVALON_PS2_INIT ( PS2_MOUSE, ps2_mouse);
     ALTERA_UP_AVALON_RS232_INIT ( SERIAL_PORT, serial_port);
     ALTERA_UP_AVALON_VIDEO_CHARACTER_BUFFER_WITH_DMA_INIT ( MTL_CHAR_BUFFER, mtl_char_buffer);
-    ALTERA_UP_AVALON_VIDEO_PIXEL_BUFFER_DMA_INIT ( MTL_PIXEL_BUFFER_DMA, mtl_pixel_buffer_dma);
+    ALTERA_UP_AVALON_VIDEO_PIXEL_BUFFER_DMA_INIT ( PIXEL_BUFFER_DMA_GREEN, pixel_buffer_dma_green);
     ALTERA_UP_SD_CARD_AVALON_INTERFACE_INIT ( SD_CARD, SD_Card);
 }

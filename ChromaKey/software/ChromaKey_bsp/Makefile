@@ -311,6 +311,13 @@ altera_nios2_gen2_hal_driver_ASM_LIB_SRCS := \
 	$(altera_nios2_gen2_hal_driver_SRCS_ROOT)/src/alt_log_macro.S \
 	$(altera_nios2_gen2_hal_driver_SRCS_ROOT)/src/crt0.S
 
+# altera_ro_zipfs sources root 
+altera_ro_zipfs_SRCS_ROOT := drivers
+
+# altera_ro_zipfs sources 
+altera_ro_zipfs_C_LIB_SRCS := \
+	$(altera_ro_zipfs_SRCS_ROOT)/src/altera_ro_zipfs.c
+
 # altera_up_avalon_video_character_buffer_with_dma_driver sources root 
 altera_up_avalon_video_character_buffer_with_dma_driver_SRCS_ROOT := drivers
 
@@ -426,6 +433,7 @@ COMPONENT_C_LIB_SRCS += \
 	$(altera_avalon_sysid_qsys_driver_C_LIB_SRCS) \
 	$(altera_avalon_timer_driver_C_LIB_SRCS) \
 	$(altera_nios2_gen2_hal_driver_C_LIB_SRCS) \
+	$(altera_ro_zipfs_C_LIB_SRCS) \
 	$(altera_up_avalon_video_character_buffer_with_dma_driver_C_LIB_SRCS) \
 	$(avalon_character_lcd_driver_C_LIB_SRCS) \
 	$(avalon_parallel_port_driver_C_LIB_SRCS) \

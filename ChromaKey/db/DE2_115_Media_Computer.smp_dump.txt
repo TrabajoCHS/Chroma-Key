@@ -40,6 +40,18 @@ i_state.011 0 0 1 0 0 1
 i_state.101 0 1 0 0 0 1 
 i_state.111 1 0 0 0 0 1 
 
+State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_scaler_green:scaler_yellow|altera_up_video_scaler_multiply_height:Multiply_Height|s_multiply_height
+Name s_multiply_height.STATE_0_GET_CURRENT_LINE s_multiply_height.STATE_2_OUTPUT_LAST_LINE s_multiply_height.STATE_1_LOOP_FIFO 
+s_multiply_height.STATE_0_GET_CURRENT_LINE 0 0 0 
+s_multiply_height.STATE_1_LOOP_FIFO 1 0 1 
+s_multiply_height.STATE_2_OUTPUT_LAST_LINE 1 1 0 
+
+State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_scaler_green:scaler_green|altera_up_video_scaler_multiply_height:Multiply_Height|s_multiply_height
+Name s_multiply_height.STATE_0_GET_CURRENT_LINE s_multiply_height.STATE_2_OUTPUT_LAST_LINE s_multiply_height.STATE_1_LOOP_FIFO 
+s_multiply_height.STATE_0_GET_CURRENT_LINE 0 0 0 
+s_multiply_height.STATE_1_LOOP_FIFO 1 0 1 
+s_multiply_height.STATE_2_OUTPUT_LAST_LINE 1 1 0 
+
 State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_ps2_key:ps2_mouse|altera_up_ps2:PS2_Serial_Port|s_ps2_transceiver
 Name s_ps2_transceiver.PS2_STATE_3_END_TRANSFER s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT s_ps2_transceiver.PS2_STATE_1_DATA_IN s_ps2_transceiver.PS2_STATE_0_IDLE s_ps2_transceiver.PS2_STATE_4_END_DELAYED 
 s_ps2_transceiver.PS2_STATE_0_IDLE 0 0 0 0 0 
@@ -94,18 +106,19 @@ s_ps2_receiver.PS2_STATE_2_DATA_IN 0 1 0 1 0
 s_ps2_receiver.PS2_STATE_3_PARITY_IN 1 0 0 1 0 
 s_ps2_receiver.PS2_STATE_4_STOP_IN 0 0 0 1 1 
 
-State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_mtl_scaler:mtl_scaler|altera_up_video_scaler_multiply_height:Multiply_Height|s_multiply_height
-Name s_multiply_height.STATE_0_GET_CURRENT_LINE s_multiply_height.STATE_2_OUTPUT_LAST_LINE s_multiply_height.STATE_1_LOOP_FIFO 
-s_multiply_height.STATE_0_GET_CURRENT_LINE 0 0 0 
-s_multiply_height.STATE_1_LOOP_FIFO 1 0 1 
-s_multiply_height.STATE_2_OUTPUT_LAST_LINE 1 1 0 
-
-State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_mtl_pixel_buffer_dma:mtl_pixel_buffer_dma|s_pixel_buffer
+State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_pixel_buffer_dma_green:pixel_buffer_dma_green|s_pixel_buffer
 Name s_pixel_buffer.STATE_3_MAX_PENDING_READS_STALL s_pixel_buffer.STATE_2_READ_BUFFER s_pixel_buffer.STATE_1_WAIT_FOR_LAST_PIXEL s_pixel_buffer.STATE_0_IDLE 
 s_pixel_buffer.STATE_0_IDLE 0 0 0 0 
 s_pixel_buffer.STATE_1_WAIT_FOR_LAST_PIXEL 0 0 1 1 
 s_pixel_buffer.STATE_2_READ_BUFFER 0 1 0 1 
 s_pixel_buffer.STATE_3_MAX_PENDING_READS_STALL 1 0 0 1 
+
+State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_dma_controller_yellow:dma_controller_yellow|altera_up_video_dma_to_stream:From_Memory_to_Stream|s_dma_to_stream
+Name s_dma_to_stream.STATE_3_MAX_PENDING_READS_STALL s_dma_to_stream.STATE_2_READ_BUFFER s_dma_to_stream.STATE_1_WAIT_FOR_LAST_PIXEL s_dma_to_stream.STATE_0_IDLE 
+s_dma_to_stream.STATE_0_IDLE 0 0 0 0 
+s_dma_to_stream.STATE_1_WAIT_FOR_LAST_PIXEL 0 0 1 1 
+s_dma_to_stream.STATE_2_READ_BUFFER 0 1 0 1 
+s_dma_to_stream.STATE_3_MAX_PENDING_READS_STALL 1 0 0 1 
 
 State Machine - |DE2_115_Media_Computer|nios_system:u0|nios_system_cpu:cpu|nios_system_cpu_cpu:cpu|nios_system_cpu_cpu_nios2_oci:the_nios_system_cpu_cpu_nios2_oci|nios_system_cpu_cpu_debug_slave_wrapper:the_nios_system_cpu_cpu_debug_slave_wrapper|nios_system_cpu_cpu_debug_slave_tck:the_nios_system_cpu_cpu_debug_slave_tck|DRsize
 Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 

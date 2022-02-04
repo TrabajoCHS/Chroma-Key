@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>04-feb-2022 9:40:40</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1643964040146</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 4, 2022 12:22:27 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1643973747576</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\jhovarne\Documents\GitHub\Chroma-Key\ChromaKey\software\ChromaKey_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
+        <BspSettingsFile>C:\Users\jhovarne\Documents\GitHub\Chroma-Key\ChromaKey\software\ChromaKey_bsp\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>
@@ -898,6 +898,42 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <Setting>
+                <SettingName>altera_ro_zipfs.ro_zipfs_name</SettingName>
+                <Identifier>ALTERA_RO_ZIPFS_NAME</Identifier>
+                <Type>QuotedString</Type>
+                <Value>/mnt/rozipfs</Value>
+                <DefaultValue>/mnt/rozipfs</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Mount point</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_ro_zipfs.ro_zipfs_offset</SettingName>
+                <Identifier>ALTERA_RO_ZIPFS_OFFSET</Identifier>
+                <Type>HexNumber</Type>
+                <Value>0x100000</Value>
+                <DefaultValue>0x100000</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Offset of file system from base of flash</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_ro_zipfs.ro_zipfs_base</SettingName>
+                <Identifier>ALTERA_RO_ZIPFS_BASE</Identifier>
+                <Type>HexNumber</Type>
+                <Value>0x8000000</Value>
+                <DefaultValue>0x0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Base address of flash memory device</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
         <MemoryMap>
                 <slaveDescriptor>sdram</slaveDescriptor>
                 <addressRange>0x00000000 - 0x07FFFFFF</addressRange>
@@ -1025,7 +1061,7 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>mtl_pixel_buffer_dma</slaveDescriptor>
+                <slaveDescriptor>pixel_buffer_dma_green</slaveDescriptor>
                 <addressRange>0x10001100 - 0x1000110F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
@@ -1039,6 +1075,12 @@
         <MemoryMap>
                 <slaveDescriptor>video_dma_controller</slaveDescriptor>
                 <addressRange>0x10001300 - 0x1000130F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>dma_controller_yellow</slaveDescriptor>
+                <addressRange>0x10001400 - 0x1000140F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
@@ -1072,4 +1114,8 @@
                 <sectionName>.stack</sectionName>
                 <regionName>sdram</regionName>
         </LinkerSection>
+        <SoftwarePackageInfo>
+                <name>altera_ro_zipfs</name>
+                <version>default</version>
+        </SoftwarePackageInfo>
 </sch:Settings>

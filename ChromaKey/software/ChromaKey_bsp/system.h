@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Fri Feb 04 09:40:40 CET 2022
+ * Generated: Fri Feb 04 12:22:26 CET 2022
  */
 
 /*
@@ -90,7 +90,7 @@
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 5
 #define ALT_CPU_ICACHE_SIZE 4096
 #define ALT_CPU_INITDA_SUPPORTED
-#define ALT_CPU_INST_ADDR_WIDTH 0x1d
+#define ALT_CPU_INST_ADDR_WIDTH 0x1c
 #define ALT_CPU_NAME "cpu"
 #define ALT_CPU_NUM_OF_SHADOW_REG_SETS 0
 #define ALT_CPU_OCI_VERSION 1
@@ -133,7 +133,7 @@
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 5
 #define NIOS2_ICACHE_SIZE 4096
 #define NIOS2_INITDA_SUPPORTED
-#define NIOS2_INST_ADDR_WIDTH 0x1d
+#define NIOS2_INST_ADDR_WIDTH 0x1c
 #define NIOS2_NUM_OF_SHADOW_REG_SETS 0
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_PERIPHERAL_REGION_BASE 0x10000000
@@ -247,6 +247,16 @@
 
 
 /*
+ * altera_ro_zipfs configuration
+ *
+ */
+
+#define ALTERA_RO_ZIPFS_BASE 0x8000000
+#define ALTERA_RO_ZIPFS_NAME "/mnt/rozipfs"
+#define ALTERA_RO_ZIPFS_OFFSET 0x100000
+
+
+/*
  * audio configuration
  *
  */
@@ -286,6 +296,20 @@
 #define CHAR_LCD_NAME "/dev/char_lcd"
 #define CHAR_LCD_SPAN 2
 #define CHAR_LCD_TYPE "altera_up_avalon_character_lcd"
+
+
+/*
+ * dma_controller_yellow configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_dma_controller_yellow altera_up_avalon_video_dma_controller
+#define DMA_CONTROLLER_YELLOW_BASE 0x10001400
+#define DMA_CONTROLLER_YELLOW_IRQ -1
+#define DMA_CONTROLLER_YELLOW_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DMA_CONTROLLER_YELLOW_NAME "/dev/dma_controller_yellow"
+#define DMA_CONTROLLER_YELLOW_SPAN 16
+#define DMA_CONTROLLER_YELLOW_TYPE "altera_up_avalon_video_dma_controller"
 
 
 /*
@@ -379,20 +403,6 @@
 
 
 /*
- * mtl_pixel_buffer_dma configuration
- *
- */
-
-#define ALT_MODULE_CLASS_mtl_pixel_buffer_dma altera_up_avalon_video_pixel_buffer_dma
-#define MTL_PIXEL_BUFFER_DMA_BASE 0x10001100
-#define MTL_PIXEL_BUFFER_DMA_IRQ -1
-#define MTL_PIXEL_BUFFER_DMA_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define MTL_PIXEL_BUFFER_DMA_NAME "/dev/mtl_pixel_buffer_dma"
-#define MTL_PIXEL_BUFFER_DMA_SPAN 16
-#define MTL_PIXEL_BUFFER_DMA_TYPE "altera_up_avalon_video_pixel_buffer_dma"
-
-
-/*
  * onchip_memory configuration
  *
  */
@@ -434,6 +444,20 @@
 #define PERFORMANCE_COUNTER_NAME "/dev/performance_counter"
 #define PERFORMANCE_COUNTER_SPAN 64
 #define PERFORMANCE_COUNTER_TYPE "altera_avalon_performance_counter"
+
+
+/*
+ * pixel_buffer_dma_green configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pixel_buffer_dma_green altera_up_avalon_video_pixel_buffer_dma
+#define PIXEL_BUFFER_DMA_GREEN_BASE 0x10001100
+#define PIXEL_BUFFER_DMA_GREEN_IRQ -1
+#define PIXEL_BUFFER_DMA_GREEN_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PIXEL_BUFFER_DMA_GREEN_NAME "/dev/pixel_buffer_dma_green"
+#define PIXEL_BUFFER_DMA_GREEN_SPAN 16
+#define PIXEL_BUFFER_DMA_GREEN_TYPE "altera_up_avalon_video_pixel_buffer_dma"
 
 
 /*
@@ -585,7 +609,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1643962243
+#define SYSID_TIMESTAMP 1643968392
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
