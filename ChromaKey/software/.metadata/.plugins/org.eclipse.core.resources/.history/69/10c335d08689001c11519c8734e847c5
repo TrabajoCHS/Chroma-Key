@@ -1,0 +1,37 @@
+/*
+ * switches_ISR.c
+ *
+ *  Created on: 4 de nov. de 2021
+ *      Author: patvalma
+ */
+
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+extern volatile int key_pressed;
+extern volatile int h, m, s;
+volatile int  parar;
+
+
+void switches_ISR( )
+{
+	volatile int * slider_switch_ptr = (int *) SWITCHES_BASE;
+	int valor_switches = *(slider_switch_ptr);
+
+
+	valor_switches = *(slider_switch_ptr);		//Lee los interruptores
+
+	if (valor_switches != 0 ){
+		parar = 0;
+	}else {
+		parar = 1;
+	}
+
+	*(slider_switch_ptr+3) = 0; // Borra la interrupcion
+
+	return;
+}
+
+
+

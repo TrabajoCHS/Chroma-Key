@@ -329,6 +329,12 @@ module nios_system (
 	wire   [3:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_byteenable;                    // mm_interconnect_0:SD_Card_avalon_sdcard_slave_byteenable -> SD_Card:i_avalon_byteenable
 	wire         mm_interconnect_0_sd_card_avalon_sdcard_slave_write;                         // mm_interconnect_0:SD_Card_avalon_sdcard_slave_write -> SD_Card:i_avalon_write
 	wire  [31:0] mm_interconnect_0_sd_card_avalon_sdcard_slave_writedata;                     // mm_interconnect_0:SD_Card_avalon_sdcard_slave_writedata -> SD_Card:i_avalon_writedata
+	wire         mm_interconnect_0_avalon_chroma_process_avalon_slave_0_chipselect;           // mm_interconnect_0:avalon_chroma_process_avalon_slave_0_chipselect -> avalon_chroma_process:chipselect
+	wire  [31:0] mm_interconnect_0_avalon_chroma_process_avalon_slave_0_readdata;             // avalon_chroma_process:readdata -> mm_interconnect_0:avalon_chroma_process_avalon_slave_0_readdata
+	wire   [2:0] mm_interconnect_0_avalon_chroma_process_avalon_slave_0_address;              // mm_interconnect_0:avalon_chroma_process_avalon_slave_0_address -> avalon_chroma_process:address
+	wire         mm_interconnect_0_avalon_chroma_process_avalon_slave_0_read;                 // mm_interconnect_0:avalon_chroma_process_avalon_slave_0_read -> avalon_chroma_process:read
+	wire         mm_interconnect_0_avalon_chroma_process_avalon_slave_0_write;                // mm_interconnect_0:avalon_chroma_process_avalon_slave_0_write -> avalon_chroma_process:write
+	wire  [31:0] mm_interconnect_0_avalon_chroma_process_avalon_slave_0_writedata;            // mm_interconnect_0:avalon_chroma_process_avalon_slave_0_writedata -> avalon_chroma_process:writedata
 	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                              // sysid:readdata -> mm_interconnect_0:sysid_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                               // mm_interconnect_0:sysid_control_slave_address -> sysid:address
 	wire  [31:0] mm_interconnect_0_performance_counter_control_slave_readdata;                // performance_counter:readdata -> mm_interconnect_0:performance_counter_control_slave_readdata
@@ -539,26 +545,32 @@ module nios_system (
 	);
 
 	altera_up_avalon_chroma_key avalon_chroma_process (
-		.clk                       (sys_clk_out_clk),                                   //                  clock.clk
-		.reset                     (rst_controller_reset_out_reset),                    //                  reset.reset
-		.pixel_video               (avalon_st_adapter_001_out_0_data),                  // avalon_foreground_sink.data
-		.pixel_video_empty         (avalon_st_adapter_001_out_0_empty),                 //                       .empty
-		.pixel_video_endofpacket   (avalon_st_adapter_001_out_0_endofpacket),           //                       .endofpacket
-		.pixel_video_ready         (avalon_st_adapter_001_out_0_ready),                 //                       .ready
-		.pixel_video_startofpacket (avalon_st_adapter_001_out_0_startofpacket),         //                       .startofpacket
-		.pixel_video_valid         (avalon_st_adapter_001_out_0_valid),                 //                       .valid
-		.pixel_fondo               (avalon_st_adapter_out_0_data),                      // avalon_background_sink.data
-		.pixel_fondo_empty         (avalon_st_adapter_out_0_empty),                     //                       .empty
-		.pixel_fondo_endofpacket   (avalon_st_adapter_out_0_endofpacket),               //                       .endofpacket
-		.pixel_fondo_ready         (avalon_st_adapter_out_0_ready),                     //                       .ready
-		.pixel_fondo_startofpacket (avalon_st_adapter_out_0_startofpacket),             //                       .startofpacket
-		.pixel_fondo_valid         (avalon_st_adapter_out_0_valid),                     //                       .valid
-		.output_data               (avalon_chroma_process_avalon_source_data),          //          avalon_source.data
-		.output_empty              (avalon_chroma_process_avalon_source_empty),         //                       .empty
-		.output_ready              (avalon_chroma_process_avalon_source_ready),         //                       .ready
-		.output_startofpacket      (avalon_chroma_process_avalon_source_startofpacket), //                       .startofpacket
-		.output_valid              (avalon_chroma_process_avalon_source_valid),         //                       .valid
-		.output_endofpacket        (avalon_chroma_process_avalon_source_endofpacket)    //                       .endofpacket
+		.clk                       (sys_clk_out_clk),                                                   //                  clock.clk
+		.reset                     (rst_controller_reset_out_reset),                                    //                  reset.reset
+		.pixel_video               (avalon_st_adapter_001_out_0_data),                                  // avalon_foreground_sink.data
+		.pixel_video_empty         (avalon_st_adapter_001_out_0_empty),                                 //                       .empty
+		.pixel_video_endofpacket   (avalon_st_adapter_001_out_0_endofpacket),                           //                       .endofpacket
+		.pixel_video_ready         (avalon_st_adapter_001_out_0_ready),                                 //                       .ready
+		.pixel_video_startofpacket (avalon_st_adapter_001_out_0_startofpacket),                         //                       .startofpacket
+		.pixel_video_valid         (avalon_st_adapter_001_out_0_valid),                                 //                       .valid
+		.pixel_fondo               (avalon_st_adapter_out_0_data),                                      // avalon_background_sink.data
+		.pixel_fondo_empty         (avalon_st_adapter_out_0_empty),                                     //                       .empty
+		.pixel_fondo_endofpacket   (avalon_st_adapter_out_0_endofpacket),                               //                       .endofpacket
+		.pixel_fondo_ready         (avalon_st_adapter_out_0_ready),                                     //                       .ready
+		.pixel_fondo_startofpacket (avalon_st_adapter_out_0_startofpacket),                             //                       .startofpacket
+		.pixel_fondo_valid         (avalon_st_adapter_out_0_valid),                                     //                       .valid
+		.output_data               (avalon_chroma_process_avalon_source_data),                          //          avalon_source.data
+		.output_empty              (avalon_chroma_process_avalon_source_empty),                         //                       .empty
+		.output_ready              (avalon_chroma_process_avalon_source_ready),                         //                       .ready
+		.output_startofpacket      (avalon_chroma_process_avalon_source_startofpacket),                 //                       .startofpacket
+		.output_valid              (avalon_chroma_process_avalon_source_valid),                         //                       .valid
+		.output_endofpacket        (avalon_chroma_process_avalon_source_endofpacket),                   //                       .endofpacket
+		.chipselect                (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_chipselect), //         avalon_slave_0.chipselect
+		.address                   (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_address),    //                       .address
+		.write                     (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_write),      //                       .write
+		.writedata                 (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_writedata),  //                       .writedata
+		.read                      (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_read),       //                       .read
+		.readdata                  (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_readdata)    //                       .readdata
 	);
 
 	nios_system_char_lcd char_lcd (
@@ -1227,6 +1239,12 @@ module nios_system (
 		.audio_config_avalon_av_config_slave_writedata                (mm_interconnect_0_audio_config_avalon_av_config_slave_writedata),             //                                                 .writedata
 		.audio_config_avalon_av_config_slave_byteenable               (mm_interconnect_0_audio_config_avalon_av_config_slave_byteenable),            //                                                 .byteenable
 		.audio_config_avalon_av_config_slave_waitrequest              (mm_interconnect_0_audio_config_avalon_av_config_slave_waitrequest),           //                                                 .waitrequest
+		.avalon_chroma_process_avalon_slave_0_address                 (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_address),              //             avalon_chroma_process_avalon_slave_0.address
+		.avalon_chroma_process_avalon_slave_0_write                   (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_write),                //                                                 .write
+		.avalon_chroma_process_avalon_slave_0_read                    (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_read),                 //                                                 .read
+		.avalon_chroma_process_avalon_slave_0_readdata                (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_readdata),             //                                                 .readdata
+		.avalon_chroma_process_avalon_slave_0_writedata               (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_writedata),            //                                                 .writedata
+		.avalon_chroma_process_avalon_slave_0_chipselect              (mm_interconnect_0_avalon_chroma_process_avalon_slave_0_chipselect),           //                                                 .chipselect
 		.char_lcd_avalon_lcd_slave_address                            (mm_interconnect_0_char_lcd_avalon_lcd_slave_address),                         //                        char_lcd_avalon_lcd_slave.address
 		.char_lcd_avalon_lcd_slave_write                              (mm_interconnect_0_char_lcd_avalon_lcd_slave_write),                           //                                                 .write
 		.char_lcd_avalon_lcd_slave_read                               (mm_interconnect_0_char_lcd_avalon_lcd_slave_read),                            //                                                 .read

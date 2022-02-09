@@ -1,0 +1,62 @@
+10:10:05 **** Build of configuration Nios II for project interrupt_example ****
+make all 
+Info: Building ../interrupt_example_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../interrupt_example_bsp/
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/Altera_UP_SD_Card_Avalon_Interface.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_performance_counter.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_avalon_timer_sc.o obj/drivers/src/altera_avalon_timer_ts.o obj/drivers/src/altera_avalon_timer_vars.o obj/drivers/src/altera_ro_zipfs.o obj/drivers/src/altera_up_avalon_audio.o obj/drivers/src/altera_up_avalon_audio_and_video_config.o obj/drivers/src/altera_up_avalon_character_lcd.o obj/drivers/src/altera_up_avalon_parallel_port.o obj/drivers/src/altera_up_avalon_ps2.o obj/drivers/src/altera_up_avalon_rs232.o obj/drivers/src/altera_up_avalon_video_character_buffer_with_dma.o obj/drivers/src/altera_up_avalon_video_pixel_buffer_dma.o obj/drivers/src/altera_up_ps2_keyboard.o obj/drivers/src/altera_up_ps2_mouse.o obj/drivers/src/perf_print_formatted_report.o
+[BSP build complete]
+Info: Compiling DecToHex.c to obj/default/DecToHex.o
+nios2-elf-gcc -xc -MP -MMD -c -I../interrupt_example_bsp//HAL/inc -I../interrupt_example_bsp/ -I../interrupt_example_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/DecToHex.o DecToHex.c
+Info: Compiling HEX_PS2.c to obj/default/HEX_PS2.o
+nios2-elf-gcc -xc -MP -MMD -c -I../interrupt_example_bsp//HAL/inc -I../interrupt_example_bsp/ -I../interrupt_example_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/HEX_PS2.o HEX_PS2.c
+Info: Compiling interrupt_example.c to obj/default/interrupt_example.o
+nios2-elf-gcc -xc -MP -MMD -c -I../interrupt_example_bsp//HAL/inc -I../interrupt_example_bsp/ -I../interrupt_example_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/interrupt_example.o interrupt_example.c
+interrupt_example.c: In function 'main':
+interrupt_example.c:109:28: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+   sprintf ("%02d:02d:%02d",h,m,s);
+                            ^
+In file included from c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\sys\reent.h:13:0,
+                 from c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\sys\errno.h:16,
+                 from c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\errno.h:14,
+                 from ../interrupt_example_bsp//HAL/inc/sys/alt_irq.h:48,
+                 from interrupt_example.c:3:
+c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:258:5: note: expected 'const char * restrict' but argument is of type 'int'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+interrupt_example.c:132:3: warning: implicit declaration of function 'strcat' [-Wimplicit-function-declaration]
+   strcat(mensaje,hStr);
+   ^
+interrupt_example.c:132:3: warning: incompatible implicit declaration of built-in function 'strcat'
+interrupt_example.c:132:3: note: include '<string.h>' or provide a declaration of 'strcat'
+interrupt_example.c:163:8: warning: implicit declaration of function 'scroll' [-Wimplicit-function-declaration]
+        scroll();//scroll de la pantalla
+        ^
+interrupt_example.c: At top level:
+interrupt_example.c:237:6: warning: conflicting types for 'scroll'
+ void scroll(void){
+      ^
+interrupt_example.c:163:8: note: previous implicit declaration of 'scroll' was here
+        scroll();//scroll de la pantalla
+        ^
+Info: Compiling interval_timer_ISR.c to obj/default/interval_timer_ISR.o
+nios2-elf-gcc -xc -MP -MMD -c -I../interrupt_example_bsp//HAL/inc -I../interrupt_example_bsp/ -I../interrupt_example_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/interval_timer_ISR.o interval_timer_ISR.c
+Info: Compiling pushbutton_ISR.c to obj/default/pushbutton_ISR.o
+nios2-elf-gcc -xc -MP -MMD -c -I../interrupt_example_bsp//HAL/inc -I../interrupt_example_bsp/ -I../interrupt_example_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/pushbutton_ISR.o pushbutton_ISR.c
+pushbutton_ISR.c: In function 'pushbutton_ISR':
+pushbutton_ISR.c:13:19: warning: unused variable 'slider_switch_ptr' [-Wunused-variable]
+    volatile int * slider_switch_ptr = (int *) SWITCHES_BASE;
+                   ^
+Info: Compiling switches_ISR.c to obj/default/switches_ISR.o
+nios2-elf-gcc -xc -MP -MMD -c -I../interrupt_example_bsp//HAL/inc -I../interrupt_example_bsp/ -I../interrupt_example_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/switches_ISR.o switches_ISR.c
+Info: Linking interrupt_example.elf
+nios2-elf-g++  -T'../interrupt_example_bsp//linker.x' -msys-crt0='../interrupt_example_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../interrupt_example_bsp/   -Wl,-Map=interrupt_example.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o interrupt_example.elf obj/default/DecToHex.o obj/default/HEX_PS2.o obj/default/interrupt_example.o obj/default/interval_timer_ISR.o obj/default/pushbutton_ISR.o obj/default/switches_ISR.o -lm -msys-lib=m
+nios2-elf-insert interrupt_example.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1635873462 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jhovarne/Documents/DE2_115_MediaComputer" --jdi ../..//output_files/DE2_115_MediaComputer.jdi --sopcinfo C:/Users/jhovarne/Documents/DE2_115_MediaComputer/software/interrupt_example_bsp/../../nios_system.sopcinfo
+Info: (interrupt_example.elf) 82 KBytes program size (code + initialized data).
+Info:                         130981 KBytes free for stack + heap.
+Info: Creating interrupt_example.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source interrupt_example.elf >interrupt_example.objdump
+[interrupt_example build complete]
+
+10:10:09 Build Finished (took 3s.514ms)
+
