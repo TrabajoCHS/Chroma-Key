@@ -1,9 +1,9 @@
-17:52:56 **** Incremental Build of configuration Nios II for project chroma_software ****
+18:44:37 **** Incremental Build of configuration Nios II for project chroma_software ****
 make all 
 Info: Building ../chroma_software_bsp/
 C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../chroma_software_bsp/
 [BSP build complete]
 [chroma_software build complete]
 
-17:52:57 Build Finished (took 959ms)
+18:44:38 Build Finished (took 1s.14ms)
 

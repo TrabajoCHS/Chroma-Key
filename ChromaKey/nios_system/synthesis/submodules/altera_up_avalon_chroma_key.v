@@ -55,8 +55,6 @@ module altera_up_avalon_chroma_key (
 
 	output_ready,
 
-	// Bidirectionals
-
 	// Outputs
 	pixel_fondo_ready,
 
@@ -70,11 +68,6 @@ module altera_up_avalon_chroma_key (
 	
 	readdata
 );
-
-/*****************************************************************************
- *                           Parameter Declarations                          *
- *****************************************************************************/
-
 
 /*****************************************************************************
  *                             Port Declarations                             *
@@ -161,22 +154,22 @@ wire [31:0] reg0, reg1, reg3, reg2;
  *****************************************************************************/
 
  ChromaProces ChromaProces (
-				.iCLK27(clk),
+				.clk(clk),
 				
-				.imVGA_R(pixel_fondo[29:20]), 	//Color rojo de la imagen [9:0]
-				.imVGA_G(pixel_fondo[19:10]), 	//Color verde de la imagen [9:0]
-				.imVGA_B(pixel_fondo[9:0]), 		//Color azul de la imagen [9:0]
+				.rojoImagen(pixel_fondo[29:20]), 	//Color rojo de la imagen [9:0]
+				.verdeImagen(pixel_fondo[19:10]), 	//Color verde de la imagen [9:0]
+				.azulImagen(pixel_fondo[9:0]), 		//Color azul de la imagen [9:0]
 
-				.iRed(pixel_video[29:20]),			//la parte roja del pixel del video que entra [9:0]
-				.iGreen(pixel_video[19:10]),		//la parte verde del pixel del video que entra [9:0]
-				.iBlue(pixel_video[9:0]),			//la parte azul del pixel del video que entra [9:0]
+				.rojoVideo(pixel_video[29:20]),		//la parte roja del pixel del video que entra [9:0]
+				.verdeVideo(pixel_video[19:10]),		//la parte verde del pixel del video que entra [9:0]
+				.azulVideo(pixel_video[9:0]),			//la parte azul del pixel del video que entra [9:0]
 				
-				.gsRed(new_red),									//la parte roja de la salida  [9:0]
-				.gsGreen(new_green),								//la parte verde de la salida [9:0]
-				.gsBlue(new_blue),								//la parte azul de la salida  [9:0]
-				.videoEnable(reg3[0]),
-				.imageEnable(reg3[1]),
-				.thG(reg0[9:0])
+				.RojoOut(new_red),						//la parte roja de la salida  [9:0]
+				.VerdeOut(new_green),					//la parte verde de la salida [9:0]
+				.AzulOut(new_blue),						//la parte azul de la salida  [9:0]
+				.videoActivo(reg3[0]),
+				.imagenActiva(reg3[1]),
+				.nivelVerde(reg0[9:0])
 );
 
 avalon_slave_MM_interface  AvalonS1MM (
@@ -196,9 +189,7 @@ avalon_slave_MM_interface  AvalonS1MM (
                                    // Datos para el registro interno reg3
                                  .data(reg2),
                                    // Write enable para el registro interno.
-                                 .we(1'b1)
-											
-											
+                                 .we(1'b1)								
 );
 
 

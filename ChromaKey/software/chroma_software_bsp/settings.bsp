@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>09-feb-2022 17:51:56</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1644425516433</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>09-feb-2022 18:40:15</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1644428415029</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\jhovarne\Documents\GitHub\Chroma-Key\ChromaKey\software\chroma_software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios_system.sopcinfo</SopcDesignFile>
