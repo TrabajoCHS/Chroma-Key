@@ -1416,8 +1416,8 @@ int HEX_PS2 (volatile int tiempoHex,volatile int flagMinutos){
 
 0000055c <main>:
 
-volatile int thR = 100;
-volatile int thB = 100;
+volatile int thR = 300;
+volatile int thB = 300;
 
 int main(void)
 {
@@ -2031,12 +2031,12 @@ void pushbutton_ISR( )
      b00:	0002eb00 	call	2eb0 <printf>
      b04:	00002206 	br	b90 <pushbutton_ISR+0x124>
 		}
-	else if (press & 0x4)// KEY2 ajusta el valor del umbral de diferencia GREEN - RED
+	else if (press & 0x4)//diferencia G/R
      b08:	e0bfff17 	ldw	r2,-4(fp)
      b0c:	1080010c 	andi	r2,r2,4
      b10:	10001226 	beq	r2,zero,b5c <pushbutton_ISR+0xf0>
 		{
-			// printf("KEY2");
+
 			thR = thR + 5;
      b14:	d0a00117 	ldw	r2,-32764(gp)
      b18:	10800144 	addi	r2,r2,5
@@ -2347,6 +2347,7 @@ void switches_ISR( )
      e9c:	e0fffd17 	ldw	r3,-12(fp)
      ea0:	18c00017 	ldw	r3,0(r3)
      ea4:	10c00015 	stw	r3,0(r2)
+
 		break;
      ea8:	00002106 	br	f30 <switches_ISR+0x214>
 	case 2:
@@ -2360,6 +2361,7 @@ void switches_ISR( )
      ec0:	e0fffd17 	ldw	r3,-12(fp)
      ec4:	18c00017 	ldw	r3,0(r3)
      ec8:	10c00015 	stw	r3,0(r2)
+
 		break;
      ecc:	00001806 	br	f30 <switches_ISR+0x214>
 	case 4:

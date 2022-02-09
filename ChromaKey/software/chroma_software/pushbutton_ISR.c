@@ -28,9 +28,9 @@ void pushbutton_ISR( )
 			*(chromaProcessor_ptr + 1) = thB;
 			printf("G - B: %d\n", *(chromaProcessor_ptr + 1));
 		}
-	else if (press & 0x4)// KEY2 ajusta el valor del umbral de diferencia GREEN - RED
+	else if (press & 0x4)//diferencia G/R
 		{
-			// printf("KEY2");
+
 			thR = thR + 5;
 			if (thR >= 800){
 				thR = 100;

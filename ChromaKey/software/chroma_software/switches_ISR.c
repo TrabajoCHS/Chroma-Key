@@ -16,10 +16,12 @@ void switches_ISR( )
 	case 1:
 		printf("Video Enabled\n");
 		*(chromaProcessor_ptr + 3) = *(slider_switch_ptr);
+
 		break;
 	case 2:
 		printf("Image Enabled\n");
 		*(chromaProcessor_ptr + 3) = *(slider_switch_ptr);
+
 		break;
 	case 4:
 		printf("SW2\n");
