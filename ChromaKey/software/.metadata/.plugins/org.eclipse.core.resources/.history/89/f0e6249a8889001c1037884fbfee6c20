@@ -1,0 +1,41 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+extern volatile int h, m;
+extern volatile int s;
+int flagMinutos;
+volatile int temporizador=0;
+volatile int ticks=0;
+
+
+
+
+void interval_timer_isr( ) {
+	volatile int * interval_timer_ptr = (int *) TIMER_BASE;
+
+	ticks++;
+	temporizador++;
+
+	if(ticks==5){
+		s ++;
+		ticks =0;
+		if(s > 59){	// Tiene que ser menor que 59, ya que si no en el display aparecera 60
+				m ++;
+				s = 0;
+			}
+			else if (m > 59){
+				h ++;
+				m = 0;
+			}
+			else if (h > 23){
+				h = 0;
+			}
+		}
+
+
+	*(interval_timer_ptr) = 0; // Borra la interrupción
+
+	return;
+}
+

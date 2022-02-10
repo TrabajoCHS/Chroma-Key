@@ -1,0 +1,338 @@
+#include "key_codes.h"	// define los valores para KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+#include <stdio.h> //Necesario para el NULL
+#include "altera_up_avalon_video_character_buffer_with_dma.h"
+
+
+
+
+void interval_timer_isr( );
+void pushbutton_ISR( );
+int DecToHex (volatile int numeroDecimal);
+//int HEX_PS2 (volatile int tiempoHex, volatile int flagMinutos);
+void LCD_cursor(int x, int y);
+void LCD_text(char * text_ptr);
+void LCD_cursor_off(void);
+void MTL_text (int, int, char *);
+void MTL_box(int x1, int y1, int x2, int y2, short pixel_color);
+void switches_ISR();
+
+volatile int hora ,minutos;	// patrón para display HEX
+volatile int segundos;
+volatile int hora_minutos;	// patrón para display HEX
+volatile int key_pressed = KEY2;
+volatile int h;
+volatile int m;
+volatile int s;
+volatile int temporizador, ticks, parar;
+char *new_text;
+char *bufferCaracteres;
+int nuevaNew =0;
+int contador_new=0;
+volatile int fin_de_cuenta =0;
+
+int main(void)
+{
+	volatile int * interval_timer_ptr = (int *) TIMER_BASE;	// Dirección Temporizador
+	volatile int * KEY_ptr = (int *) PUSHBUTTONS_BASE;					// Dirección pulsadores KEY
+  	volatile int * slider_switch_ptr = (int *) SWITCHES_BASE;
+	volatile int * HEX3_HEX0_ptr	= (int *) HEX3_HEX0_BASE;	// Dirección HEX3_HEX0
+	volatile int * HEX7_HEX4_ptr	= (int *) HEX7_HEX4_BASE;	// Dirección HEX7_HEX4
+
+
+	int counter = 	0x989680;				// 1/(50 MHz) x (0x2625a0) = 50 msec
+	int horasH, minutosH;
+	int seconds = 0;
+
+
+
+	int i,j,k;
+	char espacio[40]= " \0";
+	char caracteresFP[50], caracteresFP1[50], caracteresFP2[50], caracteresFP3[50];
+
+
+
+	*(interval_timer_ptr + 0x2) = (counter & 0xFFFF);
+	*(interval_timer_ptr + 0x3) = (counter >> 16) & 0xFFFF;
+	*(slider_switch_ptr+2)=0xFF;
+
+	/* comienza el timer y habilita las interrupciones */
+	*(interval_timer_ptr + 1) = 0x7;	// STOP = 0, START = 1, CONT = 1, ITO = 1 
+	alt_irq_register(TIMER_IRQ, NULL, interval_timer_isr);
+	alt_irq_register(SWITCHES_IRQ, NULL, switches_ISR);
+	//ha entrado en interval_timer_isr
+	//conversion a hexadecimal
+	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_ISR);
+
+	parar = 1;
+
+	FILE *fp;
+	FILE *fp1;
+	FILE *fp2;
+	FILE *fp3;
+
+	fp = fopen ("/mnt/rozipfs/new00.txt", "r");
+	fp1 = fopen ("/mnt/rozipfs/new01.txt", "r");
+	fp2 = fopen ("/mnt/rozipfs/new02.txt", "r");
+	fp3 = fopen ("/mnt/rozipfs/new03.txt", "r");
+
+
+
+	for(i=30 ; i>=0; i = i - 1){
+		for(j=50 ; j>=0; j = j - 1){
+		MTL_text(j,i,espacio);
+
+		}
+	}
+	MTL_box (0, 0, 50*8-1, 30*8-1, 0x0000); // Pinta de Negro toda la pantalla
+
+
+
+	while(1){
+		horasH = DecToHex(h);
+		minutosH= DecToHex(m);
+		segundos = DecToHex(s);
+
+		hora_minutos = (horasH<<16) | minutosH;
+		seconds = (segundos<<16)| 0x00;
+
+		*(HEX3_HEX0_ptr) = seconds;				// Visualiza en patrón en HEX3 ... HEX0
+		*(HEX7_HEX4_ptr) = hora_minutos;
+
+
+		/* Las dos siguientes instrucciones son las encargadas de que al presionar los
+		 * KEY2 y KEY3, se haga alguna tarea*/
+		*(KEY_ptr + 2) = 0xE;
+		*(KEY_ptr + 3) = 0;
+
+		sprintf ("%02d:02d:%02d",h,m,s);
+
+		char mensaje[40] = "Hora: ";
+		char hStr[16];
+		char mStr[16];
+		char sStr[16];
+
+		if(h<=9){
+			sprintf(hStr,"0%d", h);
+		}else {
+			sprintf(hStr,"%d", h);
+		}
+		if(m<=9){
+			sprintf(mStr,"0%d", m);
+		}else {
+			sprintf(mStr,"%d", m);
+		}
+		if(s<=9){
+			sprintf(sStr,"0%d", s);
+		}else {
+			sprintf(sStr,"%d", s);
+		}
+
+		strcat(mensaje,hStr);
+		strcat(mensaje,":");
+		strcat(mensaje,mStr);
+		strcat(mensaje,":");
+		strcat(mensaje,sStr);
+		strcat(mensaje,"\0");
+
+		LCD_cursor(0,0);
+		LCD_text(mensaje);
+		LCD_cursor(0,1);
+		LCD_text("Patri y Josepe\0");
+		LCD_cursor_off();
+
+
+
+		if(temporizador == 12){ //Cada 2.5s entra en esta condicion, ejecuta instrucciones sobre MTL
+			temporizador = 0;	//Reinicia el contador
+			if(parar == 1){		//si no estan activados los switches...
+					temporizador=0;
+
+					switch(fin_de_cuenta){//dependiendo del valor de fin de cuenta leo un fichero u otro
+						case 0:{
+							for (k = 0; k < 50; k++){
+								caracteresFP[k] = fgetc(fp);
+								if (caracteresFP[k] == EOF){//si llego a fin de fichero rellena con espacios y empieza en la línea siguiente
+									caracteresFP[k]= ' ';
+									fin_de_cuenta=1;//siguiente caso
+
+								}
+							}
+
+							scroll();//scroll de la pantalla
+							MTL_text (0, 29, caracteresFP);//imprime caracteres
+							break;
+						}
+
+
+						case 1:{
+							for (k = 0; k < 50; k++){
+								caracteresFP1[k] = fgetc(fp1);
+								if (caracteresFP1[k] == EOF){
+									caracteresFP1[k]= ' ';
+									fin_de_cuenta=2;
+									//linea
+								}
+
+							}
+							scroll();
+							MTL_text (0, 29, caracteresFP1);
+							break;
+						}
+
+
+						case 2:{
+							for (k = 0; k < 50; k++){
+								caracteresFP2[k] = fgetc(fp2);
+								if (caracteresFP2[k] == EOF){
+									caracteresFP2[k]= ' ';
+									fin_de_cuenta=3;
+									//linea
+								}
+
+							}
+							scroll();
+							MTL_text (0, 29, caracteresFP2);
+							break;
+						}
+
+						case 3:{
+							for (k = 0; k < 50; k++){
+								caracteresFP3[k] = fgetc(fp3);
+								if (caracteresFP3[k] == EOF){
+									caracteresFP3[k]= ' ';
+									fin_de_cuenta=0;
+									fp = fopen ("/mnt/rozipfs/new00.txt", "r");
+									fp1 = fopen ("/mnt/rozipfs/new01.txt", "r");
+									fp2 = fopen ("/mnt/rozipfs/new02.txt", "r");
+									fp3 = fopen ("/mnt/rozipfs/new03.txt", "r");
+
+									//linea
+								}
+
+							}
+							scroll();
+							MTL_text (0, 29, caracteresFP3);
+							break;
+						}
+
+						default:{
+							printf(" ");
+							fin_de_cuenta=0;
+						}
+					}
+
+
+			}
+		}
+
+}
+
+
+	return 0;
+}
+
+/* Esta funcion va metiendo linea a linea en la pantalla*/
+void scroll(void){
+	int offset_viejo, offset_nuevo; //necesitamos dos variables de offset
+	int i,k;
+	int offset =(29<<6);
+	bufferCaracteres = (char *) MTL_CHAR_BUFFER_AVALON_CHAR_BUFFER_SLAVE_BASE;
+
+	for(k=1;k<30;k++){
+		for(i=0;i<50;i++){
+			offset_viejo = (k<<6) + i;
+			offset_nuevo = ( (k-1) << 6) + i;
+			*(bufferCaracteres + offset_nuevo) = *(bufferCaracteres + offset_viejo);
+		}
+	}
+
+	while(*(new_text)){
+		*(bufferCaracteres + offset) = *(new_text);
+		++ new_text;
+		++ offset;
+	}
+}
+
+
+
+
+
+/****************************************************************************************
+ * Subrutina para mover el cursor del LCD
+****************************************************************************************/
+void LCD_cursor(int x, int y)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+	char instruction;
+
+	instruction = x;
+	if (y != 0) instruction |= 0x40;			// activar el bit 6 para la fila inferior
+	instruction |= 0x80;						// hay que activar el bit 7 para indicar el lugar
+	*(LCD_display_ptr) = instruction;			// escribe registro de instrucciones del LCD
+}
+
+/****************************************************************************************
+ * Subrutina para enviar una cadena de texto al LCD
+****************************************************************************************/
+void LCD_text(char * text_ptr)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+
+	while ( *(text_ptr) )
+	{
+		*(LCD_display_ptr + 1) = *(text_ptr);	// escribe los datos en el LCD
+		++text_ptr;
+	}
+}
+
+/****************************************************************************************
+ * Subrutina para apagar el cursor del LCD
+****************************************************************************************/
+void LCD_cursor_off(void)
+{
+  	volatile char * LCD_display_ptr = (char *) CHAR_LCD_BASE;	// 16x2 character display
+	*(LCD_display_ptr) = 0x0C;										// desactiva el curso del LCD
+}
+
+
+void MTL_text(int x, int y, char * text_ptr)
+{
+	int offset;
+  	volatile char * character_buffer = (char *)  MTL_CHAR_BUFFER_AVALON_CHAR_BUFFER_SLAVE_BASE;	// MTL character buffer
+
+  	/* asume que la cadena de texto comienza en la primera fila */
+	offset = (y << 6) + x;
+	while ( *(text_ptr) )
+	{
+		*(character_buffer + offset) = *(text_ptr);	// escribe en el buffer
+		++text_ptr;
+		++offset;
+	}
+}
+
+
+
+
+/****************************************************************************************
+ * Dibujar un rectangulo en la pantalla MTL
+****************************************************************************************/
+void MTL_box(int x1, int y1, int x2, int y2, short pixel_color)
+{
+	int offset, row, col;
+	int SRAM_BASE_SIN_CACHE = (SRAM_BASE + 0x080000000);  //Activando el bit más significativo se elude la cache de datos
+  	volatile short * pixel_buffer = (short *) SRAM_BASE_SIN_CACHE;	// MTL pixel buffer
+
+  	/* se asume que las coordenadas del rectangulo son correctas */
+	for (row = y1; row <= y2; row++)
+	{
+		col = x1;
+		while (col <= x2)
+		{
+			offset = (row << 9) + col;
+			*(pixel_buffer + offset) = pixel_color;	//procesa mitad direcciones
+			++col;
+		}
+	}
+}

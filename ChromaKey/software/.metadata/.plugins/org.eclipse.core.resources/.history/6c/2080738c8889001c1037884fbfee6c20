@@ -1,0 +1,63 @@
+/*
+ * DecToHex.c
+ *
+ *  Created on: 27 de oct. de 2021
+ *      Author: patvalma
+ */
+
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+#include "math.h"
+
+
+/* Función que convierte un número decimal a un número hexadecimal
+ * que representa los segmentos del display han de encenderse.*/
+
+int DecToHex (volatile int numeroDecimal){
+
+	int decena;
+	int unidad;
+
+	short resul1;
+	short resul2;
+	unsigned int resultado;
+
+
+	decena = numeroDecimal/10;
+	unidad = numeroDecimal%10;
+
+	switch (decena){
+		case 0: resul1 = 0x3F; break;
+		case 1: resul1 = 0x06; break;
+		case 2: resul1 = 0x5B; break;
+		case 3: resul1 = 0x4F; break;
+		case 4: resul1 = 0x66; break;
+		case 5: resul1 = 0x6D; break;
+		case 6: resul1 = 0x7D; break;
+		case 7: resul1 = 0x07; break;
+		case 8: resul1 = 0x7F; break;
+		case 9: resul1 = 0x67; break;
+		default: resul1 = 0x3F; break;
+	}
+
+	switch (unidad){
+		case 0: resul2 = 0x3F; break;
+		case 1: resul2 = 0x06; break;
+		case 2: resul2 = 0x5B; break;
+		case 3: resul2 = 0x4F; break;
+		case 4: resul2 = 0x66; break;
+		case 5: resul2 = 0x6D; break;
+		case 6: resul2 = 0x7D; break;
+		case 7: resul2 = 0x07; break;
+		case 8: resul2 = 0x7F; break;
+		case 9: resul2 = 0x67; break;
+		default: resul2 = 0x3F; break;
+	}
+
+	resultado = (resul1<<8) | resul2;
+
+	return resultado;
+}
+
+

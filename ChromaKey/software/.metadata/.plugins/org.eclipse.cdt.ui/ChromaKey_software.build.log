@@ -1,0 +1,42 @@
+10:16:03 **** Build of configuration Nios II for project ChromaKey_software ****
+make all 
+Info: Building ../ChromaKey_software_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ChromaKey_software_bsp/
+[BSP build complete]
+Info: Compiling interrupt_example.c to obj/default/interrupt_example.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ChromaKey_software_bsp//HAL/inc -I../ChromaKey_software_bsp/ -I../ChromaKey_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/interrupt_example.o interrupt_example.c
+interrupt_example.c: In function 'main':
+interrupt_example.c:41:41: error: 'HEX7_HEX4_BASE' undeclared (first use in this function)
+  volatile int * HEX7_HEX4_ptr = (int *) HEX7_HEX4_BASE; // Dirección HEX7_HEX4
+                                         ^
+interrupt_example.c:41:41: note: each undeclared identifier is reported only once for each function it appears in
+interrupt_example.c:109:28: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+   sprintf ("%02d:02d:%02d",h,m,s);
+                            ^
+In file included from c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\sys\reent.h:13:0,
+                 from c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\sys\errno.h:16,
+                 from c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\errno.h:14,
+                 from ../ChromaKey_software_bsp//HAL/inc/sys/alt_irq.h:48,
+                 from interrupt_example.c:3:
+c:\intelfpga\17.1\nios2eds\bin\gnu\h-x86_64-mingw32\nios2-elf\include\stdio.h:258:5: note: expected 'const char * restrict' but argument is of type 'int'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+interrupt_example.c:132:3: warning: implicit declaration of function 'strcat' [-Wimplicit-function-declaration]
+   strcat(mensaje,hStr);
+   ^
+interrupt_example.c:132:3: warning: incompatible implicit declaration of built-in function 'strcat'
+interrupt_example.c:132:3: note: include '<string.h>' or provide a declaration of 'strcat'
+interrupt_example.c:163:8: warning: implicit declaration of function 'scroll' [-Wimplicit-function-declaration]
+        scroll();//scroll de la pantalla
+        ^
+interrupt_example.c: At top level:
+interrupt_example.c:237:6: warning: conflicting types for 'scroll'
+ void scroll(void){
+      ^
+interrupt_example.c:163:8: note: previous implicit declaration of 'scroll' was here
+        scroll();//scroll de la pantalla
+        ^
+make: *** [obj/default/interrupt_example.o] Error 1
+
+10:16:04 Build Finished (took 1s.167ms)
+

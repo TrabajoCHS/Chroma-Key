@@ -1,0 +1,6 @@
+10:06:41 **** Clean-only build of configuration Nios II for project Chroma_soft_bsp ****
+make clean 
+[BSP clean complete]
+
+10:06:41 Build Finished (took 303ms)
+

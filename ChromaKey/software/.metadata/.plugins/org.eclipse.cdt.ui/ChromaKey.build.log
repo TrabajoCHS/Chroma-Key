@@ -1,0 +1,22 @@
+09:46:02 **** Incremental Build of configuration Nios II for project ChromaKey ****
+make all 
+Info: Building ../ChromaKey_bsp/
+C:/intelFPGA/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../ChromaKey_bsp/
+[BSP build complete]
+Info: Compiling interval_timer_ISR.c to obj/default/interval_timer_ISR.o
+nios2-elf-gcc -xc -MP -MMD -c -I../ChromaKey_bsp//HAL/inc -I../ChromaKey_bsp/ -I../ChromaKey_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED -DRO_ZIPFS    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/interval_timer_ISR.o interval_timer_ISR.c
+interval_timer_ISR.c: In function 'interval_timer_isr':
+interval_timer_ISR.c:18:2: warning: implicit declaration of function 'PrintImage' [-Wimplicit-function-declaration]
+  PrintImage("/mnt/rozipfs/imagen02.bmp");
+  ^
+Info: Linking ChromaKey.elf
+nios2-elf-g++  -T'../ChromaKey_bsp//linker.x' -msys-crt0='../ChromaKey_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../ChromaKey_bsp/   -Wl,-Map=ChromaKey.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o ChromaKey.elf obj/default/interval_timer_ISR.o obj/default/test_mtl.o -lm -msys-lib=m
+nios2-elf-insert ChromaKey.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x10001040 --timestamp 1644395618 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_system --quartus_project_dir "C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey" --jdi ../..//output_files/DE2_115_Media_Computer.jdi --sopcinfo C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/software/ChromaKey_bsp/../../nios_system.sopcinfo
+Info: (ChromaKey.elf) 52 KBytes program size (code + initialized data).
+Info:                 131011 KBytes free for stack + heap.
+Info: Creating ChromaKey.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source ChromaKey.elf >ChromaKey.objdump
+[ChromaKey build complete]
+
+09:46:04 Build Finished (took 2s.280ms)
+

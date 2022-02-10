@@ -1,0 +1,25 @@
+#include "key_codes.h" 	// define los valores de KEY1, KEY2, KEY3
+#include "system.h"
+#include "sys/alt_irq.h"
+
+volatile int h, m;
+volatile int s;
+int flagMinutos;
+volatile int temporizador=0;
+volatile int ticks=0;
+
+
+
+
+void interval_timer_isr( ) {
+	volatile int * interval_timer_ptr = (int *) TIMER_BASE;
+
+	ticks++;
+	PrintImage("/mnt/rozipfs/imagen02.bmp");
+
+
+	*(interval_timer_ptr) = 0; // Borra la interrupción
+
+	return;
+}
+
