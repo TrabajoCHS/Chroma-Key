@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/output_files/") File("DE2_115_Media_Computer.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/output_files/") File("DE2_115_Media_Computer.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

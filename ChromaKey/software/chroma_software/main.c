@@ -5,29 +5,23 @@
 #include "altera_up_avalon_video_pixel_buffer_dma.h"
 #include "altera_up_avalon_video_character_buffer_with_dma.h"
 
-/* funciones */
 void LCD_cursor( int, int );
 void LCD_text( char * );
 void LCD_cursor_off( void );
-void LCD_thresholds( void );
+void umbrales( void );
 void MTL_text (int, int, char *);
 void MTL_clean();
 void MTL_scroll();
 void MTL_box(int , int , int , int , short);
 void readBMPFile(int);
-
-/* interrupciones */
 void pushbutton_ISR( );
 void switches_ISR ( );
-
 typedef unsigned int int32;
 typedef short int16;
 typedef unsigned char byte;
-
 volatile int image = 1;
-
-volatile int thR = 300;
-volatile int thB = 300;
+volatile int nivelRojo = 350;
+volatile int nivelAzul = 350;
 
 int main(void)
 {
@@ -36,28 +30,18 @@ int main(void)
 	volatile int * slider_switch_ptr = (int *) SWITCHES_BASE;	// Dirección switches
 	volatile int * red_LED_ptr = (int *) RED_LEDS_BASE;
 	volatile int * green_LED_ptr = (int *) GREEN_LEDS_BASE;
-
-	// CHROMAPROCESSOR_BASE
-	// Registro 0 para umbral del rojo thR
-	// Registro 1 para umbral del azul thB
-	// Registro 2 para controlar las señales que se envian a la MTL (camara, memoria o ambas)
 	volatile int * chromaProcessor_ptr = (int *) AVALON_CHROMA_PROCESS_BASE;
-	*(chromaProcessor_ptr) = thR;
-	*(chromaProcessor_ptr + 1) = thB;
+	*(chromaProcessor_ptr) = nivelRojo;
+	*(chromaProcessor_ptr + 1) = nivelAzul;
 	*(chromaProcessor_ptr + 3) = 3;
-
-
-	*(KEY_ptr + 2) = 0xE; 		/* Mascara de los pulsadores (bit 0 es reset) */
+	*(KEY_ptr + 2) = 0xE;
 	*(KEY_ptr + 3) = 0;
 	alt_irq_register(PUSHBUTTONS_IRQ, NULL, pushbutton_ISR);
-
 	*(slider_switch_ptr + 2) = 0xFF;
 	alt_irq_register(SWITCHES_IRQ, NULL, switches_ISR);
-
 	readBMPFile(0);
 
-	// Muestra los valores de los umbrales del croma en la pantalla LCD
-	LCD_thresholds();
+	umbrales();
 
 	while(1)
 	{
@@ -104,15 +88,13 @@ void LCD_cursor_off(void)
 	*(LCD_display_ptr) = 0x0C;										// desactiva el curso del LCD
 }
 
-/****************************************************************************************
- * Subrutina para informar por el LCD sobre los valores de los umbrales
-****************************************************************************************/
-void LCD_thresholds(void)
+
+void umbrales(void)
 {
   	char first_row[16];
-	sprintf(first_row, "G - R = %d", thR);
+	sprintf(first_row, "(G - R) = %d", nivelRojo);
   	char second_row[16];
-	sprintf(second_row, "G - B = %d", thB);
+	sprintf(second_row, "(G - B) = %d", nivelAzul);
 
   	LCD_cursor (0,0);						// fija el cursor del LCD en la fila inferior
 	LCD_text (first_row);

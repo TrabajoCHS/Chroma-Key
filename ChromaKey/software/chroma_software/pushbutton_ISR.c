@@ -6,7 +6,7 @@
 
 extern volatile int image;
 
-extern volatile int thR, thB;
+extern volatile int nivelRojo, nivelAzul;
 typedef unsigned char byte;
 
 void pushbutton_ISR( )
@@ -21,21 +21,20 @@ void pushbutton_ISR( )
 	if (press & 0x2) // KEY1 ajusta el valor del umbral de diferencia GREEN - BLUE
 		{
 			// printf("KEY1");
-			thB = thB + 5;
-			if (thB >= 800){
-				thB = 100;
+			nivelAzul = nivelAzul + 10;
+			if (nivelAzul >= 1000){
+				nivelAzul = 150;
 			}
-			*(chromaProcessor_ptr + 1) = thB;
+			*(chromaProcessor_ptr + 1) = nivelAzul;
 			printf("G - B: %d\n", *(chromaProcessor_ptr + 1));
 		}
 	else if (press & 0x4)//diferencia G/R
 		{
-
-			thR = thR + 5;
-			if (thR >= 800){
-				thR = 100;
+			nivelRojo = nivelRojo + 10;
+			if (nivelRojo >= 1000){
+				nivelRojo = 150;
 			}
-			*(chromaProcessor_ptr) = thR;
+			*(chromaProcessor_ptr) = nivelRojo;
 			printf("G - R: %d\n", *(chromaProcessor_ptr));
 		}
 	else if (press & 0x8){
@@ -45,7 +44,7 @@ void pushbutton_ISR( )
 			image = 0;
 		}
 	}
-	LCD_thresholds();
+	umbrales();
 	return;
 }
 

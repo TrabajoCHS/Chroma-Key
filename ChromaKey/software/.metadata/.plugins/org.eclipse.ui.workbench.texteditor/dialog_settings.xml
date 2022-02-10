@@ -2,21 +2,28 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="chroma" key="selection"/>
+		<item value="nivelAzul" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="thb"/>
+			<item value="thr"/>
+			<item value="LCD_thresholds"/>
+			<item value="LCD_THRESHOLDS"/>
+			<item value="thB"/>
+			<item value="thR"/>
 			<item value="chroma"/>
 			<item value="HEX"/>
-			<item value="HEX7_HEX4_BASE"/>
-			<item value="SWITCHES_BASE"/>
-			<item value="TIMER_BASE"/>
-			<item value="timer"/>
-			<item value="SRAM_BASE"/>
 		</list>
 		<list key="replacehistory">
+			<item value="nivelAzul"/>
+			<item value="nivelRojo"/>
+			<item value="umbrales"/>
+			<item value="nivelR"/>
+			<item value="nivelA"/>
+			<item value="nievlR"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -1,5 +1,5 @@
 Fitter report for DE2_115_Media_Computer
-Wed Feb 09 18:38:29 2022
+Thu Feb 10 16:04:15 2022
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -76,7 +76,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                                ;
 +------------------------------------+----------------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Feb 09 18:38:29 2022                    ;
+; Fitter Status                      ; Successful - Thu Feb 10 16:04:15 2022                    ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition ;
 ; Revision Name                      ; DE2_115_Media_Computer                                   ;
 ; Top-level Entity Name              ; DE2_115_Media_Computer                                   ;
@@ -1198,7 +1198,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/output_files/DE2_115_Media_Computer.pin.
+The pin-out file can be found in C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/output_files/DE2_115_Media_Computer.pin.
 
 
 +----------------------------------------------------------------------------+
@@ -7361,14 +7361,14 @@ Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors
 Info (119006): Selected device EP4CE115F29C7 for design "DE2_115_Media_Computer"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Info (15535): Implemented PLL "nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 27
-    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of 0 degrees (0 ps) for nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[0] port File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 27
-    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of -54 degrees (-3000 ps) for nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[1] port File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 27
-Info (15535): Implemented PLL "nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
-    Info (15099): Implementing clock multiplication of 73, clock division of 297, and phase shift of 0 degrees (0 ps) for nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|clk[0] port File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
-Warning (15564): Compensate clock of PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" has been set to clock2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
-Info (15535): Implemented PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
-    Info (15099): Implementing clock multiplication of 2, clock division of 3, and phase shift of 0 degrees (0 ps) for nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|clk[2] port File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
+Info (15535): Implemented PLL "nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 27
+    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of 0 degrees (0 ps) for nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[0] port File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 27
+    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of -54 degrees (-3000 ps) for nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[1] port File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 27
+Info (15535): Implemented PLL "nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
+    Info (15099): Implementing clock multiplication of 73, clock division of 297, and phase shift of 0 degrees (0 ps) for nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|clk[0] port File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
+Warning (15564): Compensate clock of PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" has been set to clock2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
+Info (15535): Implemented PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" as Cyclone IV E PLL type File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
+    Info (15099): Implementing clock multiplication of 2, clock division of 3, and phase shift of 0 degrees (0 ps) for nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|clk[2] port File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
     Info (176445): Device EP4CE40F29C7 is compatible
@@ -7450,35 +7450,35 @@ Info (332111): Found 1 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):  100.000 altera_reserved_tck
-Info (176353): Automatically promoted node CLOCK2_50~input (placed in PIN AG14 (CLK15, DIFFCLK_6p)) File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 160
+Info (176353): Automatically promoted node CLOCK2_50~input (placed in PIN AG14 (CLK15, DIFFCLK_6p)) File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 160
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G15
-Info (176353): Automatically promoted node nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|clk[0] (placed in counter C0 of PLL_4) File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 32
+Info (176353): Automatically promoted node nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|clk[0] (placed in counter C0 of PLL_4) File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 32
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
-Info (176353): Automatically promoted node nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[0] (placed in counter C1 of PLL_1) File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 32
+Info (176353): Automatically promoted node nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[0] (placed in counter C1 of PLL_1) File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 32
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[1] (placed in counter C0 of PLL_1) File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 32
+Info (176353): Automatically promoted node nios_system:u0|nios_system_sys_sdram_pll:sys_sdram_pll|altera_up_altpll:sys_pll|altpll:PLL_for_DE_Series_Boards|altpll_3lb2:auto_generated|clk[1] (placed in counter C0 of PLL_1) File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_3lb2.tdf Line: 32
     Info (176355): Automatically promoted destinations to use location or clock signal External Clock Output CLKCTRL_PLL1E0
-Info (176353): Automatically promoted node nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|clk[2] (placed in counter C0 of PLL_3) File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 32
+Info (176353): Automatically promoted node nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|clk[2] (placed in counter C0 of PLL_3) File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 32
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G13
-Info (176353): Automatically promoted node TD_CLK27~input (placed in PIN B14 (CLK11, DIFFCLK_4p)) File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 162
+Info (176353): Automatically promoted node TD_CLK27~input (placed in PIN B14 (CLK11, DIFFCLK_4p)) File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 162
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G10
 Info (176353): Automatically promoted node altera_internal_jtag~TCKUTAP 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node nios_system:u0|altera_reset_controller:rst_controller|r_sync_rst  File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/nios_system/synthesis/submodules/altera_reset_controller.v Line: 288
+Info (176353): Automatically promoted node nios_system:u0|altera_reset_controller:rst_controller|r_sync_rst  File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/nios_system/synthesis/submodules/altera_reset_controller.v Line: 288
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[6] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[5] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[4] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[3] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[2] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[1] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[0] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_ca7:usedw_counter|counter_reg_bit[6] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_ca7.tdf Line: 69
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_ca7:usedw_counter|counter_reg_bit[5] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_ca7.tdf Line: 69
-        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_ca7:usedw_counter|counter_reg_bit[4] File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_ca7.tdf Line: 69
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[6] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[5] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[4] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[3] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[2] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[1] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[0] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_0ab.tdf Line: 68
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_ca7:usedw_counter|counter_reg_bit[6] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_ca7.tdf Line: 69
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_ca7:usedw_counter|counter_reg_bit[5] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_ca7.tdf Line: 69
+        Info (176357): Destination node nios_system:u0|nios_system_serial_port:serial_port|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_b341:auto_generated|a_dpfifo_uq31:dpfifo|cntr_ca7:usedw_counter|counter_reg_bit[4] File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/cntr_ca7.tdf Line: 69
         Info (176358): Non-global destination nodes limited to 10 nodes
-Info (176353): Automatically promoted node nios_system:u0|altera_reset_controller:rst_controller_002|merged_reset~0  File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/nios_system/synthesis/submodules/altera_reset_controller.v Line: 134
+Info (176353): Automatically promoted node nios_system:u0|altera_reset_controller:rst_controller_002|merged_reset~0  File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/nios_system/synthesis/submodules/altera_reset_controller.v Line: 134
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
 Warning (176250): Ignoring invalid fast I/O register assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
@@ -7539,11 +7539,11 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has 2.5V VCCIO pins. 9 total pin(s) used --  49 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 30 total pin(s) used --  42 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has 3.3V VCCIO pins. 45 total pin(s) used --  26 pins available
-Warning (15058): PLL "nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|pll1" is in normal or source synchronous mode with output clock "compensate_clock" set to clk[0] that is not fully compensated because it feeds an output pin -- only PLLs in zero delay buffer mode can fully compensate output pins File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
-Warning (15064): PLL "nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|pll1" output port clk[0] feeds output pin "AUD_XCK~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
-Warning (15055): PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" input clock inclk[0] is not fully compensated and may have reduced jitter performance because it is fed by a non-dedicated input File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
-    Info (15024): Input port INCLK[0] of node "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" is driven by CLOCK2_50~inputclkctrl which is OUTCLK output port of Clock control block type node CLOCK2_50~inputclkctrl File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
-Warning (15064): PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" output port clk[2] feeds output pin "GPIO[1]~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
+Warning (15058): PLL "nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|pll1" is in normal or source synchronous mode with output clock "compensate_clock" set to clk[0] that is not fully compensated because it feeds an output pin -- only PLLs in zero delay buffer mode can fully compensate output pins File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
+Warning (15064): PLL "nios_system:u0|nios_system_audio_pll:audio_pll|altera_up_altpll:audio_pll|altpll:PLL_for_DE_Series_Boards|altpll_dkb2:auto_generated|pll1" output port clk[0] feeds output pin "AUD_XCK~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_dkb2.tdf Line: 27
+Warning (15055): PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" input clock inclk[0] is not fully compensated and may have reduced jitter performance because it is fed by a non-dedicated input File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
+    Info (15024): Input port INCLK[0] of node "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" is driven by CLOCK2_50~inputclkctrl which is OUTCLK output port of Clock control block type node CLOCK2_50~inputclkctrl File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
+Warning (15064): PLL "nios_system:u0|nios_system_video_pll:video_pll|altera_up_altpll:video_pll|altpll:PLL_for_DE_Series_Boards|altpll_8fb2:auto_generated|pll1" output port clk[2] feeds output pin "GPIO[1]~output" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/db/altpll_8fb2.tdf Line: 27
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "EEP_I2C_SCLK" is assigned to location or region, but does not exist in design
     Warning (15706): Node "EEP_I2C_SDAT" is assigned to location or region, but does not exist in design
@@ -7716,13 +7716,13 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SMA_CLKOUT" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_CTS" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_RTS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:15
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:16
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 5% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 43% of the available device resources in the region that extends from location X34_Y24 to location X45_Y36
@@ -7730,7 +7730,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 1.37 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.38 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -7738,217 +7738,217 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:05
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 157 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin FL_RY uses I/O standard 3.3-V LVTTL at Y1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 173
-    Info (169178): Pin SD_WP_N uses I/O standard 3.3-V LVTTL at AF14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 179
-    Info (169178): Pin FL_ADDR[0] uses I/O standard 3.3-V LVTTL at AG12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[1] uses I/O standard 3.3-V LVTTL at AH7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[2] uses I/O standard 3.3-V LVTTL at Y13 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[3] uses I/O standard 3.3-V LVTTL at Y14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[4] uses I/O standard 3.3-V LVTTL at Y12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[5] uses I/O standard 3.3-V LVTTL at AA13 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[6] uses I/O standard 3.3-V LVTTL at AA12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[7] uses I/O standard 3.3-V LVTTL at AB13 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[8] uses I/O standard 3.3-V LVTTL at AB12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[9] uses I/O standard 3.3-V LVTTL at AB10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[10] uses I/O standard 3.3-V LVTTL at AE9 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[11] uses I/O standard 3.3-V LVTTL at AF9 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[12] uses I/O standard 3.3-V LVTTL at AA10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[13] uses I/O standard 3.3-V LVTTL at AD8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[14] uses I/O standard 3.3-V LVTTL at AC8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[15] uses I/O standard 3.3-V LVTTL at Y10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[16] uses I/O standard 3.3-V LVTTL at AA8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[17] uses I/O standard 3.3-V LVTTL at AH12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[18] uses I/O standard 3.3-V LVTTL at AC12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[19] uses I/O standard 3.3-V LVTTL at AD12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[20] uses I/O standard 3.3-V LVTTL at AE10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[21] uses I/O standard 3.3-V LVTTL at AD10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_ADDR[22] uses I/O standard 3.3-V LVTTL at AD11 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
-    Info (169178): Pin FL_CE_N uses I/O standard 3.3-V LVTTL at AG7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 263
-    Info (169178): Pin FL_OE_N uses I/O standard 3.3-V LVTTL at AG8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 264
-    Info (169178): Pin FL_WE_N uses I/O standard 3.3-V LVTTL at AC10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 266
-    Info (169178): Pin TD_HS uses I/O standard 3.3-V LVTTL at E5 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 183
-    Info (169178): Pin TD_VS uses I/O standard 3.3-V LVTTL at E4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 184
-    Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at AB22 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[1] uses I/O standard 3.3-V LVTTL at AC15 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[2] uses I/O standard 3.3-V LVTTL at AB21 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[3] uses I/O standard 3.3-V LVTTL at Y17 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[4] uses I/O standard 3.3-V LVTTL at AC21 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[5] uses I/O standard 3.3-V LVTTL at Y16 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[6] uses I/O standard 3.3-V LVTTL at AD21 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[7] uses I/O standard 3.3-V LVTTL at AE16 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[8] uses I/O standard 3.3-V LVTTL at AD15 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[9] uses I/O standard 3.3-V LVTTL at AE15 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[10] uses I/O standard 3.3-V LVTTL at AC19 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[11] uses I/O standard 3.3-V LVTTL at AF16 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[12] uses I/O standard 3.3-V LVTTL at AD19 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[13] uses I/O standard 3.3-V LVTTL at AF15 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[14] uses I/O standard 3.3-V LVTTL at AF24 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[15] uses I/O standard 3.3-V LVTTL at AE21 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[16] uses I/O standard 3.3-V LVTTL at AF25 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[17] uses I/O standard 3.3-V LVTTL at AC22 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[18] uses I/O standard 3.3-V LVTTL at AE22 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[19] uses I/O standard 3.3-V LVTTL at AF21 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[20] uses I/O standard 3.3-V LVTTL at AF22 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[21] uses I/O standard 3.3-V LVTTL at AD22 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[22] uses I/O standard 3.3-V LVTTL at AG25 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[23] uses I/O standard 3.3-V LVTTL at AD25 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[24] uses I/O standard 3.3-V LVTTL at AH25 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[25] uses I/O standard 3.3-V LVTTL at AE25 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[26] uses I/O standard 3.3-V LVTTL at AG22 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[27] uses I/O standard 3.3-V LVTTL at AE24 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[28] uses I/O standard 3.3-V LVTTL at AH22 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[29] uses I/O standard 3.3-V LVTTL at AF26 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[30] uses I/O standard 3.3-V LVTTL at AE20 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[31] uses I/O standard 3.3-V LVTTL at AG23 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[32] uses I/O standard 3.3-V LVTTL at AF20 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[33] uses I/O standard 3.3-V LVTTL at AH26 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[34] uses I/O standard 3.3-V LVTTL at AH23 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin GPIO[35] uses I/O standard 3.3-V LVTTL at AG26 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169178): Pin SRAM_DQ[0] uses I/O standard 3.3-V LVTTL at AH3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[1] uses I/O standard 3.3-V LVTTL at AF4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[2] uses I/O standard 3.3-V LVTTL at AG4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[3] uses I/O standard 3.3-V LVTTL at AH4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[4] uses I/O standard 3.3-V LVTTL at AF6 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[5] uses I/O standard 3.3-V LVTTL at AG6 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[6] uses I/O standard 3.3-V LVTTL at AH6 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[7] uses I/O standard 3.3-V LVTTL at AF7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[8] uses I/O standard 3.3-V LVTTL at AD1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[9] uses I/O standard 3.3-V LVTTL at AD2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[10] uses I/O standard 3.3-V LVTTL at AE2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[11] uses I/O standard 3.3-V LVTTL at AE1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[12] uses I/O standard 3.3-V LVTTL at AE3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[13] uses I/O standard 3.3-V LVTTL at AE4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[14] uses I/O standard 3.3-V LVTTL at AF3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin SRAM_DQ[15] uses I/O standard 3.3-V LVTTL at AG3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
-    Info (169178): Pin DRAM_DQ[0] uses I/O standard 3.3-V LVTTL at W3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[1] uses I/O standard 3.3-V LVTTL at W2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[2] uses I/O standard 3.3-V LVTTL at V4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[3] uses I/O standard 3.3-V LVTTL at W1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[4] uses I/O standard 3.3-V LVTTL at V3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[5] uses I/O standard 3.3-V LVTTL at V2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[6] uses I/O standard 3.3-V LVTTL at V1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[7] uses I/O standard 3.3-V LVTTL at U3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[8] uses I/O standard 3.3-V LVTTL at Y3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[9] uses I/O standard 3.3-V LVTTL at Y4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[10] uses I/O standard 3.3-V LVTTL at AB1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[11] uses I/O standard 3.3-V LVTTL at AA3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[12] uses I/O standard 3.3-V LVTTL at AB2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[13] uses I/O standard 3.3-V LVTTL at AC1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[14] uses I/O standard 3.3-V LVTTL at AB3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[15] uses I/O standard 3.3-V LVTTL at AC2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[16] uses I/O standard 3.3-V LVTTL at M8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[17] uses I/O standard 3.3-V LVTTL at L8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[18] uses I/O standard 3.3-V LVTTL at P2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[19] uses I/O standard 3.3-V LVTTL at N3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[20] uses I/O standard 3.3-V LVTTL at N4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[21] uses I/O standard 3.3-V LVTTL at M4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[22] uses I/O standard 3.3-V LVTTL at M7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[23] uses I/O standard 3.3-V LVTTL at L7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[24] uses I/O standard 3.3-V LVTTL at U5 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[25] uses I/O standard 3.3-V LVTTL at R7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[26] uses I/O standard 3.3-V LVTTL at R1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[27] uses I/O standard 3.3-V LVTTL at R2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[28] uses I/O standard 3.3-V LVTTL at R3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[29] uses I/O standard 3.3-V LVTTL at T3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[30] uses I/O standard 3.3-V LVTTL at U4 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin DRAM_DQ[31] uses I/O standard 3.3-V LVTTL at U1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
-    Info (169178): Pin FL_DQ[0] uses I/O standard 3.3-V LVTTL at AH8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin FL_DQ[1] uses I/O standard 3.3-V LVTTL at AF10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin FL_DQ[2] uses I/O standard 3.3-V LVTTL at AG10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin FL_DQ[3] uses I/O standard 3.3-V LVTTL at AH10 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin FL_DQ[4] uses I/O standard 3.3-V LVTTL at AF11 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin FL_DQ[5] uses I/O standard 3.3-V LVTTL at AG11 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin FL_DQ[6] uses I/O standard 3.3-V LVTTL at AH11 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin FL_DQ[7] uses I/O standard 3.3-V LVTTL at AF12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
-    Info (169178): Pin PS2_KBCLK uses I/O standard 3.3-V LVTTL at G6 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 201
-    Info (169178): Pin PS2_KBDAT uses I/O standard 3.3-V LVTTL at H5 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 202
-    Info (169178): Pin PS2_MSCLK uses I/O standard 3.3-V LVTTL at G5 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 203
-    Info (169178): Pin PS2_MSDAT uses I/O standard 3.3-V LVTTL at F5 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 204
-    Info (169178): Pin AUD_BCLK uses I/O standard 3.3-V LVTTL at F2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 207
-    Info (169178): Pin AUD_ADCLRCK uses I/O standard 3.3-V LVTTL at C2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 208
-    Info (169178): Pin AUD_DACLRCK uses I/O standard 3.3-V LVTTL at E3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 209
-    Info (169178): Pin LCD_DATA[0] uses I/O standard 3.3-V LVTTL at L3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin LCD_DATA[1] uses I/O standard 3.3-V LVTTL at L1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin LCD_DATA[2] uses I/O standard 3.3-V LVTTL at L2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin LCD_DATA[3] uses I/O standard 3.3-V LVTTL at K7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin LCD_DATA[4] uses I/O standard 3.3-V LVTTL at K1 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin LCD_DATA[5] uses I/O standard 3.3-V LVTTL at K2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin LCD_DATA[6] uses I/O standard 3.3-V LVTTL at M3 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin LCD_DATA[7] uses I/O standard 3.3-V LVTTL at M5 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
-    Info (169178): Pin I2C_SDAT uses I/O standard 3.3-V LVTTL at A8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 212
-    Info (169178): Pin SD_CMD uses I/O standard 3.3-V LVTTL at AD14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 218
-    Info (169178): Pin SD_DAT[0] uses I/O standard 3.3-V LVTTL at AE14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
-    Info (169178): Pin SD_DAT[1] uses I/O standard 3.3-V LVTTL at AF13 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
-    Info (169178): Pin SD_DAT[2] uses I/O standard 3.3-V LVTTL at AB14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
-    Info (169178): Pin SD_DAT[3] uses I/O standard 3.3-V LVTTL at AC14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
-    Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 159
-    Info (169178): Pin CLOCK3_50 uses I/O standard 3.3-V LVTTL at AG15 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 161
-    Info (169178): Pin CLOCK2_50 uses I/O standard 3.3-V LVTTL at AG14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 160
-    Info (169178): Pin AUD_ADCDAT uses I/O standard 3.3-V LVTTL at D2 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 170
-    Info (169178): Pin UART_RXD uses I/O standard 3.3-V LVTTL at G12 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 167
-    Info (169178): Pin TD_CLK27 uses I/O standard 3.3-V LVTTL at B14 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 162
-    Info (169178): Pin TD_DATA[6] uses I/O standard 3.3-V LVTTL at E7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
-    Info (169178): Pin TD_DATA[5] uses I/O standard 3.3-V LVTTL at D6 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
-    Info (169178): Pin TD_DATA[1] uses I/O standard 3.3-V LVTTL at A7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
-    Info (169178): Pin TD_DATA[4] uses I/O standard 3.3-V LVTTL at D7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
-    Info (169178): Pin TD_DATA[0] uses I/O standard 3.3-V LVTTL at E8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
-    Info (169178): Pin TD_DATA[3] uses I/O standard 3.3-V LVTTL at C7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
-    Info (169178): Pin TD_DATA[2] uses I/O standard 3.3-V LVTTL at D8 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
-    Info (169178): Pin TD_DATA[7] uses I/O standard 3.3-V LVTTL at F7 File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin FL_RY uses I/O standard 3.3-V LVTTL at Y1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 173
+    Info (169178): Pin SD_WP_N uses I/O standard 3.3-V LVTTL at AF14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 179
+    Info (169178): Pin FL_ADDR[0] uses I/O standard 3.3-V LVTTL at AG12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[1] uses I/O standard 3.3-V LVTTL at AH7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[2] uses I/O standard 3.3-V LVTTL at Y13 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[3] uses I/O standard 3.3-V LVTTL at Y14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[4] uses I/O standard 3.3-V LVTTL at Y12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[5] uses I/O standard 3.3-V LVTTL at AA13 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[6] uses I/O standard 3.3-V LVTTL at AA12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[7] uses I/O standard 3.3-V LVTTL at AB13 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[8] uses I/O standard 3.3-V LVTTL at AB12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[9] uses I/O standard 3.3-V LVTTL at AB10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[10] uses I/O standard 3.3-V LVTTL at AE9 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[11] uses I/O standard 3.3-V LVTTL at AF9 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[12] uses I/O standard 3.3-V LVTTL at AA10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[13] uses I/O standard 3.3-V LVTTL at AD8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[14] uses I/O standard 3.3-V LVTTL at AC8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[15] uses I/O standard 3.3-V LVTTL at Y10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[16] uses I/O standard 3.3-V LVTTL at AA8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[17] uses I/O standard 3.3-V LVTTL at AH12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[18] uses I/O standard 3.3-V LVTTL at AC12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[19] uses I/O standard 3.3-V LVTTL at AD12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[20] uses I/O standard 3.3-V LVTTL at AE10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[21] uses I/O standard 3.3-V LVTTL at AD10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_ADDR[22] uses I/O standard 3.3-V LVTTL at AD11 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 262
+    Info (169178): Pin FL_CE_N uses I/O standard 3.3-V LVTTL at AG7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 263
+    Info (169178): Pin FL_OE_N uses I/O standard 3.3-V LVTTL at AG8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 264
+    Info (169178): Pin FL_WE_N uses I/O standard 3.3-V LVTTL at AC10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 266
+    Info (169178): Pin TD_HS uses I/O standard 3.3-V LVTTL at E5 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 183
+    Info (169178): Pin TD_VS uses I/O standard 3.3-V LVTTL at E4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 184
+    Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at AB22 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[1] uses I/O standard 3.3-V LVTTL at AC15 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[2] uses I/O standard 3.3-V LVTTL at AB21 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[3] uses I/O standard 3.3-V LVTTL at Y17 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[4] uses I/O standard 3.3-V LVTTL at AC21 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[5] uses I/O standard 3.3-V LVTTL at Y16 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[6] uses I/O standard 3.3-V LVTTL at AD21 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[7] uses I/O standard 3.3-V LVTTL at AE16 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[8] uses I/O standard 3.3-V LVTTL at AD15 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[9] uses I/O standard 3.3-V LVTTL at AE15 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[10] uses I/O standard 3.3-V LVTTL at AC19 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[11] uses I/O standard 3.3-V LVTTL at AF16 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[12] uses I/O standard 3.3-V LVTTL at AD19 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[13] uses I/O standard 3.3-V LVTTL at AF15 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[14] uses I/O standard 3.3-V LVTTL at AF24 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[15] uses I/O standard 3.3-V LVTTL at AE21 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[16] uses I/O standard 3.3-V LVTTL at AF25 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[17] uses I/O standard 3.3-V LVTTL at AC22 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[18] uses I/O standard 3.3-V LVTTL at AE22 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[19] uses I/O standard 3.3-V LVTTL at AF21 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[20] uses I/O standard 3.3-V LVTTL at AF22 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[21] uses I/O standard 3.3-V LVTTL at AD22 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[22] uses I/O standard 3.3-V LVTTL at AG25 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[23] uses I/O standard 3.3-V LVTTL at AD25 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[24] uses I/O standard 3.3-V LVTTL at AH25 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[25] uses I/O standard 3.3-V LVTTL at AE25 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[26] uses I/O standard 3.3-V LVTTL at AG22 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[27] uses I/O standard 3.3-V LVTTL at AE24 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[28] uses I/O standard 3.3-V LVTTL at AH22 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[29] uses I/O standard 3.3-V LVTTL at AF26 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[30] uses I/O standard 3.3-V LVTTL at AE20 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[31] uses I/O standard 3.3-V LVTTL at AG23 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[32] uses I/O standard 3.3-V LVTTL at AF20 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[33] uses I/O standard 3.3-V LVTTL at AH26 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[34] uses I/O standard 3.3-V LVTTL at AH23 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin GPIO[35] uses I/O standard 3.3-V LVTTL at AG26 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169178): Pin SRAM_DQ[0] uses I/O standard 3.3-V LVTTL at AH3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[1] uses I/O standard 3.3-V LVTTL at AF4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[2] uses I/O standard 3.3-V LVTTL at AG4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[3] uses I/O standard 3.3-V LVTTL at AH4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[4] uses I/O standard 3.3-V LVTTL at AF6 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[5] uses I/O standard 3.3-V LVTTL at AG6 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[6] uses I/O standard 3.3-V LVTTL at AH6 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[7] uses I/O standard 3.3-V LVTTL at AF7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[8] uses I/O standard 3.3-V LVTTL at AD1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[9] uses I/O standard 3.3-V LVTTL at AD2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[10] uses I/O standard 3.3-V LVTTL at AE2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[11] uses I/O standard 3.3-V LVTTL at AE1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[12] uses I/O standard 3.3-V LVTTL at AE3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[13] uses I/O standard 3.3-V LVTTL at AE4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[14] uses I/O standard 3.3-V LVTTL at AF3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin SRAM_DQ[15] uses I/O standard 3.3-V LVTTL at AG3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 192
+    Info (169178): Pin DRAM_DQ[0] uses I/O standard 3.3-V LVTTL at W3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[1] uses I/O standard 3.3-V LVTTL at W2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[2] uses I/O standard 3.3-V LVTTL at V4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[3] uses I/O standard 3.3-V LVTTL at W1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[4] uses I/O standard 3.3-V LVTTL at V3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[5] uses I/O standard 3.3-V LVTTL at V2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[6] uses I/O standard 3.3-V LVTTL at V1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[7] uses I/O standard 3.3-V LVTTL at U3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[8] uses I/O standard 3.3-V LVTTL at Y3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[9] uses I/O standard 3.3-V LVTTL at Y4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[10] uses I/O standard 3.3-V LVTTL at AB1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[11] uses I/O standard 3.3-V LVTTL at AA3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[12] uses I/O standard 3.3-V LVTTL at AB2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[13] uses I/O standard 3.3-V LVTTL at AC1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[14] uses I/O standard 3.3-V LVTTL at AB3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[15] uses I/O standard 3.3-V LVTTL at AC2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[16] uses I/O standard 3.3-V LVTTL at M8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[17] uses I/O standard 3.3-V LVTTL at L8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[18] uses I/O standard 3.3-V LVTTL at P2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[19] uses I/O standard 3.3-V LVTTL at N3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[20] uses I/O standard 3.3-V LVTTL at N4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[21] uses I/O standard 3.3-V LVTTL at M4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[22] uses I/O standard 3.3-V LVTTL at M7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[23] uses I/O standard 3.3-V LVTTL at L7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[24] uses I/O standard 3.3-V LVTTL at U5 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[25] uses I/O standard 3.3-V LVTTL at R7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[26] uses I/O standard 3.3-V LVTTL at R1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[27] uses I/O standard 3.3-V LVTTL at R2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[28] uses I/O standard 3.3-V LVTTL at R3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[29] uses I/O standard 3.3-V LVTTL at T3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[30] uses I/O standard 3.3-V LVTTL at U4 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin DRAM_DQ[31] uses I/O standard 3.3-V LVTTL at U1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 195
+    Info (169178): Pin FL_DQ[0] uses I/O standard 3.3-V LVTTL at AH8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin FL_DQ[1] uses I/O standard 3.3-V LVTTL at AF10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin FL_DQ[2] uses I/O standard 3.3-V LVTTL at AG10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin FL_DQ[3] uses I/O standard 3.3-V LVTTL at AH10 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin FL_DQ[4] uses I/O standard 3.3-V LVTTL at AF11 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin FL_DQ[5] uses I/O standard 3.3-V LVTTL at AG11 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin FL_DQ[6] uses I/O standard 3.3-V LVTTL at AH11 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin FL_DQ[7] uses I/O standard 3.3-V LVTTL at AF12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 198
+    Info (169178): Pin PS2_KBCLK uses I/O standard 3.3-V LVTTL at G6 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 201
+    Info (169178): Pin PS2_KBDAT uses I/O standard 3.3-V LVTTL at H5 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 202
+    Info (169178): Pin PS2_MSCLK uses I/O standard 3.3-V LVTTL at G5 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 203
+    Info (169178): Pin PS2_MSDAT uses I/O standard 3.3-V LVTTL at F5 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 204
+    Info (169178): Pin AUD_BCLK uses I/O standard 3.3-V LVTTL at F2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 207
+    Info (169178): Pin AUD_ADCLRCK uses I/O standard 3.3-V LVTTL at C2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 208
+    Info (169178): Pin AUD_DACLRCK uses I/O standard 3.3-V LVTTL at E3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 209
+    Info (169178): Pin LCD_DATA[0] uses I/O standard 3.3-V LVTTL at L3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin LCD_DATA[1] uses I/O standard 3.3-V LVTTL at L1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin LCD_DATA[2] uses I/O standard 3.3-V LVTTL at L2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin LCD_DATA[3] uses I/O standard 3.3-V LVTTL at K7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin LCD_DATA[4] uses I/O standard 3.3-V LVTTL at K1 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin LCD_DATA[5] uses I/O standard 3.3-V LVTTL at K2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin LCD_DATA[6] uses I/O standard 3.3-V LVTTL at M3 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin LCD_DATA[7] uses I/O standard 3.3-V LVTTL at M5 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 215
+    Info (169178): Pin I2C_SDAT uses I/O standard 3.3-V LVTTL at A8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 212
+    Info (169178): Pin SD_CMD uses I/O standard 3.3-V LVTTL at AD14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 218
+    Info (169178): Pin SD_DAT[0] uses I/O standard 3.3-V LVTTL at AE14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
+    Info (169178): Pin SD_DAT[1] uses I/O standard 3.3-V LVTTL at AF13 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
+    Info (169178): Pin SD_DAT[2] uses I/O standard 3.3-V LVTTL at AB14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
+    Info (169178): Pin SD_DAT[3] uses I/O standard 3.3-V LVTTL at AC14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
+    Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 159
+    Info (169178): Pin CLOCK3_50 uses I/O standard 3.3-V LVTTL at AG15 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 161
+    Info (169178): Pin CLOCK2_50 uses I/O standard 3.3-V LVTTL at AG14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 160
+    Info (169178): Pin AUD_ADCDAT uses I/O standard 3.3-V LVTTL at D2 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 170
+    Info (169178): Pin UART_RXD uses I/O standard 3.3-V LVTTL at G12 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 167
+    Info (169178): Pin TD_CLK27 uses I/O standard 3.3-V LVTTL at B14 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 162
+    Info (169178): Pin TD_DATA[6] uses I/O standard 3.3-V LVTTL at E7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin TD_DATA[5] uses I/O standard 3.3-V LVTTL at D6 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin TD_DATA[1] uses I/O standard 3.3-V LVTTL at A7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin TD_DATA[4] uses I/O standard 3.3-V LVTTL at D7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin TD_DATA[0] uses I/O standard 3.3-V LVTTL at E8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin TD_DATA[3] uses I/O standard 3.3-V LVTTL at C7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin TD_DATA[2] uses I/O standard 3.3-V LVTTL at D8 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
+    Info (169178): Pin TD_DATA[7] uses I/O standard 3.3-V LVTTL at F7 File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 182
 Warning (169064): Following 42 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin GPIO[0] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[1] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[2] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[3] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[4] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[5] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[6] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[7] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[8] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[9] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[10] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[11] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[12] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[13] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[14] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[15] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[16] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[17] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[18] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[19] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[20] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[21] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[22] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[23] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[24] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[25] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[26] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[27] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[28] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[29] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[30] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[31] has a permanently enabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[32] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[33] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[34] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin GPIO[35] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
-    Info (169065): Pin AUD_BCLK has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 207
-    Info (169065): Pin AUD_ADCLRCK has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 208
-    Info (169065): Pin AUD_DACLRCK has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 209
-    Info (169065): Pin SD_DAT[1] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
-    Info (169065): Pin SD_DAT[2] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
-    Info (169065): Pin SD_DAT[3] has a permanently disabled output enable File: C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
-Info (144001): Generated suppressed messages file C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/output_files/DE2_115_Media_Computer.fit.smsg
+    Info (169065): Pin GPIO[0] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[1] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[2] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[3] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[4] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[5] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[6] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[7] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[8] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[9] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[10] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[11] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[12] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[13] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[14] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[15] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[16] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[17] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[18] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[19] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[20] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[21] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[22] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[23] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[24] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[25] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[26] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[27] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[28] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[29] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[30] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[31] has a permanently enabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[32] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[33] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[34] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin GPIO[35] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 189
+    Info (169065): Pin AUD_BCLK has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 207
+    Info (169065): Pin AUD_ADCLRCK has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 208
+    Info (169065): Pin AUD_DACLRCK has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 209
+    Info (169065): Pin SD_DAT[1] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
+    Info (169065): Pin SD_DAT[2] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
+    Info (169065): Pin SD_DAT[3] has a permanently disabled output enable File: C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/DE2_115_Media_Computer.v Line: 219
+Info (144001): Generated suppressed messages file C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/output_files/DE2_115_Media_Computer.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 197 warnings
-    Info: Peak virtual memory: 6061 megabytes
-    Info: Processing ended: Wed Feb 09 18:38:32 2022
+    Info: Peak virtual memory: 6043 megabytes
+    Info: Processing ended: Thu Feb 10 16:04:18 2022
     Info: Elapsed time: 00:00:54
-    Info: Total CPU time (on all processors): 00:01:17
+    Info: Total CPU time (on all processors): 00:01:16
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/jhovarne/Documents/GitHub/Chroma-Key/ChromaKey/output_files/DE2_115_Media_Computer.fit.smsg.
+The suppressed messages can be found in C:/Users/patvalma/Documents/GitHub/Chroma-Key/ChromaKey/output_files/DE2_115_Media_Computer.fit.smsg.
 
 

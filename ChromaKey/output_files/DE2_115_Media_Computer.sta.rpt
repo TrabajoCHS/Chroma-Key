@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE2_115_Media_Computer
-Wed Feb 09 18:38:47 2022
+Thu Feb 10 16:04:33 2022
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
 
 
@@ -107,13 +107,13 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.26        ;
+; Average used               ; 1.27        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.0%      ;
-;     Processors 3-4         ;   8.7%      ;
+;     Processor 2            ;   9.4%      ;
+;     Processors 3-4         ;   9.0%      ;
 +----------------------------+-------------+
 
 
@@ -122,8 +122,8 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                ; Status ; Read at                  ;
 +--------------------------------------------------------------+--------+--------------------------+
-; nios_system/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Wed Feb 09 18:38:44 2022 ;
-; nios_system/synthesis/submodules/nios_system_cpu_cpu.sdc     ; OK     ; Wed Feb 09 18:38:44 2022 ;
+; nios_system/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Thu Feb 10 16:04:29 2022 ;
+; nios_system/synthesis/submodules/nios_system_cpu_cpu.sdc     ; OK     ; Thu Feb 10 16:04:29 2022 ;
 +--------------------------------------------------------------+--------+--------------------------+
 
 
@@ -3830,7 +3830,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
-    Info: Processing started: Wed Feb 09 18:38:39 2022
+    Info: Processing started: Thu Feb 10 16:04:25 2022
 Info: Command: quartus_sta DE2_115_Media_Computer -c DE2_115_Media_Computer
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -4023,7 +4023,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 37 warnings
     Info: Peak virtual memory: 5001 megabytes
-    Info: Processing ended: Wed Feb 09 18:38:47 2022
+    Info: Processing ended: Thu Feb 10 16:04:33 2022
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:09
 
